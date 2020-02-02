@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatchTheFlow", "CatchTheFlow\CatchTheFlow.csproj", "{C795C6C9-563C-431B-96FC-330C218A955B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sound", "Sound", "{C02CF756-D741-43F9-A7DA-DAB9793449B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sound", "Sound\Sound\Sound.csproj", "{4FA639AB-2AFB-4389-85C8-28D948B70C1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,12 @@ Global
 		{C795C6C9-563C-431B-96FC-330C218A955B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C795C6C9-563C-431B-96FC-330C218A955B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C795C6C9-563C-431B-96FC-330C218A955B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FA639AB-2AFB-4389-85C8-28D948B70C1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FA639AB-2AFB-4389-85C8-28D948B70C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FA639AB-2AFB-4389-85C8-28D948B70C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FA639AB-2AFB-4389-85C8-28D948B70C1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4FA639AB-2AFB-4389-85C8-28D948B70C1A} = {C02CF756-D741-43F9-A7DA-DAB9793449B1}
 	EndGlobalSection
 EndGlobal
