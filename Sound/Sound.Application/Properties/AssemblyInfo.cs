@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sound")]
+[assembly: AssemblyTitle("Sound.Application")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Sound")]
+[assembly: AssemblyProduct("Sound.Application")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4FA639AB-2AFB-4389-85C8-28D948B70C1A")]
+[assembly: Guid("3C9D3D5A-E130-4DFF-BAF3-60BFB6F071E0")]
 
 // Version information for an assembly consists of the following four values:
 //
