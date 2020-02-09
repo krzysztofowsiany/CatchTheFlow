@@ -55,9 +55,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Sound\Sound.csproj">
+    <ProjectReference Include="..\Sound.Infrastructure\Sound.Infrastructure.csproj">
       <Project>{4fa639ab-2afb-4389-85c8-28d948b70c1a}</Project>
-      <Name>Sound</Name>
+      <Name>Sound.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

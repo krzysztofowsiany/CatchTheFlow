@@ -36,10 +36,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Reactive, Version=4.3.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263">
-      <HintPath>..\..\packages\System.Reactive.4.3.2\lib\net46\System.Reactive.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
       <Private>True</Private>
@@ -58,7 +54,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Consumer.cs" />
+    <Compile Include="Events\WorkStopped.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,10 +65,6 @@
     <ProjectReference Include="..\Sound.Core\Sound.Core.csproj">
       <Project>{7aedb1fa-3401-4829-89fe-006868d02d93}</Project>
       <Name>Sound.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sound.Infrastructure\Sound.Infrastructure.csproj">
-      <Project>{4fa639ab-2afb-4389-85c8-28d948b70c1a}</Project>
-      <Name>Sound.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
