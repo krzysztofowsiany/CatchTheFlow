@@ -58,7 +58,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IEvent.cs" />
+    <Compile Include="Extensions\BsonExtensions.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="IEventBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

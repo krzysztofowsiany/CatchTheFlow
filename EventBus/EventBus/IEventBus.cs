@@ -2,8 +2,8 @@
 
 namespace EventBus
 {
-    public interface IEventBus : ISubject<IEvent>
+    public interface IEventBus : ISubject<Event>
     {
-        void PushEvent(IEvent @event);
+        void PushEvent(Event @event);
     }
 }
