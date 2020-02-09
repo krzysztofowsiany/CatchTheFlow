@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sound.Application", "Sound\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sound.Core", "Sound\Sound.Core\Sound.Core.csproj", "{7AEDB1FA-3401-4829-89FE-006868D02D93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{9ED88D87-D667-49B9-8CE0-1A50EF5E9551}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{7AEDB1FA-3401-4829-89FE-006868D02D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AEDB1FA-3401-4829-89FE-006868D02D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AEDB1FA-3401-4829-89FE-006868D02D93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ED88D87-D667-49B9-8CE0-1A50EF5E9551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ED88D87-D667-49B9-8CE0-1A50EF5E9551}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ED88D87-D667-49B9-8CE0-1A50EF5E9551}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ED88D87-D667-49B9-8CE0-1A50EF5E9551}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4FA639AB-2AFB-4389-85C8-28D948B70C1A} = {C02CF756-D741-43F9-A7DA-DAB9793449B1}
