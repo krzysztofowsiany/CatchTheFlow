@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reactive.Linq;
 using EventBus;
+using EventBus.Extensions;
 using Sound.Application.Events;
 
 namespace Sound.Infrastructure
@@ -16,10 +17,10 @@ namespace Sound.Infrastructure
                 .OfType<Event>();
 
             events.Where(e => e.Type.Equals(nameof(WorkStopped)))
-                .Select(e => e.Data.Deserialize())
-                .Subscribe(oNext =>
+                .Select(e => e.Data.Deserialize() as WorkStopped)
+                .Subscribe(e =>
                 {
-                    
+                    Console.WriteLine(e);
                 });
         }
     }
