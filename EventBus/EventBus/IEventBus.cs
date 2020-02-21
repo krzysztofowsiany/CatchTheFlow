@@ -1,9 +1,11 @@
-﻿using System.Reactive.Subjects;
+﻿using System;
 
 namespace EventBus
 {
-    public interface IEventBus : ISubject<Event>
+    public interface IEventBus
     {
-        void PushEvent(Event @event);
+        void PushEvent<TEvent>(TEvent @event) where TEvent : class;
+
+        IDisposable Subscribe<TEvent>(Action<TEvent> onNext) where TEvent : class;
     }
 }

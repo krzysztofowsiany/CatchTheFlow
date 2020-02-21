@@ -1,12 +1,18 @@
 ﻿using System;
+using Sound.Infrastructure;
 
 namespace Sandbox
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var eventBus = new EventBus.EventBus();
+            var sound = new EventListener(eventBus);
+            var workStopped = new WorkStopped("test");
+            eventBus.PushEvent(workStopped);     
+            
+            Console.ReadKey();
         }
     }
 }

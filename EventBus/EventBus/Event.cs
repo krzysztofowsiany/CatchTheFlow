@@ -1,6 +1,6 @@
 ﻿namespace EventBus
 {
-    public struct Event
+    public class Event
     {
         public string Data { get; }
 

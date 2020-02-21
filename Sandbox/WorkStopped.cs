@@ -1,4 +1,4 @@
-﻿namespace Sound.Application.Events
+﻿namespace Sandbox
 {
     public class WorkStopped
     {
