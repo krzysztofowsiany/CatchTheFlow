@@ -1,4 +1,4 @@
-﻿namespace Sound.Domain
+﻿namespace Sound.Core
 {
     public class SoundPlayer
     {

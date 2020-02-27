@@ -1,14 +1,20 @@
-﻿using System;
+﻿using GWTTestBase;
+using Sound.Application.Events;
+using Sound.Infrastructure;
 using Xunit;
 
 namespace Sound.Tests
 {
-    public class Tests
+    public class Tests : TestBase
     {
         [Fact]
-        public void Test1()
+        public void test()
         {
-            Assert.True(true);
+            Give(new WorkStopped("test"));
+            
+            new EventListener(_eventBus);
+            
+            Then(new SoundStopped("test"));
         }
     }
 }

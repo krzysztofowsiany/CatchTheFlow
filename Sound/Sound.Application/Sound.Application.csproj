@@ -54,6 +54,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Events\SoundStopped.cs" />
     <Compile Include="Events\WorkStopped.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

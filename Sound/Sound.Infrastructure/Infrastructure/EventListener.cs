@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Reactive.Linq;
 using EventBus;
-using EventBus.Extensions;
 using Sound.Application.Events;
 
 namespace Sound.Infrastructure
@@ -15,6 +13,7 @@ namespace Sound.Infrastructure
             _eventBus = eventBus;
             var events = _eventBus.Subscribe<WorkStopped>(onNext =>
             {
+                _eventBus.PushEvent(new SoundStopped(onNext.Value));
                 Console.WriteLine($"Event in sound {onNext.Value}");
             });
                 
