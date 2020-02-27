@@ -11,10 +11,12 @@ namespace Sound.Tests
         public void test()
         {
             Give(new WorkStopped("test"));
-            
-            new EventListener(_eventBus);
-            
+
+            When<EventListener>();
+
             Then(new SoundStopped("test"));
         }
+
+       
     }
 }

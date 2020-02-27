@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using EventBus;
 using FluentAssertions;
@@ -7,7 +8,7 @@ namespace GWTTestBase
     public class TestBase
     {
         private IList<object> _givens;
-        protected IEventBus _eventBus;
+        private IEventBus _eventBus;
         private object _event;
 
         public TestBase()
@@ -18,13 +19,17 @@ namespace GWTTestBase
 
         protected void Then<TEvent>(TEvent @event) where TEvent: class
         {
-            _eventBus.Subscribe<TEvent>(onNext =>
+            _eventBus.Subscribe<TEvent>(incomeEvent =>
             {
-                _event = onNext;
+                if (@event.GetType().Name.Equals(incomeEvent.GetType().Name))
+                {
+                    _event = incomeEvent;
+                }
             });
             
             PushEvents();
-            
+
+            _event.Should().NotBeNull();
             _event.Should().BeEquivalentTo(@event);
             
             void PushEvents()
@@ -34,6 +39,11 @@ namespace GWTTestBase
                     _eventBus.PushEvent(given);
                 }
             }
+        }
+        
+        protected void When<TEventListener>()
+        {
+            Activator.CreateInstance(typeof(TEventListener), _eventBus);
         }
 
         protected void Give<TEvent>(TEvent @event) where TEvent: class
