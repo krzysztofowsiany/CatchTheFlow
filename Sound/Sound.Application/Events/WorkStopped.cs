@@ -1,11 +1,18 @@
-﻿namespace Sound.Application.Events
+﻿using System;
+
+namespace Sound.Application.Events
 {
     public class WorkStopped
     {
-        public string Value { get; }
-        public WorkStopped(string value)
+        public ushort WorkTime { get; }
+        public DateTime StopTime { get; }
+        
+        public DateTime Timestamp { get; }
+        public WorkStopped(ushort workTime, DateTime stopTime, DateTime timestamp)
         {
-            Value = value;
+            WorkTime = workTime;
+            StopTime = stopTime;
+            Timestamp = timestamp;
         }
     }
 }

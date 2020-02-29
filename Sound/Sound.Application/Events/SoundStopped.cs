@@ -1,11 +1,13 @@
-﻿namespace Sound.Application.Events
+﻿using System;
+
+namespace Sound.Application.Events
 {
     public class SoundStopped
     {
-        public string Value { get; }
-        public SoundStopped(string value)
+        public DateTime Timestamp { get; }
+        public SoundStopped(DateTime timestamp)
         {
-            Value = value;
+            Timestamp = timestamp;
         }
     }
 }
