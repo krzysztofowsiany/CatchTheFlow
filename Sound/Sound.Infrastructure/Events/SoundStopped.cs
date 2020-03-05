@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sound.Application.Events
+namespace Sound.Infrastructure.Events
 {
     public class SoundStopped
     {

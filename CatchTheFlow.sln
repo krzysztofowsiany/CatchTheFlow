@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GWTTestBase", "GWTTestBase\GWTTestBase.csproj", "{897889C5-E0B5-45A3-87B7-EAB8604AD7CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSLib", "CQRSLib\CQRSLib.csproj", "{28030DA9-13CB-42E9-8A07-360D6C42DD66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{897889C5-E0B5-45A3-87B7-EAB8604AD7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{897889C5-E0B5-45A3-87B7-EAB8604AD7CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{897889C5-E0B5-45A3-87B7-EAB8604AD7CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28030DA9-13CB-42E9-8A07-360D6C42DD66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28030DA9-13CB-42E9-8A07-360D6C42DD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28030DA9-13CB-42E9-8A07-360D6C42DD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28030DA9-13CB-42E9-8A07-360D6C42DD66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4FA639AB-2AFB-4389-85C8-28D948B70C1A} = {C02CF756-D741-43F9-A7DA-DAB9793449B1}

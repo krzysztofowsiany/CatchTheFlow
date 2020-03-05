@@ -1,6 +1,6 @@
-﻿using System;
-using EventBus;
-using Sound.Application.Events;
+﻿using EventBus;
+using Sound.Application.Views;
+using Sound.Infrastructure.Events;
 
 namespace Sound.Infrastructure
 {
@@ -11,10 +11,14 @@ namespace Sound.Infrastructure
         public EventListener(IEventBus eventBus)
         {
             _eventBus = eventBus;
-            var events = _eventBus.Subscribe<WorkStopped>(onNext =>
+            var events = _eventBus.Subscribe<WorkStopped>(@event =>
             {
-                _eventBus.PushEvent(new SoundStopped(onNext.Timestamp));
+                var view = new WorkStopTime(@event.StopTime);
+                
+                
+                //_eventBus.PushEvent(new SoundStopped(@event.Timestamp));
               //  Console.WriteLine($"Event in sound {onNext.Value}");
+              
             });
                 
         }

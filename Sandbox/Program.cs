@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Reflection;
+using Autofac;
+using Sound;
 using Sound.Infrastructure;
 
 namespace Sandbox
@@ -7,6 +10,9 @@ namespace Sandbox
     {
         static void Main(string[] args)
         {
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(new SoundModule(Assembly.GetExecutingAssembly()));
+            
             var eventBus = new EventBus.EventBus();
             var sound = new EventListener(eventBus);
             var workStopped = new WorkStopped("test");
