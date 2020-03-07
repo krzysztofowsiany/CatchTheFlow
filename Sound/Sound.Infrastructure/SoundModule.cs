@@ -2,6 +2,7 @@ using System;
 using System.Reflection;
 using Autofac;
 using CQRSLib;
+using Sound.Infrastructure;
 using Module = Autofac.Module;
 
 namespace Sound
@@ -19,6 +20,8 @@ namespace Sound
         {
             base.Load(builder);
 
+            builder.RegisterType<EventListener>().AutoActivate();
+            
             builder.RegisterAssemblyTypes(_assembly)
                 .Where(x => x.IsAssignableTo<ICommandHandler>())
                 .AsImplementedInterfaces();

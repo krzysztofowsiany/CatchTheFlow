@@ -1,4 +1,5 @@
-﻿using EventBus;
+﻿using System;
+using EventBus;
 using Sound.Application.Views;
 using Sound.Infrastructure.Events;
 
@@ -17,7 +18,7 @@ namespace Sound.Infrastructure
                 
                 
                 //_eventBus.PushEvent(new SoundStopped(@event.Timestamp));
-              //  Console.WriteLine($"Event in sound {onNext.Value}");
+                Console.WriteLine($"Event in sound {@event.WorkTime}");
               
             });
                 
