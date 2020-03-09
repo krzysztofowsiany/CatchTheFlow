@@ -27,7 +27,7 @@ namespace Sandbox
                 .As<IEventBus>()
                 .SingleInstance();
             
-            builder.RegisterModule(new SoundModule(Assembly.GetExecutingAssembly()));
+            builder.RegisterModule(new SoundModule());
             var container = builder.Build();
             return container;
         }
