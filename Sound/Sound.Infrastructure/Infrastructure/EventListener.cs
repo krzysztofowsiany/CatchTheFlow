@@ -10,16 +10,15 @@ namespace Sound.Infrastructure
 {
     public class EventListener
     {
-        private IEventBus _eventBus;
-
-        public EventListener(IEventBus eventBus, ICommandHandler<StopPlay> stopPlayCommandHandler)
+        public EventListener(
+            IEventBus eventBus, 
+            ICommandBus commandBus)
         {
-            _eventBus = eventBus;
-            var events = _eventBus.Subscribe<WorkStopped>(@event =>
+            var events = eventBus.Subscribe<WorkStopped>(@event =>
             {
                 var view = new WorkStopTime(@event.StopTime);
-                
-                stopPlayCommandHandler.Handle(new StopPlay());
+
+                commandBus.Send(new StopPlay());
                 
                 //_eventBus.PushEvent(new SoundStopped(@event.Timestamp));
                 Console.WriteLine($"Event in sound {@event.WorkTime}");

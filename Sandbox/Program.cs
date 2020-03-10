@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Reflection;
 using Autofac;
+using CQRSLib;
 using EventBus;
 using Sound;
 
@@ -25,6 +26,10 @@ namespace Sandbox
             var builder = new ContainerBuilder();
             builder.RegisterType<EventBus.EventBus>()
                 .As<IEventBus>()
+                .SingleInstance();
+            
+            builder.RegisterType<CommandBus>()
+                .As<ICommandBus>()
                 .SingleInstance();
             
             builder.RegisterModule(new SoundModule());
