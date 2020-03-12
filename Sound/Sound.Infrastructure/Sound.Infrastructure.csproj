@@ -86,6 +86,10 @@
       <Project>{3c9d3d5a-e130-4dff-baf3-60bfb6f071e0}</Project>
       <Name>Sound.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Sound.Core\Sound.Core.csproj">
+      <Project>{7aedb1fa-3401-4829-89fe-006868d02d93}</Project>
+      <Name>Sound.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

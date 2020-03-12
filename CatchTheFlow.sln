@@ -14,11 +14,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sound.Application", "Sound\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sound.Core", "Sound\Sound.Core\Sound.Core.csproj", "{7AEDB1FA-3401-4829-89FE-006868D02D93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{9ED88D87-D667-49B9-8CE0-1A50EF5E9551}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GWTTestBase", "GWTTestBase\GWTTestBase.csproj", "{897889C5-E0B5-45A3-87B7-EAB8604AD7CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSLib", "CQRSLib\CQRSLib.csproj", "{28030DA9-13CB-42E9-8A07-360D6C42DD66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{FB979114-144D-4B1A-8DB2-B6E42759CB71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,10 +50,6 @@ Global
 		{7AEDB1FA-3401-4829-89FE-006868D02D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AEDB1FA-3401-4829-89FE-006868D02D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AEDB1FA-3401-4829-89FE-006868D02D93}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9ED88D87-D667-49B9-8CE0-1A50EF5E9551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9ED88D87-D667-49B9-8CE0-1A50EF5E9551}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9ED88D87-D667-49B9-8CE0-1A50EF5E9551}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9ED88D87-D667-49B9-8CE0-1A50EF5E9551}.Release|Any CPU.Build.0 = Release|Any CPU
 		{897889C5-E0B5-45A3-87B7-EAB8604AD7CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{897889C5-E0B5-45A3-87B7-EAB8604AD7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{897889C5-E0B5-45A3-87B7-EAB8604AD7CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -62,6 +58,10 @@ Global
 		{28030DA9-13CB-42E9-8A07-360D6C42DD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28030DA9-13CB-42E9-8A07-360D6C42DD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28030DA9-13CB-42E9-8A07-360D6C42DD66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB979114-144D-4B1A-8DB2-B6E42759CB71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB979114-144D-4B1A-8DB2-B6E42759CB71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB979114-144D-4B1A-8DB2-B6E42759CB71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB979114-144D-4B1A-8DB2-B6E42759CB71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4FA639AB-2AFB-4389-85C8-28D948B70C1A} = {C02CF756-D741-43F9-A7DA-DAB9793449B1}

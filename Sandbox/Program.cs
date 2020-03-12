@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using Autofac;
 using CQRSLib;
 using EventBus;
@@ -7,9 +6,9 @@ using Sound;
 
 namespace Sandbox
 {
-    static class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var container = RegisterContainer();
 

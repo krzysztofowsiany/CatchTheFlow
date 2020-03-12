@@ -2,6 +2,7 @@ using Autofac;
 using CQRSLib;
 using Sound.Application.CommandHandlers;
 using Sound.Application.Commands;
+using Sound.Core;
 using Sound.Infrastructure;
 using Module = Autofac.Module;
 
@@ -15,6 +16,8 @@ namespace Sound
 
             builder.RegisterType<EventListener>().AutoActivate();
             builder.RegisterType<HandlerStopPlay>().As<ICommandHandler<StopPlay>>();
+            builder.RegisterType<SoundPlayerFacade>()
+                .SingleInstance();
         }
     }
 }
