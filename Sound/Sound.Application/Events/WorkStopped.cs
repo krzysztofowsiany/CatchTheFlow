@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sound.Infrastructure.Events
+namespace Sound.Application.Events
 {
     public class WorkStopped
     {

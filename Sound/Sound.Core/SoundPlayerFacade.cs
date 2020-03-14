@@ -1,12 +1,11 @@
 ﻿
-using System;
 using System.Media;
 
 namespace Sound.Core
 {
     public class SoundPlayerFacade
     {
-        private SoundPlayer _playerPlayer;
+        private readonly SoundPlayer _playerPlayer;
 
         public SoundPlayerFacade()
         {
@@ -14,8 +13,7 @@ namespace Sound.Core
         }
         public void StopPlay()
         {
-            Console.WriteLine("stop play");
-           // _playerPlayer.Stop();
+            _playerPlayer.Stop();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using GWTTestBase;
 using Sound.Infrastructure;
-using Sound.Infrastructure.Events;
+using Sound.Application.Events;
 using Xunit;
 
 namespace Sound.Tests
