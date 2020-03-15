@@ -1,23 +1,42 @@
 using System;
 using System.Collections.Generic;
+using Autofac;
 using CQRSLib;
 using EventBus;
 using FluentAssertions;
+using Sound;
 
 namespace GWTTestBase
 {
     public class TestBase
     {
-        private IList<object> _givens;
-        private IEventBus _eventBus;
+        private readonly IList<object> _givens;
+        private readonly IEventBus _eventBus;
         private object _event;
-        private CommandBus _commandBus;
+        private readonly ICommandBus _commandBus;
 
         protected TestBase()
         {
             _givens = new List<object>();
-            _eventBus = new EventBus.EventBus();
-            _commandBus = new CommandBus(null);
+            var container = RegisterContainer();
+            _eventBus = container.Resolve<IEventBus>();
+            _commandBus = container.Resolve<ICommandBus>();
+        }
+        
+        private static IContainer RegisterContainer()
+        {
+            var builder = new ContainerBuilder();
+            builder.RegisterType<EventBus.EventBus>()
+                .As<IEventBus>()
+                .SingleInstance();
+            
+            builder.RegisterType<CommandBus>()
+                .As<ICommandBus>()
+                .SingleInstance();
+            
+            builder.RegisterModule(new SoundModule());
+            var container = builder.Build();
+            return container;
         }
 
         protected void Then<TEvent>(TEvent @event) where TEvent: class
