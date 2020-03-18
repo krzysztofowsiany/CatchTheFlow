@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="work_started_tests.cs" />
     <Compile Include="work_stopped_tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="work_stopped_time_view_tests.cs" />
