@@ -7,22 +7,22 @@ using Sound.Core;
 
 namespace Sound.Application.CommandHandlers
 {
-    public class HandlerStopPlay: ICommandHandler<StopPlay>
+    public class StopPlayCommandHandler: ICommandHandler<StopPlay>
     {
-        private readonly SoundPlayerFacade _soundPlayerFacade;
+        private readonly SoundPlayerService _soundPlayerService;
         private readonly IEventBus _eventBus;
 
-        public HandlerStopPlay(
+        public StopPlayCommandHandler(
             IEventBus eventBus, 
-            SoundPlayerFacade soundPlayerFacade)
+            SoundPlayerService soundPlayerService)
         {
-            _soundPlayerFacade = soundPlayerFacade;
+            _soundPlayerService = soundPlayerService;
             _eventBus = eventBus;
         }
         
         public void Handle(StopPlay command)
         {
-            _soundPlayerFacade.StopPlay(); 
+            _soundPlayerService.StopPlay(); 
             _eventBus.PushEvent(new SoundStopped(command.Timestamp));
         }
     }

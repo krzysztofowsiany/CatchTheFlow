@@ -12,14 +12,24 @@ namespace Sound.Infrastructure
             IEventBus eventBus, 
             ICommandBus commandBus)
         {
-            var events = eventBus.Subscribe<WorkStopped>(@event =>
+            eventBus.Subscribe<WorkStopped>(@event =>
             {
                 var view = new WorkStopTime(@event.StopTime);
-                
                 
                 commandBus.Send(new StopPlay
                 {
                     Timestamp = @event.Timestamp
+                });
+            });
+            
+            eventBus.Subscribe<WorkStarted>(@event =>
+            {
+                var view = new SoundWorkInformation(@event);
+                
+                commandBus.Send(new StartPlay
+                {
+                    Timestamp = view.Timestamp,
+                    Sound = view.Sound
                 });
             });
                 
