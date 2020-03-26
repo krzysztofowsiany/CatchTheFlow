@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Reflection;
+using System.Threading;
 using Autofac;
 using CQRSLib;
 using EventBus;
@@ -14,9 +14,17 @@ namespace Sandbox
             var container = RegisterContainer();
 
             var eventBus = container.Resolve<IEventBus>();
+
+            var workStarted = new WorkStarted(23, DateTime.Now, DateTime.Now);
+            eventBus.PushEvent(workStarted);  
             
-            var workStopped = new WorkStopped("test");
-            eventBus.PushEvent(workStopped);     
+            Thread.Sleep(5000);
+            
+            eventBus.PushEvent(workStarted); 
+            Thread.Sleep(5000);
+            
+            var workStopped = new WorkStopped(23, DateTime.Now, DateTime.Now);
+            eventBus.PushEvent(workStopped);
             
             Console.ReadKey();
         }

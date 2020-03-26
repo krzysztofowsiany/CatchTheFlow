@@ -8,6 +8,7 @@ namespace Sound.Sound
     public class SoundPlayer : ISoundPlayer
     {
         private readonly WaveOutEvent _waveOutputEvent;
+        private AudioFileReader _audioFileReader;
 
         public SoundPlayer()
         {
@@ -18,16 +19,18 @@ namespace Sound.Sound
         {
             if (_waveOutputEvent.PlaybackState == PlaybackState.Playing)
                 _waveOutputEvent.Stop();
+            
+            _audioFileReader?.Dispose();
         }
 
         public void Play(string sound)
         {
+            Stop();
+            
             var audioFile = GetSoundPath(sound);
-            using (var audioFileReader = new AudioFileReader(audioFile))
-            {
-                _waveOutputEvent.Init(audioFileReader);
-                _waveOutputEvent.Play();
-            }
+            _audioFileReader = new AudioFileReader(audioFile);
+            _waveOutputEvent.Init(_audioFileReader);
+            _waveOutputEvent.Play();
         }
         
         private string GetSoundPath(string sound)
