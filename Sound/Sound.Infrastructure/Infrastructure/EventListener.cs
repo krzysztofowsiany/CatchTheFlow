@@ -8,31 +8,48 @@ namespace Sound.Infrastructure
 {
     public class EventListener
     {
+        private readonly IEventBus _eventBus;
+        private readonly ICommandBus _commandBus;
+        private readonly IEventRepository _eventRepository;
+
         public EventListener(
             IEventBus eventBus, 
-            ICommandBus commandBus)
+            ICommandBus commandBus,
+            IEventRepository eventRepository)
         {
-            eventBus.Subscribe<WorkStopped>(@event =>
-            {
-                var view = new WorkStopTime(@event.StopTime);
-                
-                commandBus.Send(new StopPlay
-                {
-                    Timestamp = @event.Timestamp
-                });
-            });
+            _eventBus = eventBus;
+            _commandBus = commandBus;
+            _eventRepository = eventRepository;
             
-            eventBus.Subscribe<WorkStarted>(@event =>
+            SubscribeToWorkStopped();
+            SubscribeToWorkStarted();
+        }
+
+        private void SubscribeToWorkStarted()
+        {
+            _eventBus.Subscribe<WorkStarted>(@event =>
             {
-                var view = new SoundWorkInformation(@event);
-                
-                commandBus.Send(new StartPlay
+                var view = new SoundWorkInformation(@event, _eventRepository.Events);
+
+                _commandBus.Send(new StartPlay
                 {
                     Timestamp = view.Timestamp,
                     Sound = view.Sound
                 });
             });
-                
+        }
+
+        private void SubscribeToWorkStopped()
+        {
+            _eventBus.Subscribe<WorkStopped>(@event =>
+            {
+                var view = new WorkStopTime(@event.StopTime);
+
+                _commandBus.Send(new StopPlay
+                {
+                    Timestamp = @event.Timestamp
+                });
+            });
         }
     }
 }

@@ -9,6 +9,12 @@ namespace EventBus
     public class EventBus : IEventBus
     {
         private readonly Subject<Event> _subject = new Subject<Event>();
+        private readonly IEventRepository _eventRepository;
+
+        public EventBus(IEventRepository eventRepository)
+        {
+            _eventRepository = eventRepository;
+        }
 
         public IDisposable Subscribe<TEvent>(Action<TEvent> onNext) where TEvent: class
         {
@@ -24,6 +30,7 @@ namespace EventBus
         public void PushEvent<TEvent>(TEvent @event) where TEvent: class
         {
             var e = new Event(@event.Serialize(), @event.GetType().Name);
+            _eventRepository.Add(e);
             _subject.OnNext(e);
         }
     }

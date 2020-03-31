@@ -68,8 +68,10 @@
   <ItemGroup>
     <Compile Include="EventBus.cs" />
     <Compile Include="Event.cs" />
+    <Compile Include="EventRepository.cs" />
     <Compile Include="Extensions\BSONExtensions.cs" />
     <Compile Include="IEventBus.cs" />
+    <Compile Include="IEventRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

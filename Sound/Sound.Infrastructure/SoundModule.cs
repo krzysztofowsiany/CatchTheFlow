@@ -1,5 +1,6 @@
 using Autofac;
 using CQRSLib;
+using EventBus;
 using Sound.Application.CommandHandlers;
 using Sound.Application.Commands;
 using Sound.Core;
@@ -24,6 +25,10 @@ namespace Sound
                 .As<ICommandHandler<StartPlay>>();
             
             builder.RegisterType<SoundPlayerService>();
+            
+            builder.RegisterType<EventRepository>()
+                .As<IEventRepository>()
+                .SingleInstance();
             
             builder.RegisterType<SoundPlayer>()
                 .As<ISoundPlayer>()

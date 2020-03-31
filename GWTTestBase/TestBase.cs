@@ -14,6 +14,7 @@ namespace GWTTestBase
         private readonly IEventBus _eventBus;
         private object _event;
         private readonly ICommandBus _commandBus;
+        private readonly IEventRepository _eventRepository;
 
         protected TestBase()
         {
@@ -21,6 +22,7 @@ namespace GWTTestBase
             var container = RegisterContainer();
             _eventBus = container.Resolve<IEventBus>();
             _commandBus = container.Resolve<ICommandBus>();
+            _eventRepository = container.Resolve<IEventRepository>();
         }
         
         private static IContainer RegisterContainer()
@@ -65,7 +67,7 @@ namespace GWTTestBase
         
         protected void When<TEventListener>()
         {
-            Activator.CreateInstance(typeof(TEventListener), _eventBus, _commandBus);
+            Activator.CreateInstance(typeof(TEventListener), _eventBus, _commandBus, _eventRepository);
         }
 
         protected void Give<TEvent>(TEvent @event) where TEvent: class
