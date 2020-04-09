@@ -1,4 +1,5 @@
-﻿using CQRSLib;
+﻿using System;
+using CQRSLib;
 using EventBus;
 using Sound.Application.Commands;
 using Sound.Application.Views;
@@ -29,11 +30,11 @@ namespace Sound.Infrastructure
         {
             _eventBus.Subscribe<WorkStarted>(@event =>
             {
-                var view = new SoundWorkInformation(@event, _eventRepository.Events);
+                var view = new SoundWorkInformation(_eventRepository);
 
                 _commandBus.Send(new StartPlay
                 {
-                    Timestamp = view.Timestamp,
+                    Timestamp = DateTime.UtcNow,
                     Sound = view.Sound
                 });
             });
@@ -43,7 +44,7 @@ namespace Sound.Infrastructure
         {
             _eventBus.Subscribe<WorkStopped>(@event =>
             {
-                var view = new WorkStopTime(@event.StopTime);
+                var view = new WorkStopTime(_eventRepository);
 
                 _commandBus.Send(new StopPlay
                 {

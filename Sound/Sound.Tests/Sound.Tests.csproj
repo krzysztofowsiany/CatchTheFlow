@@ -52,8 +52,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="work_started_tests.cs" />
-    <Compile Include="work_stopped_tests.cs" />
+    <Compile Include="sound_worker_information_view_tests.cs" />
+    <Compile Include="work_started_command_tests.cs" />
+    <Compile Include="work_stopped_command_tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="work_stopped_time_view_tests.cs" />
   </ItemGroup>

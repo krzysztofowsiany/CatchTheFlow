@@ -1,24 +1,30 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using EventBus;
 using Sound.Application.Events;
 using EventBus.Extensions;
+using EventBus.View;
 
 
 namespace Sound.Application.Views
 {
-    public class SoundWorkInformation
+    public class SoundWorkInformation :BaseView 
     {
-        public DateTime Timestamp { get;  }
-
         public string Sound { get; private set; }
 
-        public SoundWorkInformation(WorkStarted @event, IList<Event> events)
+        public SoundWorkInformation(string sound): base(null)
         {
-            GetSoundFromEvents(events);
-            
-            Timestamp = @event.Timestamp;
+            Sound = sound;
+        }
+        
+        public SoundWorkInformation(IEventRepository eventRepository) : base(eventRepository)
+        {
+            RestoreState();
+        }
+
+        public override void RestoreState()
+        {
+            GetSoundFromEvents(_eventRepository.Events);
         }
 
         private void GetSoundFromEvents(IList<Event> events)

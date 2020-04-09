@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Sound.Tests
 {
-    public class work_started_tests : TestBase
+    public class work_started_command_tests : CommandTest
     {
         [Fact]
         public void when_work_started_then_sound_should_started()

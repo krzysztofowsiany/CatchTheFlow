@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using Autofac;
 using CQRSLib;
 using EventBus;
+using EventBus.Extensions;
+using EventBus.View;
 using FluentAssertions;
-using Sound;
 
 namespace GWTTestBase
 {
-    public class TestBase
+    public class CommandTest
     {
         private readonly IList<object> _givens;
         private readonly IEventBus _eventBus;
@@ -16,29 +17,12 @@ namespace GWTTestBase
         private readonly ICommandBus _commandBus;
         private readonly IEventRepository _eventRepository;
 
-        protected TestBase()
+        protected CommandTest()
         {
             _givens = new List<object>();
-            var container = RegisterContainer();
-            _eventBus = container.Resolve<IEventBus>();
-            _commandBus = container.Resolve<ICommandBus>();
-            _eventRepository = container.Resolve<IEventRepository>();
-        }
-        
-        private static IContainer RegisterContainer()
-        {
-            var builder = new ContainerBuilder();
-            builder.RegisterType<EventBus.EventBus>()
-                .As<IEventBus>()
-                .SingleInstance();
-            
-            builder.RegisterType<CommandBus>()
-                .As<ICommandBus>()
-                .SingleInstance();
-            
-            builder.RegisterModule(new SoundModule());
-            var container = builder.Build();
-            return container;
+            _eventBus = IoT.Container.Resolve<IEventBus>();
+            _commandBus = IoT.Container.Resolve<ICommandBus>();
+            _eventRepository = IoT.Container.Resolve<IEventRepository>();
         }
 
         protected void Then<TEvent>(TEvent @event) where TEvent: class
