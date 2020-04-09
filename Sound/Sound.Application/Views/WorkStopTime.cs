@@ -10,9 +10,9 @@ namespace Sound.Application.Views
 {
     public class WorkStopTime :BaseView
     {
-        public DateTime StopTime { get; private set;}
-        
-        public WorkStopTime(DateTime stopTime): base(null)
+        public DateTime StopTime { get; private set; }
+
+        public WorkStopTime(DateTime stopTime) :base(null)
         {
             StopTime = stopTime;
         }
@@ -26,14 +26,14 @@ namespace Sound.Application.Views
         {
             GetSoundFromEvents(_eventRepository.Events);
         }
-        
+
         private void GetSoundFromEvents(IList<Event> events)
         {
             var typeName = typeof(WorkStopped).Name;
             var @event = events
                 .Where(e => e.Type == typeName)
                 .Select(e => e.Data.Deserialize<WorkStopped>())
-                .OrderByDescending(e => e.StopTime)
+                .OrderByDescending(e => e.Timestamp)
                 .FirstOrDefault();
 
             StopTime = @event.StopTime;
