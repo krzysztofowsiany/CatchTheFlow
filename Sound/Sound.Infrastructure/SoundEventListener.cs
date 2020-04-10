@@ -7,13 +7,13 @@ using Sound.Application.Events;
 
 namespace Sound.Infrastructure
 {
-    public class EventListener
+    public class SoundEventListener
     {
         private readonly IEventBus _eventBus;
         private readonly ICommandBus _commandBus;
         private readonly IEventRepository _eventRepository;
 
-        public EventListener(
+        public SoundEventListener(
             IEventBus eventBus, 
             ICommandBus commandBus,
             IEventRepository eventRepository)
@@ -30,9 +30,9 @@ namespace Sound.Infrastructure
         {
             _eventBus.Subscribe<WorkStarted>(@event =>
             {
-                var view = new SoundWorkInformation(_eventRepository);
+                var view = new SoundWorkInformationView(_eventRepository);
 
-                _commandBus.Send(new StartPlay
+                _commandBus.Send(new StartPlayCommand
                 {
                     Timestamp = DateTime.UtcNow,
                     Sound = view.Sound
@@ -44,11 +44,12 @@ namespace Sound.Infrastructure
         {
             _eventBus.Subscribe<WorkStopped>(@event =>
             {
-                var view = new WorkStopTime(_eventRepository);
+                var view = new WorkStopTimeView(_eventRepository);
 
-                _commandBus.Send(new StopPlay
+                _commandBus.Send(new StopPlayCommand
                 {
-                    Timestamp = @event.Timestamp
+                    Timestamp = DateTime.UtcNow,
+                    StopTime = view.StopTime
                 });
             });
         }

@@ -8,16 +8,16 @@ using Sound.Application.Events;
 
 namespace Sound.Application.Views
 {
-    public class WorkStopTime :BaseView
+    public class WorkStopTimeView :BaseView
     {
         public DateTime StopTime { get; private set; }
 
-        public WorkStopTime(DateTime stopTime) :base(null)
+        public WorkStopTimeView(DateTime stopTime) :base(null)
         {
             StopTime = stopTime;
         }
         
-        public WorkStopTime(IEventRepository eventRepository) :base(eventRepository)
+        public WorkStopTimeView(IEventRepository eventRepository) :base(eventRepository)
         {
             RestoreState();
         }

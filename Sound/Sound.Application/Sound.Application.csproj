@@ -56,16 +56,16 @@
   <ItemGroup>
     <Compile Include="CommandHandlers\StartPlayCommandHandler.cs" />
     <Compile Include="CommandHandlers\StopPlayCommandHandler.cs" />
-    <Compile Include="Commands\StartPlay.cs" />
-    <Compile Include="Commands\StopPlay.cs" />
+    <Compile Include="Commands\StartPlayCommand.cs" />
+    <Compile Include="Commands\StopPlayCommand.cs" />
     <Compile Include="Events\SoundStarted.cs" />
     <Compile Include="Events\SoundStopped.cs" />
     <Compile Include="Events\WorkSoundUpdated.cs" />
     <Compile Include="Events\WorkStarted.cs" />
     <Compile Include="Events\WorkStopped.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\SoundWorkInformation.cs" />
-    <Compile Include="Views\WorkStopTime.cs" />
+    <Compile Include="Views\SoundWorkInformationView.cs" />
+    <Compile Include="Views\WorkStopTimeView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CQRSLib\CQRSLib.csproj">

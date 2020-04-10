@@ -7,7 +7,7 @@ using Sound.Core;
 
 namespace Sound.Application.CommandHandlers
 {
-    public class StopPlayCommandHandler: ICommandHandler<StopPlay>
+    public class StopPlayCommandHandler: ICommandHandler<StopPlayCommand>
     {
         private readonly SoundPlayerService _soundPlayerService;
         private readonly IEventBus _eventBus;
@@ -20,7 +20,7 @@ namespace Sound.Application.CommandHandlers
             _eventBus = eventBus;
         }
         
-        public void Handle(StopPlay command)
+        public void Handle(StopPlayCommand command)
         {
             _soundPlayerService.StopPlay(); 
             _eventBus.PushEvent(new SoundStopped(command.Timestamp));

@@ -7,7 +7,7 @@ using Sound.Core;
 
 namespace Sound.Application.CommandHandlers
 {
-    public class StartPlayCommandHandler: ICommandHandler<StartPlay>
+    public class StartPlayCommandHandler: ICommandHandler<StartPlayCommand>
     {
         private readonly SoundPlayerService _soundPlayerService;
         private readonly IEventBus _eventBus;
@@ -20,7 +20,7 @@ namespace Sound.Application.CommandHandlers
             _eventBus = eventBus;
         }
         
-        public void Handle(StartPlay command)
+        public void Handle(StartPlayCommand command)
         {
             _soundPlayerService.StartPlay(command.Sound); 
             _eventBus.PushEvent(new SoundStarted(command.Sound, command.Timestamp));

@@ -4,7 +4,7 @@ using Sound.Infrastructure;
 using Sound.Application.Events;
 using Xunit;
 
-namespace Sound.Tests
+namespace Sound.Tests.state_change
 {
     public class work_stopped_command_tests : CommandTest
     {
@@ -15,7 +15,7 @@ namespace Sound.Tests
                 DateTime.Parse("2019-01-01 23:25"), 
                 DateTime.Parse("2019-01-01 23:25")));
 
-            When<EventListener>();
+            When<SoundEventListener>();
 
             Then(new SoundStopped(DateTime.Parse("2019-01-01 23:25")));
         }

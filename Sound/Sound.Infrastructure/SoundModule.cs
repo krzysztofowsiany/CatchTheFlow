@@ -16,13 +16,13 @@ namespace Sound
         {
             base.Load(builder);
 
-            builder.RegisterType<EventListener>()
+            builder.RegisterType<SoundEventListener>()
                 .AutoActivate();
             
             builder.RegisterType<StopPlayCommandHandler>()
-                .As<ICommandHandler<StopPlay>>();
+                .As<ICommandHandler<StopPlayCommand>>();
             builder.RegisterType<StartPlayCommandHandler>()
-                .As<ICommandHandler<StartPlay>>();
+                .As<ICommandHandler<StartPlayCommand>>();
             
             builder.RegisterType<SoundPlayerService>();
             

@@ -8,16 +8,16 @@ using EventBus.View;
 
 namespace Sound.Application.Views
 {
-    public class SoundWorkInformation :BaseView 
+    public class SoundWorkInformationView :BaseView 
     {
         public string Sound { get; private set; }
 
-        public SoundWorkInformation(string sound): base(null)
+        public SoundWorkInformationView(string sound): base(null)
         {
             Sound = sound;
         }
         
-        public SoundWorkInformation(IEventRepository eventRepository) : base(eventRepository)
+        public SoundWorkInformationView(IEventRepository eventRepository) : base(eventRepository)
         {
             RestoreState();
         }

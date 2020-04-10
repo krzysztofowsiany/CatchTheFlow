@@ -3,10 +3,10 @@ using CQRSLib;
 
 namespace Sound.Application.Commands
 {
-    public class StartPlay: ICommand
+    public class StopPlayCommand : ICommand
     {
         public DateTime Timestamp { get; set; }
-        public string Sound { get; set; }
-        
+
+        public DateTime StopTime { get; set; }
     }
 }

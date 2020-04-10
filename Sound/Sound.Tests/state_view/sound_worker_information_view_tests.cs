@@ -5,7 +5,7 @@ using Sound.Application.Events;
 using Sound.Application.Views;
 using Xunit;
 
-namespace Sound.Tests
+namespace Sound.Tests.state_view
 {
     public class sound_worker_information_view_tests : ViewTest
     {
@@ -20,7 +20,7 @@ namespace Sound.Tests
                 DateTime.Parse("2019-01-01 23:00"), 
                 DateTime.Parse("2019-01-01 23:00")));
 
-            Then(new SoundWorkInformation("work_1.mp3"));
+            Then(new SoundWorkInformationView("work_1.mp3"));
         }
     }
 }
