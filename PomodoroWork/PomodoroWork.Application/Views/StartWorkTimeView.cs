@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using EventBus;
-using EventBus.Extensions;
 using EventBus.View;
 using PomodoroWork.Application.Events;
 
@@ -25,11 +23,6 @@ namespace PomodoroWork.Application.Views
         }
 
         public override void RestoreState()
-        {
-            GetStartTimeFromEvents(_eventRepository.Events);
-        }
-
-        private void GetStartTimeFromEvents(IList<Event> events)
         {
             var @event = GetEvents<WorkStarted>()
                 .OrderByDescending(e => e.Timestamp)
