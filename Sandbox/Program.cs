@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Threading;
 using Autofac;
-using CQRSLib;
 using EventBus;
-using Sound;
 
 namespace Sandbox
 {
@@ -11,9 +9,7 @@ namespace Sandbox
     {
         public static void Main(string[] args)
         {
-            var container = RegisterContainer();
-
-            var eventBus = container.Resolve<IEventBus>();
+            var eventBus = IoT.Container.Resolve<IEventBus>();
 
             eventBus.PushEvent(new WorkSoundUpdated("work_1.mp3", DateTime.Now));  
             var workStarted = new WorkStarted(23, DateTime.Now, DateTime.Now);
@@ -29,22 +25,6 @@ namespace Sandbox
             eventBus.PushEvent(workStopped);
             
             Console.ReadKey();
-        }
-
-        private static IContainer RegisterContainer()
-        {
-            var builder = new ContainerBuilder();
-            builder.RegisterType<EventBus.EventBus>()
-                .As<IEventBus>()
-                .SingleInstance();
-            
-            builder.RegisterType<CommandBus>()
-                .As<ICommandBus>()
-                .SingleInstance();
-            
-            builder.RegisterModule(new SoundModule());
-            var container = builder.Build();
-            return container;
         }
     }
 }

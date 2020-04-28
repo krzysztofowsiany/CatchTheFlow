@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Sound.Tests.state_change
 {
-    public class work_stopped_command_tests : CommandTest
+    public class work_stopped_command_tests : CommandTest<sound_module>
     {
         [Fact]
         public void when_work_stopped_then_sound_stopped()

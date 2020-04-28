@@ -9,9 +9,9 @@ namespace PomodoroWork.Application.Views
     public class StartWorkTimeView :BaseView
     {
         public DateTime StartTime { get; private set; }
-        public short WorkTime { get; private set; }
+        public ushort WorkTime { get; private set; }
 
-        public StartWorkTimeView(short workTime, DateTime startTime) :base(null)
+        public StartWorkTimeView(ushort workTime, DateTime startTime) :base(null)
         {
             StartTime = startTime;
             WorkTime = workTime;

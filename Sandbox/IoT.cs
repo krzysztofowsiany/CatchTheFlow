@@ -1,16 +1,16 @@
 using Autofac;
-using Autofac.Core;
 using CQRSLib;
 using EventBus;
+using PomodoroWork;
+using Sound;
 
-namespace GWTTestBase
+namespace Sandbox
 {
     public static class IoT
     {
-        public static IContainer Container;
+        private static IContainer _container;
 
-        public static void RegisterContainer<TModule>()
-            where TModule: Module, new()
+        private static IContainer RegisterContainer()
         {
             var builder = new ContainerBuilder();
             builder.RegisterType<EventBus.EventBus>()
@@ -24,10 +24,15 @@ namespace GWTTestBase
             builder.RegisterType<EventRepository>()
                 .As<IEventRepository>()
                 .SingleInstance();
-
-            builder.RegisterModule<TModule>();
             
-            Container = builder.Build();
+            builder.RegisterModule(new SoundModule());
+            builder.RegisterModule(new PomodoroWorkModule());
+
+            _container = builder.Build();
+            return _container;
         }
+
+        public static IContainer Container 
+            => _container ?? RegisterContainer();
     }
 }

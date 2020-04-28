@@ -33,9 +33,27 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="Autofac, Version=5.1.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da">
+          <HintPath>..\..\packages\Autofac.5.1.2\lib\net461\Autofac.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+          <HintPath>..\..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="mscorlib" />
         <Reference Include="System" />
+        <Reference Include="System.ComponentModel.Composition" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
+        <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+          <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+          <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
         <Reference Include="System.Xml" />
         <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
             <HintPath>..\..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
@@ -52,12 +70,16 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="state_change\fake_date_time.cs" />
+        <Compile Include="state_change\pomodoro_work_module.cs" />
+        <Compile Include="state_change\stop_work_command_tests.cs" />
         <Compile Include="state_view\start_work_time_view_tests.cs" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="state_change" />
-    </ItemGroup>
-    <ItemGroup>
+      <ProjectReference Include="..\..\CQRSLib\CQRSLib.csproj">
+        <Project>{28030da9-13cb-42e9-8a07-360d6c42dd66}</Project>
+        <Name>CQRSLib</Name>
+      </ProjectReference>
       <ProjectReference Include="..\..\EventBus\EventBus\EventBus.csproj">
         <Project>{b2a273c5-3dbc-40bf-a1a6-361a920e3f05}</Project>
         <Name>EventBus</Name>
@@ -74,6 +96,13 @@
         <Project>{1a951890-6edd-49d2-a0dd-f00e9056365b}</Project>
         <Name>PomodoroWork.Core</Name>
       </ProjectReference>
+      <ProjectReference Include="..\PomodoroWork.Infrastructure\PomodoroWork.Infrastructure.csproj">
+        <Project>{f32049f3-552e-40a2-aa3b-a7ac353e8db8}</Project>
+        <Name>PomodoroWork.Infrastructure</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

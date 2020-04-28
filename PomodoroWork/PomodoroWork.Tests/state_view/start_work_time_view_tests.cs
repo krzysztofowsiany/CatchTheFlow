@@ -6,7 +6,7 @@ using Xunit;
 
 namespace PomodoroWork.Tests.state_view
 {
-    public class start_work_time_view_tests : ViewTest
+    public class start_work_time_view_tests : ViewTest<PomodoroWorkModule>
     {
         [Fact]
         public void start_work_time_view_restored__when__work_started()

@@ -5,20 +5,16 @@ using EventBus;
 using Sound.Application.CommandHandlers;
 using Sound.Application.Commands;
 using Sound.Core;
-using Sound.Infrastructure;
 using Sound.Sound;
 using Module = Autofac.Module;
 
-namespace Sound
+namespace Sound.Tests.state_change
 {
-    public sealed class SoundModule : Module
+    public sealed class sound_module : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
             base.Load(builder);
-
-            builder.RegisterType<SoundEventListener>()
-                .AutoActivate();
             
             builder.RegisterType<StopPlayCommandHandler>()
                 .As<ICommandHandler<StopPlayCommand>>();
@@ -35,7 +31,7 @@ namespace Sound
                 .As<ISoundPlayer>()
                 .SingleInstance();
             
-            builder.RegisterType<DateTime>()
+            builder.RegisterType<fake_date_time>()
                 .As<IDateTime>();
         }
     }

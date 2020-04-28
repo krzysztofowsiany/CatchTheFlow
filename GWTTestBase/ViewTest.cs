@@ -7,13 +7,15 @@ using FluentAssertions;
 
 namespace GWTTestBase
 {
-    public class ViewTest
+    public class ViewTest<TModule>
+        where TModule: Module, new()
     {
         private readonly IEventRepository _eventRepository;
 
         protected ViewTest()
         {
-            _eventRepository = IoT.Container.Resolve<IEventRepository>();
+            IoT.RegisterContainer<TModule>();
+            _eventRepository =  IoT.Container.Resolve<IEventRepository>();
         }
         
         protected void Then<TView>(TView view) where TView: BaseView
@@ -22,11 +24,9 @@ namespace GWTTestBase
                 (TView)Activator.CreateInstance(typeof(TView), _eventRepository);
 
             expectedView.RestoreState();
-            
             expectedView.Should().BeEquivalentTo(view);
         }
        
-
         protected void Give<TEvent>(TEvent given) where TEvent: class
         {
             var @event = new Event(given.Serialize(), given.GetType().Name);

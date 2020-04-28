@@ -1,9 +1,10 @@
-﻿using System;
-using CQRSLib;
+﻿using CQRSLib;
+using CQRSLib.DateTime;
 using EventBus;
 using Sound.Application.Commands;
 using Sound.Application.Views;
 using Sound.Application.Events;
+using DateTime = System.DateTime;
 
 namespace Sound.Infrastructure
 {
@@ -12,13 +13,16 @@ namespace Sound.Infrastructure
         private readonly IEventBus _eventBus;
         private readonly ICommandBus _commandBus;
         private readonly IEventRepository _eventRepository;
+        private readonly IDateTime _dateTime;
 
         public SoundEventListener(
             IEventBus eventBus, 
+            IDateTime dateTime,
             ICommandBus commandBus,
             IEventRepository eventRepository)
         {
             _eventBus = eventBus;
+            _dateTime = dateTime;
             _commandBus = commandBus;
             _eventRepository = eventRepository;
             
@@ -34,7 +38,7 @@ namespace Sound.Infrastructure
 
                 _commandBus.Send(new StartPlayCommand
                 {
-                    Timestamp = DateTime.UtcNow,
+                    Timestamp = @event.Timestamp,
                     Sound = view.Sound
                 });
             });

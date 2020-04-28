@@ -7,7 +7,7 @@ using Xunit;
 
 namespace Sound.Tests.state_view
 {
-    public class work_stopped_time_view_tests : ViewTest
+    public class work_stopped_time_view_tests : ViewTest<SoundModule>
     {
         [Fact]
         public void when_work_stopped_then_sound_stopped()

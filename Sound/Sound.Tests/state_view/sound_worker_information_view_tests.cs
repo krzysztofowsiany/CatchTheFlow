@@ -7,7 +7,7 @@ using Xunit;
 
 namespace Sound.Tests.state_view
 {
-    public class sound_worker_information_view_tests : ViewTest
+    public class sound_worker_information_view_tests : ViewTest<SoundModule>
     {
         [Fact]
         public void sound_work_information_view_restored__when__work_sound_updated_and_work_started()

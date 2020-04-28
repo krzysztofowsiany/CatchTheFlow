@@ -62,6 +62,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IgnoreTimestampPropertyStep.cs" />
     <Compile Include="IoT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommandTest.cs" />
@@ -75,6 +76,10 @@
     <ProjectReference Include="..\EventBus\EventBus\EventBus.csproj">
       <Project>{b2a273c5-3dbc-40bf-a1a6-361a920e3f05}</Project>
       <Name>EventBus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PomodoroWork\PomodoroWork.Infrastructure\PomodoroWork.Infrastructure.csproj">
+      <Project>{f32049f3-552e-40a2-aa3b-a7ac353e8db8}</Project>
+      <Name>PomodoroWork.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sound\Sound.Infrastructure\Sound.Infrastructure.csproj">
       <Project>{4fa639ab-2afb-4389-85c8-28d948b70c1a}</Project>

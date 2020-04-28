@@ -1,3 +1,2 @@
-1. Finish refactor
-2. verify model
-3. commit
+1. write module for command
+2. Add reference to autofac 5.1.2

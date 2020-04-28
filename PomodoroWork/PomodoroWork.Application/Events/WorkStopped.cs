@@ -1,17 +1,17 @@
-using System;
+﻿using System;
 
 namespace PomodoroWork.Application.Events
 {
-    public class WorkStarted
+    public class WorkStopped
     {
         public ushort WorkTime { get; }
-        public DateTime StartTime { get; }
+        public DateTime StopTime { get; }
+        
         public DateTime Timestamp { get; }
-
-        public WorkStarted(ushort workTime, DateTime startTime, DateTime timestamp)
+        public WorkStopped(ushort workTime, DateTime stopTime, DateTime timestamp)
         {
             WorkTime = workTime;
-            StartTime = startTime;
+            StopTime = stopTime;
             Timestamp = timestamp;
         }
     }
