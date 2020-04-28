@@ -70,7 +70,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="state_change\fake_date_time.cs" />
     <Compile Include="state_change\sound_module.cs" />
     <Compile Include="state_change\work_started_command_tests.cs" />
     <Compile Include="state_change\work_stopped_command_tests.cs" />

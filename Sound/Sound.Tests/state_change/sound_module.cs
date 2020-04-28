@@ -31,7 +31,7 @@ namespace Sound.Tests.state_change
                 .As<ISoundPlayer>()
                 .SingleInstance();
             
-            builder.RegisterType<fake_date_time>()
+            builder.RegisterType<DateTime>()
                 .As<IDateTime>();
         }
     }
