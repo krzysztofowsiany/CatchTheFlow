@@ -42,7 +42,7 @@ namespace GWTTestBase
             
             PushEvents();
 
-            Thread.Sleep(10);
+            Thread.Sleep(200);
             
             _event.Should().NotBeNull();
             _event.Should().BeEquivalentTo(@event, options => 

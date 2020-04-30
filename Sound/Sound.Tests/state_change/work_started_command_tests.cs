@@ -12,7 +12,7 @@ namespace Sound.Tests.state_change
         public void when_work_started_then_sound_should_started()
         {
             Give(@event: new WorkSoundUpdated(
-                "work_1.mp3",
+                "work_2.mp3",
                 DateTime.Parse("2019-01-01 23:25")));
             
             Give(@event: new WorkStarted(25, 
@@ -22,7 +22,7 @@ namespace Sound.Tests.state_change
             When<SoundEventListener>();
 
             Then(new SoundStarted(
-                "work_1.mp3",
+                "work_2.mp3",
                 DateTime.Parse("2019-01-01 23:25")));
         }
     }
