@@ -27,7 +27,7 @@ namespace PomodoroWork.Infrastructure
             _commandBus = commandBus;
             _eventRepository = eventRepository;
             _dateTime = dateTime;
-            
+
             SubscribeToWorkStarted();
         }
 
@@ -36,18 +36,16 @@ namespace PomodoroWork.Infrastructure
             _eventBus.Subscribe<WorkStarted>(@event =>
             {
                 var view = new StartWorkTimeView(_eventRepository);
-                
+
                 Observable
                     .Timer(_dateTime.DueTime(view.WorkTime))
                     .Subscribe(
                         onNext =>
                         {
-                            _commandBus.Send(new StopWorkCommand
-                            {
-                                Timestamp = DateTime.UtcNow,
-                                WorkTime =  view.WorkTime,
-                                StopTime = view.StartTime.AddMinutes(view.WorkTime)
-                            });  
+                            _commandBus.Send(new StopWorkCommand(
+                                view.WorkTime,
+                                view.StartTime.AddMinutes(view.WorkTime),
+                                DateTime.UtcNow));
                         }
                     );
             });

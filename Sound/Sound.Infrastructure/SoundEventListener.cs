@@ -36,11 +36,7 @@ namespace Sound.Infrastructure
             {
                 var view = new SoundWorkInformationView(_eventRepository);
 
-                _commandBus.Send(new StartPlayCommand
-                {
-                    Timestamp = @event.Timestamp,
-                    Sound = view.Sound
-                });
+                _commandBus.Send(new StartPlayCommand(view.Sound, DateTime.Now));
             });
         }
 
@@ -50,11 +46,7 @@ namespace Sound.Infrastructure
             {
                 var view = new WorkStopTimeView(_eventRepository);
 
-                _commandBus.Send(new StopPlayCommand
-                {
-                    Timestamp = DateTime.UtcNow,
-                    StopTime = view.StopTime
-                });
+                _commandBus.Send(new StopPlayCommand (view.StopTime, DateTime.UtcNow));
             });
         }
     }

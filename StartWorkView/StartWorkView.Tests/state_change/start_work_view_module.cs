@@ -1,5 +1,8 @@
 using Autofac;
+using CQRSLib;
 using CQRSLib.DateTime;
+using StartWorkView.Application.CommandHandlers;
+using StartWorkView.Application.Commands;
 
 namespace StartWorkView.Tests.state_change
 {
@@ -9,8 +12,8 @@ namespace StartWorkView.Tests.state_change
         {
             base.Load(builder);
 
-          //  builder.RegisterType<StopWorkCommandHandler>()
-               // .As<ICommandHandler<StopWorkCommand>>();
+            builder.RegisterType<StartWorkCommandHandler>()
+                .As<ICommandHandler<StartWorkCommand>>();
             
             builder.RegisterType<fake_date_time>()
                 .As<IDateTime>();

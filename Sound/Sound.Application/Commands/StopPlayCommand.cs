@@ -5,8 +5,14 @@ namespace Sound.Application.Commands
 {
     public class StopPlayCommand : ICommand
     {
-        public DateTime Timestamp { get; set; }
+        public StopPlayCommand(DateTime stopTime, DateTime timestamp)
+        {
+            StopTime = stopTime;
+            Timestamp = timestamp;
+        }
 
-        public DateTime StopTime { get; set; }
+        public DateTime Timestamp { get;  }
+
+        public DateTime StopTime { get;  }
     }
 }

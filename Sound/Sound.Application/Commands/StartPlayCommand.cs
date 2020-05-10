@@ -5,7 +5,13 @@ namespace Sound.Application.Commands
 {
     public class StartPlayCommand: ICommand
     {
-        public DateTime Timestamp { get; set; }
-        public string Sound { get; set; }
+        public StartPlayCommand(string sound, DateTime timestamp)
+        {
+            Sound = sound;
+            Timestamp = timestamp;
+        }
+
+        public DateTime Timestamp { get;  }
+        public string Sound { get;  }
     }
 }

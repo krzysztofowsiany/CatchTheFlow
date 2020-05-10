@@ -5,9 +5,16 @@ namespace PomodoroWork.Application.Commands
 {
     public class StopWorkCommand: ICommand
     {
-        public DateTime Timestamp { get; set; }
-        public DateTime StopTime { get; set; }
+        public StopWorkCommand(ushort workTime, DateTime stopTime, DateTime timestamp)
+        {
+            WorkTime = workTime;
+            StopTime = stopTime;
+            Timestamp = timestamp;
+        }
 
-        public ushort WorkTime { get; set; }
+        public DateTime Timestamp { get;  }
+        public DateTime StopTime { get;  }
+
+        public ushort WorkTime { get;  }
     }
 }

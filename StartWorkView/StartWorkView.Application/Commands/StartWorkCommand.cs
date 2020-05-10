@@ -5,9 +5,15 @@ namespace StartWorkView.Application.Commands
 {
     public class StartWorkCommand: ICommand
     {
-        public DateTime Timestamp { get; set; }
-        public DateTime StopTime { get; set; }
+        public StartWorkCommand(ushort workTime, DateTime stopTime, DateTime timestamp)
+        {
+            Timestamp = timestamp;
+            StopTime = stopTime;
+            WorkTime = workTime;
+        }
 
-        public ushort WorkTime { get; set; }
+        public DateTime Timestamp { get;  }
+        public DateTime StopTime { get;  }
+        public ushort WorkTime { get;  }
     }
 }
