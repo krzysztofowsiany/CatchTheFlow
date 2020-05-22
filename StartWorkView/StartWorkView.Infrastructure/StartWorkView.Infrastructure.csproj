@@ -56,7 +56,6 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="StartWorkViewEventListener.cs" />
         <Compile Include="StartWorkViewModule.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
@@ -72,6 +71,10 @@
       <ProjectReference Include="..\StartWorkView.Application\StartWorkView.Application.csproj">
         <Project>{30a07d01-22bb-40c6-8025-fccbcecb548c}</Project>
         <Name>StartWorkView.Application</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\StartWorkView.UI\StartWorkView.UI.csproj">
+        <Project>{9ee05091-854a-4563-9707-23d02238ebe8}</Project>
+        <Name>StartWorkView.UI</Name>
       </ProjectReference>
     </ItemGroup>
     <ItemGroup>

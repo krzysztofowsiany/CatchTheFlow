@@ -43,6 +43,8 @@
         <Compile Include="Events\WorkStarted.cs" />
         <Compile Include="Events\WorkTimeUpdated.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="QueryHandlers\UserWorkTimeQueryHandler.cs" />
+        <Compile Include="Query\UserWorkTimeQuery.cs" />
         <Compile Include="Views\UserWorkTime.cs" />
     </ItemGroup>
     <ItemGroup>
