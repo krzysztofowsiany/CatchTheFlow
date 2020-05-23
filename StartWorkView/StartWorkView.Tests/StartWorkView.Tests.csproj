@@ -103,6 +103,10 @@
         <Project>{22e9f66a-d363-4d06-8c20-878ab901cc14}</Project>
         <Name>StartWorkView.Infrastructure</Name>
       </ProjectReference>
+      <ProjectReference Include="..\StartWorkView.UI\StartWorkView.UI.csproj">
+        <Project>{9ee05091-854a-4563-9707-23d02238ebe8}</Project>
+        <Name>StartWorkView.UI</Name>
+      </ProjectReference>
     </ItemGroup>
     <ItemGroup>
       <Analyzer Include="..\..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />

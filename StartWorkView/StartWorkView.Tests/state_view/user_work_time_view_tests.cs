@@ -2,7 +2,7 @@
 using GWTTestBase;
 using StartWorkView.Application.Events;
 using StartWorkView.Application.Views;
-using StartWorkView.Infrastructure;
+using StartWorkView.UI;
 using Xunit;
 
 namespace StartWorkView.Tests.state_view

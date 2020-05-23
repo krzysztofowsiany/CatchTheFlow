@@ -9,7 +9,7 @@ using StartWorkView.Application.Views;
 using StartWorkView.UI;
 using Module = Autofac.Module;
 
-namespace StartWorkView.Infrastructure
+namespace StartWorkView.UI
 {
     public sealed class StartWorkViewModule : Module
     {
