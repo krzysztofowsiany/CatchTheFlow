@@ -26,6 +26,7 @@ namespace StartWorkView.UI
         {
             var dateTime = DateTime.UtcNow;
             _commandBus.Send(new StartWorkCommand(25, dateTime, dateTime));
+            Close();
         }
     }
 }
