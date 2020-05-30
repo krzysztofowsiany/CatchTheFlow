@@ -4,7 +4,7 @@ using CQRSLib;
 using EventBus;
 using PomodoroWork;
 using Sound;
-using StartWorkView.Infrastructure;
+using StartWorkView.UI;
 
 namespace CatchTheFlow
 {

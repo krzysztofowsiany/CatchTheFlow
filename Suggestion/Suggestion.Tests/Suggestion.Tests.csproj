@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="..\..\packages\xunit.core.2.4.1\build\xunit.core.props" Condition="Exists('..\..\packages\xunit.core.2.4.1\build\xunit.core.props')" />
     <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{8A300124-99F9-45AA-8703-32FD9580CC13}</ProjectGuid>
+        <ProjectGuid>{338D1C97-90D7-417E-959F-62F5319C01CC}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>StartWorkView.Infrastructure</RootNamespace>
-        <AssemblyName>StartWorkView.Infrastructure</AssemblyName>
+        <RootNamespace>Suggestion.Tests</RootNamespace>
+        <AssemblyName>Suggestion.Tests</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -54,32 +55,63 @@
           <Private>True</Private>
         </Reference>
         <Reference Include="System.Xml" />
+        <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
+          <HintPath>..\..\packages\xunit.abstractions.2.0.3\lib\net35\xunit.abstractions.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="xunit.assert, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
+          <HintPath>..\..\packages\xunit.assert.2.4.1\lib\netstandard1.1\xunit.assert.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="xunit.core, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
+          <HintPath>..\..\packages\xunit.extensibility.core.2.4.1\lib\net452\xunit.core.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
+        <Reference Include="xunit.execution.desktop, Version=2.4.1.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c">
+          <HintPath>..\..\packages\xunit.extensibility.execution.2.4.1\lib\net452\xunit.execution.desktop.dll</HintPath>
+          <Private>True</Private>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="state_change\fake_date_time.cs" />
+        <Compile Include="state_change\suggestion_module.cs" />
+        <Compile Include="state_change\suggest_short_breake_command_tests.cs" />
+        <Compile Include="state_view\short_break_suggested_view_tests.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\..\CQRSLib\CQRSLib.csproj">
         <Project>{28030da9-13cb-42e9-8a07-360d6c42dd66}</Project>
         <Name>CQRSLib</Name>
       </ProjectReference>
-      <ProjectReference Include="..\..\EventBus\EventBus\EventBus.csproj">
-        <Project>{b2a273c5-3dbc-40bf-a1a6-361a920e3f05}</Project>
-        <Name>EventBus</Name>
+      <ProjectReference Include="..\..\GWTTestBase\GWTTestBase.csproj">
+        <Project>{897889c5-e0b5-45a3-87b7-eab8604ad7cf}</Project>
+        <Name>GWTTestBase</Name>
       </ProjectReference>
-      <ProjectReference Include="..\StartWorkView.Application\StartWorkView.Application.csproj">
+      <ProjectReference Include="..\Suggestion.Application\Suggestion.Application.csproj">
         <Project>{30a07d01-22bb-40c6-8025-fccbcecb548c}</Project>
-        <Name>StartWorkView.Application</Name>
+        <Name>Suggestion.Application</Name>
       </ProjectReference>
-      <ProjectReference Include="..\StartWorkView.UI\StartWorkView.UI.csproj">
-        <Project>{9ee05091-854a-4563-9707-23d02238ebe8}</Project>
-        <Name>StartWorkView.UI</Name>
+      <ProjectReference Include="..\Suggestion.Infrastructure\Suggestion.Infrastructure.csproj">
+        <Project>{22e9f66a-d363-4d06-8c20-878ab901cc14}</Project>
+        <Name>Suggestion.Infrastructure</Name>
       </ProjectReference>
     </ItemGroup>
     <ItemGroup>
-      <None Include="packages.config" />
+      <Analyzer Include="..\..\packages\xunit.analyzers.0.10.0\analyzers\dotnet\cs\xunit.analyzers.dll" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+      <PropertyGroup>
+        <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+      </PropertyGroup>
+      <Error Condition="!Exists('..\..\packages\xunit.core.2.4.1\build\xunit.core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\xunit.core.2.4.1\build\xunit.core.props'))" />
+      <Error Condition="!Exists('..\..\packages\xunit.core.2.4.1\build\xunit.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\xunit.core.2.4.1\build\xunit.core.targets'))" />
+    </Target>
+    <Import Project="..\..\packages\xunit.core.2.4.1\build\xunit.core.targets" Condition="Exists('..\..\packages\xunit.core.2.4.1\build\xunit.core.targets')" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
     <Target Name="BeforeBuild">

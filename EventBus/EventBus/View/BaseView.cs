@@ -15,9 +15,8 @@ namespace EventBus.View
 
         public abstract void RestoreState();
 
-
-        protected IEnumerable<TEvent> GetEvents<TEvent>() 
-            where TEvent: class
+        protected IEnumerable<TEvent> GetEvents<TEvent>()
+            where TEvent : class
         {
             var typeName = typeof(TEvent).Name;
             var events = _eventRepository.Events
@@ -26,5 +25,8 @@ namespace EventBus.View
 
             return events;
         }
+
+        protected IEnumerable<string> GetNamesOfEvents()
+            => _eventRepository.Events.Select(e => e.Type);
     }
 }

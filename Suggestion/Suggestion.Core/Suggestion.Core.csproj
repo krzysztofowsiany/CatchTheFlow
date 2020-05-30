@@ -4,11 +4,11 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{8A300124-99F9-45AA-8703-32FD9580CC13}</ProjectGuid>
+        <ProjectGuid>{A1456E5C-0131-43D2-8C30-3FF4259989C2}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>StartWorkView.Infrastructure</RootNamespace>
-        <AssemblyName>StartWorkView.Infrastructure</AssemblyName>
+        <RootNamespace>Suggestion.Core</RootNamespace>
+        <AssemblyName>Suggestion.Core</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
     </PropertyGroup>
@@ -32,52 +32,19 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="Autofac, Version=5.1.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da">
-          <HintPath>..\..\packages\Autofac.5.1.2\lib\net461\Autofac.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
-          <HintPath>..\..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="mscorlib" />
         <Reference Include="System" />
-        <Reference Include="System.ComponentModel.Composition" />
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
-        <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-          <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
-          <HintPath>..\..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\..\CQRSLib\CQRSLib.csproj">
-        <Project>{28030da9-13cb-42e9-8a07-360d6c42dd66}</Project>
-        <Name>CQRSLib</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\..\EventBus\EventBus\EventBus.csproj">
-        <Project>{b2a273c5-3dbc-40bf-a1a6-361a920e3f05}</Project>
-        <Name>EventBus</Name>
-      </ProjectReference>
       <ProjectReference Include="..\StartWorkView.Application\StartWorkView.Application.csproj">
         <Project>{30a07d01-22bb-40c6-8025-fccbcecb548c}</Project>
         <Name>StartWorkView.Application</Name>
       </ProjectReference>
-      <ProjectReference Include="..\StartWorkView.UI\StartWorkView.UI.csproj">
-        <Project>{9ee05091-854a-4563-9707-23d02238ebe8}</Project>
-        <Name>StartWorkView.UI</Name>
-      </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
