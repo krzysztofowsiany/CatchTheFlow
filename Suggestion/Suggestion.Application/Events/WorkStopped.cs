@@ -7,12 +7,10 @@ namespace Suggestion.Application.Events
         public ushort WorkTime { get; }
         public DateTime StopTime { get; }
         
-        public DateTime Timestamp { get; }
-        public WorkStopped(ushort workTime, DateTime stopTime, DateTime timestamp)
+        public WorkStopped(ushort workTime, DateTime stopTime)
         {
             WorkTime = workTime;
             StopTime = stopTime;
-            Timestamp = timestamp;
         }
     }
 }

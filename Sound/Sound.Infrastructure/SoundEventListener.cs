@@ -36,7 +36,7 @@ namespace Sound.Infrastructure
             {
                 var view = new SoundWorkInformationView(_eventRepository);
 
-                _commandBus.Send(new StartPlayCommand(view.Sound, DateTime.Now));
+                _commandBus.Send(new StartPlayCommand(view.Sound));
             });
         }
 
@@ -46,7 +46,7 @@ namespace Sound.Infrastructure
             {
                 var view = new WorkStopTimeView(_eventRepository);
 
-                _commandBus.Send(new StopPlayCommand (view.StopTime, DateTime.UtcNow));
+                _commandBus.Send(new StopPlayCommand (view.StopTime));
             });
         }
     }

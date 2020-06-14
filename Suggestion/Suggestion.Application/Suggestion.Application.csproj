@@ -40,7 +40,8 @@
     <ItemGroup>
         <Compile Include="CommandHandlers\SuggestShortBreakCommandHandler.cs" />
         <Compile Include="Commands\SuggestShortBreakeCommand.cs" />
-        <Compile Include="Events\WorkStarted.cs" />
+        <Compile Include="Events\LongBreakeStopped.cs" />
+        <Compile Include="Events\SuggestedShortBreake.cs" />
         <Compile Include="Events\WorkStopped.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Views\TimeOfEndWorkView.cs" />

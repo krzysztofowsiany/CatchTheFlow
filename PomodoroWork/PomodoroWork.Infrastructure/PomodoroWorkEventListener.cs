@@ -44,8 +44,7 @@ namespace PomodoroWork.Infrastructure
                         {
                             _commandBus.Send(new StopWorkCommand(
                                 view.WorkTime,
-                                view.StartTime.AddMinutes(view.WorkTime),
-                                DateTime.UtcNow));
+                                view.StartTime.AddMinutes(view.WorkTime)));
                         }
                     );
             });

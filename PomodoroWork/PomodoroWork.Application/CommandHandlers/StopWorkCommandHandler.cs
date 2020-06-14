@@ -19,8 +19,7 @@ namespace PomodoroWork.Application.CommandHandlers
         {
           _eventBus.PushEvent(new WorkStopped(
               command.WorkTime, 
-              command.StopTime,
-              command.Timestamp));
+              command.StopTime));
         }
     }
 }

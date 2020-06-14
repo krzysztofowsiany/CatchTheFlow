@@ -6,13 +6,11 @@ namespace StartWorkView.Application.Events
     {
         public ushort WorkTime { get; }
         public DateTime StartTime { get; }
-        public DateTime Timestamp { get; }
 
-        public WorkStarted(ushort workTime, DateTime startTime, DateTime timestamp)
+        public WorkStarted(ushort workTime, DateTime startTime)
         {
             WorkTime = workTime;
             StartTime = startTime;
-            Timestamp = timestamp;
         }
     }
 }

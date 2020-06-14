@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Threading;
 using GWTTestBase;
 using StartWorkView.Application.Events;
 using StartWorkView.Application.Views;
@@ -12,11 +12,9 @@ namespace StartWorkView.Tests.state_view
         [Fact]
         public void user_work_time_view_restored__when__work_time_update()
         {
-            Give( new WorkTimeUpdated(20, 
-                DateTime.Parse("2019-01-01 22:45")));
+            Give( new WorkTimeUpdated(20));
             
-            Give( new WorkTimeUpdated(25, 
-                DateTime.Parse("2019-01-01 22:45:10")));
+            Give( new WorkTimeUpdated(25));
 
             Then(new UserWorkTime(25));
         }

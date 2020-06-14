@@ -23,7 +23,6 @@ namespace Sound.Application.Views
         public override void RestoreState()
         {
             var @event = GetEvents<WorkStopped>()
-                    .OrderByDescending(e => e.Timestamp)
                     .FirstOrDefault();
 
             StopTime = @event.StopTime;

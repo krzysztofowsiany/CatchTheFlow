@@ -13,14 +13,13 @@ namespace StartWorkView.Tests.state_change
         {
             When(new StartWorkCommand(
                 25,
-                DateTime.Parse("2019-01-01 23:00"),
-                DateTime.Parse("2019-01-01 23:00")
-            ));
+                DateTime.Parse("2019-01-01 23:00"))
+            );
             
             Then(new WorkStarted(
                 25,
-                DateTime.Parse("2019-01-01 23:00"),
-                DateTime.Parse("2019-01-01 23:00")));
+                DateTime.Parse("2019-01-01 23:00"))
+            );
         }
     }
 }

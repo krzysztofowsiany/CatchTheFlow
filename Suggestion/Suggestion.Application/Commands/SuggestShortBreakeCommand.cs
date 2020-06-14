@@ -5,15 +5,13 @@ namespace Suggestion.Application.Commands
 {
     public class SuggestShortBreakCommand: ICommand
     {
-        public SuggestShortBreakCommand(ushort workTime, DateTime stopTime, DateTime timestamp)
+        public SuggestShortBreakCommand(ushort breakeTime, DateTime stopTime)
         {
-            Timestamp = timestamp;
             StopTime = stopTime;
-            WorkTime = workTime;
+            BreakeTime = breakeTime;
         }
 
-        public DateTime Timestamp { get;  }
         public DateTime StopTime { get;  }
-        public ushort WorkTime { get;  }
+        public ushort BreakeTime { get;  }
     }
 }

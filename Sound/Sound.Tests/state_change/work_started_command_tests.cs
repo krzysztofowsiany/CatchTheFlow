@@ -1,5 +1,4 @@
-﻿using System;
-using GWTTestBase;
+﻿using GWTTestBase;
 using Sound.Application.Commands;
 using Sound.Application.Events;
 using Xunit;
@@ -12,12 +11,12 @@ namespace Sound.Tests.state_change
         public void when_work_started_then_sound_should_started()
         {
             When(new StartPlayCommand( 
-                "work_2.mp3", 
-                DateTime.Parse("2019-01-01 23:25")) );
+                "work_2.mp3") 
+            );
 
             Then(new SoundStarted(
-                "work_2.mp3",
-                DateTime.Parse("2019-01-01 23:25")));
+                "work_2.mp3")
+            );
         }
     }
 }

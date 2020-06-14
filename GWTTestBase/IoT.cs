@@ -4,11 +4,11 @@ using EventBus;
 
 namespace GWTTestBase
 {
-    public static class IoT
+    public class IoT
     {
-        public static IContainer Container;
+        public IContainer Container;
 
-        public static void RegisterContainer<TModule>()
+        public void RegisterContainer<TModule>()
             where TModule: Module, new()
         {
             var builder = new ContainerBuilder();

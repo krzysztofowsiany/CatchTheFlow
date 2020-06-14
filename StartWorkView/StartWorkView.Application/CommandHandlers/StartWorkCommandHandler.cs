@@ -19,8 +19,7 @@ namespace StartWorkView.Application.CommandHandlers
         {
           _eventBus.PushEvent(new WorkStarted(
               command.WorkTime, 
-              command.StopTime,
-              command.Timestamp));
+              command.StopTime));
         }
     }
 }

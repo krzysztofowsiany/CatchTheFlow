@@ -23,7 +23,6 @@ namespace Sound.Application.Views
         public override void RestoreState()
         {
             var @event = GetEvents<WorkSoundUpdated>()
-                .OrderByDescending(e => e.Timestamp)
                 .FirstOrDefault();
 
             Sound = @event?.Sound;

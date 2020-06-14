@@ -13,13 +13,11 @@ namespace PomodoroWork.Tests.state_change
         {
             When(new StopWorkCommand(
                 25, 
-                DateTime.Parse("2019-01-01 23:25"),
-                DateTime.UtcNow)
+                DateTime.Parse("2019-01-01 23:25"))
             );
             
             Then(new WorkStopped(
                 25,
-                DateTime.Parse("2019-01-01 23:25"),
                 DateTime.Parse("2019-01-01 23:25")));
         }
     }

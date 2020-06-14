@@ -1,15 +1,15 @@
+using System.Linq;
 using FluentAssertions.Equivalency;
 
 namespace GWTTestBase
 {
-    public class IgnoreTimestampPropertyStep : IEquivalencyStep
+    public class IgnoreEmptyObjectStep : IEquivalencyStep
     {
         public bool CanHandle(IEquivalencyValidationContext context, IEquivalencyAssertionOptions config)
-            => context.SelectedMemberPath.Contains("Timestamp");
+            => context.RuntimeType.GetFields().Length == 0
+               && context.RuntimeType.GetProperties().Length == 0;
 
         public bool Handle(IEquivalencyValidationContext context, IEquivalencyValidator parent,
-            IEquivalencyAssertionOptions config)
-            => true;
-
+            IEquivalencyAssertionOptions config) => true;
     }
 }

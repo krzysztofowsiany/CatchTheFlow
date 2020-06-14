@@ -25,7 +25,6 @@ namespace PomodoroWork.Application.Views
         public override void RestoreState()
         {
             var @event = GetEvents<WorkStarted>()
-                .OrderByDescending(e => e.Timestamp)
                 .FirstOrDefault();
 
             StartTime = @event.StartTime;

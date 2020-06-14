@@ -29,7 +29,10 @@ namespace EventBus
 
         public void PushEvent<TEvent>(TEvent @event) where TEvent: class
         {
-            var e = new Event(@event.Serialize(), @event.GetType().Name);
+            var e = new Event(
+                @event.Serialize(), 
+                @event.GetType().Name,
+                DateTime.UtcNow);
             _eventRepository.Add(e);
             _subject.OnNext(e);
         }

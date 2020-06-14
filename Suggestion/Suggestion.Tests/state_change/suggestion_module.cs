@@ -1,5 +1,8 @@
 using Autofac;
+using CQRSLib;
 using CQRSLib.DateTime;
+using Suggestion.Application.CommandHandlers;
+using Suggestion.Application.Commands;
 
 namespace Suggestion.Tests.state_change
 {
@@ -9,8 +12,8 @@ namespace Suggestion.Tests.state_change
         {
             base.Load(builder);
 
-          //  builder.RegisterType<StopWorkCommandHandler>()
-               // .As<ICommandHandler<StopWorkCommand>>();
+            builder.RegisterType<SuggestShortBreakCommandHandler>()
+                .As<ICommandHandler<SuggestShortBreakCommand>>();
             
             builder.RegisterType<fake_date_time>()
                 .As<IDateTime>();

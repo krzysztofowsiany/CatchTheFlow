@@ -25,7 +25,7 @@ namespace StartWorkView.UI
         private void StartWork(object sender, RoutedEventArgs e)
         {
             var dateTime = DateTime.UtcNow;
-            _commandBus.Send(new StartWorkCommand(25, dateTime, dateTime));
+            _commandBus.Send(new StartWorkCommand(25, dateTime));
             Close();
         }
     }

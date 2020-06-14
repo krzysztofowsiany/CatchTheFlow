@@ -1,16 +1,12 @@
-using System;
-
 namespace Sound.Application.Events
 {
     public class SoundStarted
     {
         public string Sound { get; }
-        public DateTime Timestamp { get; }
 
-        public SoundStarted(string sound, DateTime timestamp)
+        public SoundStarted(string sound)
         {
             Sound = sound;
-            Timestamp = timestamp;
         }
     }
 }

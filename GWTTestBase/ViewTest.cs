@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using Autofac;
 using EventBus;
 using EventBus.Extensions;
@@ -11,11 +12,13 @@ namespace GWTTestBase
         where TModule: Module, new()
     {
         private readonly IEventRepository _eventRepository;
+        private readonly IoT _iot;
 
         protected ViewTest()
         {
-            IoT.RegisterContainer<TModule>();
-            _eventRepository =  IoT.Container.Resolve<IEventRepository>();
+            _iot = new IoT();
+            _iot.RegisterContainer<TModule>();
+            _eventRepository =  _iot.Container.Resolve<IEventRepository>();
         }
         
         protected void Then<TView>(TView view) where TView: BaseView
@@ -29,8 +32,12 @@ namespace GWTTestBase
        
         protected void Give<TEvent>(TEvent given) where TEvent: class
         {
-            var @event = new Event(given.Serialize(), given.GetType().Name);
+            var @event = new Event(
+                given.Serialize(), 
+                given.GetType().Name,
+                DateTime.UtcNow);
             _eventRepository.Add(@event);
+            Thread.Sleep(1);
         }
     }
 }

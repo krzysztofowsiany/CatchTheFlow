@@ -1,4 +1,3 @@
-using System;
 using CQRSLib;
 using EventBus;
 using Sound.Application.Commands;
@@ -22,8 +21,8 @@ namespace Sound.Application.CommandHandlers
         
         public void Handle(StopPlayCommand command)
         {
-            _soundPlayerService.StopPlay(); 
-            _eventBus.PushEvent(new SoundStopped(command.Timestamp));
+           // _soundPlayerService.StopPlay(); 
+            _eventBus.PushEvent(new SoundStopped());
         }
     }
 }

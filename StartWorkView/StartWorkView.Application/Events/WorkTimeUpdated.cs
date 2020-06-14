@@ -1,16 +1,12 @@
-using System;
-
 namespace StartWorkView.Application.Events
 {
     public class WorkTimeUpdated
     {
         public ushort WorkTime { get; }
-        public DateTime Timestamp { get; }
 
-        public WorkTimeUpdated(ushort workTime, DateTime timestamp)
+        public WorkTimeUpdated(ushort workTime)
         {
             WorkTime = workTime;
-            Timestamp = timestamp;
         }
     }
 }

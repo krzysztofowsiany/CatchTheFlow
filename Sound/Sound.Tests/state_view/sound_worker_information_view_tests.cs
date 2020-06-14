@@ -1,6 +1,5 @@
 ﻿using System;
 using GWTTestBase;
-using Sound.Infrastructure;
 using Sound.Application.Events;
 using Sound.Application.Views;
 using Xunit;
@@ -13,12 +12,13 @@ namespace Sound.Tests.state_view
         public void sound_work_information_view_restored__when__work_sound_updated_and_work_started()
         {
             Give( new WorkSoundUpdated(
-                "work_1.mp3",
-                DateTime.Parse("2019-01-01 21:25")));
+                "work_1.mp3")
+            );
             
-            Give( new WorkStarted(25, 
-                DateTime.Parse("2019-01-01 23:00"), 
-                DateTime.Parse("2019-01-01 23:00")));
+            Give( new WorkStarted(
+                25, 
+                DateTime.Parse("2019-01-01 23:00"))
+            );
 
             Then(new SoundWorkInformationView("work_1.mp3"));
         }

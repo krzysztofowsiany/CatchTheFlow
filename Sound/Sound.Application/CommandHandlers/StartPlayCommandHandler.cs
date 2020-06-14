@@ -1,4 +1,3 @@
-using System;
 using CQRSLib;
 using EventBus;
 using Sound.Application.Commands;
@@ -23,7 +22,7 @@ namespace Sound.Application.CommandHandlers
         public void Handle(StartPlayCommand command)
         {
             _soundPlayerService.StartPlay(command.Sound); 
-            _eventBus.PushEvent(new SoundStarted(command.Sound, command.Timestamp));
+            _eventBus.PushEvent(new SoundStarted(command.Sound));
         }
     }
 }

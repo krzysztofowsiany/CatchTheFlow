@@ -1,6 +1,7 @@
 using CQRSLib;
 using EventBus;
 using Suggestion.Application.Commands;
+using Suggestion.Application.Events;
 
 namespace Suggestion.Application.CommandHandlers
 {
@@ -16,10 +17,9 @@ namespace Suggestion.Application.CommandHandlers
         
         public void Handle(SuggestShortBreakCommand command)
         {
-          /*eventBus.PushEvent(new WorkStarted(
-              command.WorkTime, 
-              command.StopTime,
-              command.Timestamp));*/
+            _eventBus.PushEvent(new SuggestedShortBreake(
+              command.BreakeTime, 
+              command.StopTime));
         }
     }
 }

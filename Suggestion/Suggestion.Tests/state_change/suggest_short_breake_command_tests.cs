@@ -1,5 +1,7 @@
-﻿using GWTTestBase;
+﻿using System;
+using GWTTestBase;
 using Suggestion.Application.Commands;
+using Suggestion.Application.Events;
 using Xunit;
 
 namespace Suggestion.Tests.state_change
@@ -9,18 +11,15 @@ namespace Suggestion.Tests.state_change
         [Fact]
         public void when_suggest_short_breake_command_then_suggested_shor_break()
         {
-           /* Give(@event: new WorkStarted(
-                25,
-                DateTime.Parse("2019-01-01 23:00"),
-                DateTime.Parse("2019-01-01 23:00")
-                ));
+            When(new SuggestShortBreakCommand(
+                5,
+                DateTime.Parse("2019-01-01 23:25"))
+            );
             
-            When<PomodoroWorkEventListener>();
-            
-            Then(new WorkStopped(
-                25,
-                DateTime.Parse("2019-01-01 23:25"),
-                DateTime.Parse("2019-01-01 23:25")));*/
+            Then(new SuggestedShortBreake(
+                5,
+                DateTime.Parse("2019-01-01 23:25"))
+            );
         }
     }
 }

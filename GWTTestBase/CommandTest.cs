@@ -13,13 +13,15 @@ namespace GWTTestBase
         private object _event;
         private readonly ICommandBus _commandBus;
         private TCommand _command;
+        private readonly IoT _iot;
 
         protected CommandTest()
         {
-            IoT.RegisterContainer<TModule>();
+            _iot = new IoT();
+            _iot.RegisterContainer<TModule>();
             
-            _eventBus = IoT.Container.Resolve<IEventBus>();
-            _commandBus = IoT.Container.Resolve<ICommandBus>();
+            _eventBus = _iot.Container.Resolve<IEventBus>();
+            _commandBus = _iot.Container.Resolve<ICommandBus>();
         }
 
         protected void Then<TEvent>(TEvent @event) where TEvent: class
@@ -36,7 +38,7 @@ namespace GWTTestBase
 
             _event.Should().NotBeNull();
             _event.Should().BeEquivalentTo(@event, options => 
-                options.Using(new IgnoreTimestampPropertyStep()));
+                options.Using(new IgnoreEmptyObjectStep()));
         }
         
         protected void When(TCommand command) =>

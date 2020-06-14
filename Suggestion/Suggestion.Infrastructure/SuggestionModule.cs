@@ -3,7 +3,6 @@ using CQRSLib;
 using CQRSLib.DateTime;
 using Suggestion.Application.CommandHandlers;
 using Suggestion.Application.Commands;
-using DateTime = System.DateTime;
 using Module = Autofac.Module;
 
 namespace Suggestion.Infrastructure

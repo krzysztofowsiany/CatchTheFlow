@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using EventBus;
 using EventBus.View;
@@ -23,7 +22,6 @@ namespace StartWorkView.Application.Views
         public override void RestoreState()
         {
             var @event = GetEvents<WorkTimeUpdated>()
-                .OrderByDescending(e => e.Timestamp)
                 .FirstOrDefault();
 
             WorkTime = @event.WorkTime;

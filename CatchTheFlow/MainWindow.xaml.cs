@@ -14,8 +14,8 @@ namespace CatchTheFlow
         {
             InitializeComponent();
             var eventBus = IoT.Container.Resolve<IEventBus>();
-            eventBus.PushEvent(new WorkSoundUpdated("work_2.mp3", DateTime.Now));
-            eventBus.PushEvent(new WorkTimeUpdated(25, DateTime.Now));
+            eventBus.PushEvent(new WorkSoundUpdated("work_2.mp3"));
+            eventBus.PushEvent(new WorkTimeUpdated(25));
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
