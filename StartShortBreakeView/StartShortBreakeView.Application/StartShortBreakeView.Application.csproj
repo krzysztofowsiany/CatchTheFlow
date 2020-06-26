@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{08ED1A40-1E25-4084-8147-9C5BCBA2E01C}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>StartShortBreakeView.Application</RootNamespace>
+        <AssemblyName>StartShortBreakeView.Application</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="CommandHandlers\StartShortBreakeCommandHandler.cs" />
+        <Compile Include="Commands\StartShortBreakeCommand.cs" />
+        <Compile Include="Events\ShortBreakeStarted.cs" />
+        <Compile Include="Events\SuggestedShortBreake.cs" />
+        <Compile Include="Events\ShortBreakeTimeUpdated.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="QueryHandlers\UserShortBreakeTimeQueryHandler.cs" />
+        <Compile Include="Query\UserShortBreakeTimeQuery.cs" />
+        <Compile Include="Views\ShortBreakeTimeView.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\CQRSLib\CQRSLib.csproj">
+        <Project>{28030da9-13cb-42e9-8a07-360d6c42dd66}</Project>
+        <Name>CQRSLib</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\EventBus\EventBus\EventBus.csproj">
+        <Project>{b2a273c5-3dbc-40bf-a1a6-361a920e3f05}</Project>
+        <Name>EventBus</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>

@@ -11,21 +11,22 @@ namespace StartWorkView.UI
     public partial class StartWorkDialog
     {
         private readonly ICommandBus _commandBus;
+        private readonly UserWorkTime _result;
 
         public StartWorkDialog(ICommandBus commandBus, IQueryBus queryBus)
         {
             InitializeComponent();
             
             _commandBus = commandBus;
-            var result = queryBus.Process<UserWorkTimeQuery, UserWorkTime>(new UserWorkTimeQuery());
+            _result = queryBus.Process<UserWorkTimeQuery, UserWorkTime>(new UserWorkTimeQuery());
 
-            WorkTime.Text = $"{result.WorkTime} min";
+            WorkTime.Text = $"{_result.WorkTime} min";
         }
         
         private void StartWork(object sender, RoutedEventArgs e)
         {
             var dateTime = DateTime.UtcNow;
-            _commandBus.Send(new StartWorkCommand(25, dateTime));
+            _commandBus.Send(new StartWorkCommand(_result.WorkTime, dateTime));
             Close();
         }
     }

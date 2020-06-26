@@ -4,6 +4,7 @@ using CQRSLib;
 using EventBus;
 using PomodoroWork;
 using Sound;
+using StartShortBreakeView.UI;
 using StartWorkView.UI;
 
 namespace CatchTheFlow
@@ -34,6 +35,7 @@ namespace CatchTheFlow
             builder.RegisterModule(new SoundModule());
             builder.RegisterModule(new PomodoroWorkModule());
             builder.RegisterModule(new StartWorkViewModule());
+            builder.RegisterModule(new StartShortBreakeViewModule());
 
             _container = builder.Build();
             return _container;

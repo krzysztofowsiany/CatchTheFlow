@@ -123,6 +123,14 @@
         <Project>{4fa639ab-2afb-4389-85c8-28d948b70c1a}</Project>
         <Name>Sound.Infrastructure</Name>
       </ProjectReference>
+      <ProjectReference Include="..\StartShortBreakeView\StartShortBreakeView.Application\StartShortBreakeView.Application.csproj">
+        <Project>{08ed1a40-1e25-4084-8147-9c5bcba2e01c}</Project>
+        <Name>StartShortBreakeView.Application</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\StartShortBreakeView\StartShortBreakeView.UI\StartShortBreakeView.UI.csproj">
+        <Project>{e04de452-7959-4265-8e2c-841d636a8d74}</Project>
+        <Name>StartShortBreakeView.UI</Name>
+      </ProjectReference>
       <ProjectReference Include="..\StartWorkView\StartWorkView.Application\StartWorkView.Application.csproj">
         <Project>{30a07d01-22bb-40c6-8025-fccbcecb548c}</Project>
         <Name>StartWorkView.Application</Name>
