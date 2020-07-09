@@ -28,9 +28,20 @@ namespace Sound.Infrastructure
             
             SubscribeToWorkStopped();
             SubscribeToWorkStarted();
+            SubscribeToShortBreakeStarted();
         }
 
         private void SubscribeToWorkStarted()
+        {
+            _eventBus.Subscribe<ShortBreakeStarted>(@event =>
+            {
+                var view = new SoundShortBreakeInformationView(_eventRepository);
+
+                _commandBus.Send(new StartPlayCommand(view.Sound));
+            });
+        }
+        
+        private void SubscribeToShortBreakeStarted()
         {
             _eventBus.Subscribe<WorkStarted>(@event =>
             {

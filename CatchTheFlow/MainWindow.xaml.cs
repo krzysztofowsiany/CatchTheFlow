@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using Autofac;
 using EventBus;
 using Sound.Application.Events;
@@ -17,8 +16,8 @@ namespace CatchTheFlow
             InitializeComponent();
             var eventBus = IoT.Container.Resolve<IEventBus>();
             eventBus.PushEvent(new WorkSoundUpdated("work_2.mp3"));
+            eventBus.PushEvent(new ShortBreakeSoundUpdated("short_breake_1.mp3"));
             eventBus.PushEvent(new WorkTimeUpdated(25));
-            
             eventBus.PushEvent(new ShortBreakeTimeUpdated(5));
         }
             
