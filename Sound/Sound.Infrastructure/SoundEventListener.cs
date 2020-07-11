@@ -29,6 +29,7 @@ namespace Sound.Infrastructure
             SubscribeToWorkStopped();
             SubscribeToWorkStarted();
             SubscribeToShortBreakeStarted();
+            SubscribeToShortBreakeStopped();
         }
 
         private void SubscribeToWorkStarted()
@@ -56,6 +57,16 @@ namespace Sound.Infrastructure
             _eventBus.Subscribe<WorkStopped>(@event =>
             {
                 var view = new WorkStopTimeView(_eventRepository);
+
+                _commandBus.Send(new StopPlayCommand (view.StopTime));
+            });
+        }
+        
+        private void SubscribeToShortBreakeStopped()
+        {
+            _eventBus.Subscribe<ShortBreakeStopped>(@event =>
+            {
+                var view = new ShortBreakeStopTimeView(_eventRepository);
 
                 _commandBus.Send(new StopPlayCommand (view.StopTime));
             });
