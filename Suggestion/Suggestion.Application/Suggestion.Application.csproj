@@ -39,11 +39,17 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="CommandHandlers\SuggestShortBreakCommandHandler.cs" />
+        <Compile Include="CommandHandlers\SuggestWorkCommandHandler.cs" />
         <Compile Include="Commands\SuggestShortBreakeCommand.cs" />
+        <Compile Include="Commands\SuggestWorkCommand.cs" />
         <Compile Include="Events\LongBreakeStopped.cs" />
+        <Compile Include="Events\ShortBreakStopped.cs" />
         <Compile Include="Events\SuggestedShortBreake.cs" />
+        <Compile Include="Events\SuggestedWork.cs" />
         <Compile Include="Events\WorkStopped.cs" />
+        <Compile Include="Events\WorkTimeUpdated.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Views\ShortBreakeStoppedInformation.cs" />
         <Compile Include="Views\TimeOfEndWorkView.cs" />
     </ItemGroup>
     <ItemGroup>

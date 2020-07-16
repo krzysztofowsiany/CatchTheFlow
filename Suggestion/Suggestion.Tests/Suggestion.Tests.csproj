@@ -77,7 +77,9 @@
         <Compile Include="state_change\fake_date_time.cs" />
         <Compile Include="state_change\suggestion_module.cs" />
         <Compile Include="state_change\suggest_short_breake_command_tests.cs" />
+        <Compile Include="state_change\suggest_work_command_tests.cs" />
         <Compile Include="state_view\short_break_suggested_view_tests.cs" />
+        <Compile Include="state_view\work_suggested_view_test.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

@@ -2,12 +2,12 @@ using System;
 
 namespace Suggestion.Application.Events
 {
-    public class ShortBreakeStopped
+    public class LongBreakeStopped
     {
         public ushort BreakeTime { get; }
         public DateTime StopTime { get; }
 
-        public ShortBreakeStopped(ushort breakeTime, DateTime stopTime)
+        public LongBreakeStopped(ushort breakeTime, DateTime stopTime)
         {
             BreakeTime = breakeTime;
             StopTime = stopTime;

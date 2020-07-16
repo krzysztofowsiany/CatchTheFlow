@@ -21,6 +21,9 @@ namespace Suggestion.Infrastructure
             
             builder.RegisterType<SuggestShortBreakCommandHandler>()
                 .As<ICommandHandler<SuggestShortBreakCommand>>();
+            
+            builder.RegisterType<SuggestWorkCommandHandler>()
+                .As<ICommandHandler<SuggestWorkCommand>>();
         }
     }
 }

@@ -24,8 +24,20 @@ namespace Suggestion.Infrastructure
             _eventRepository = eventRepository;
 
             SubscribeToWorkStarted();
+            SubscribeToShortBreakeStopped();
         }
 
+        private void  SubscribeToShortBreakeStopped()
+        {
+            _eventBus.Subscribe<ShortBreakeStopped>(@event =>
+            {
+                var view = new ShortBreakeStoppedInformation(_eventRepository);
+                    _commandBus.Send(
+                        new SuggestWorkCommand(view.WorkTime, view.StopTime)
+                    );
+            });
+        }
+        
         private void SubscribeToWorkStarted()
         {
             _eventBus.Subscribe<WorkStopped>(@event =>

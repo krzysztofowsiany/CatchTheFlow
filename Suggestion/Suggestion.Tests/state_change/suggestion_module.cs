@@ -15,6 +15,9 @@ namespace Suggestion.Tests.state_change
             builder.RegisterType<SuggestShortBreakCommandHandler>()
                 .As<ICommandHandler<SuggestShortBreakCommand>>();
             
+            builder.RegisterType<SuggestWorkCommandHandler>()
+                .As<ICommandHandler<SuggestWorkCommand>>();
+            
             builder.RegisterType<fake_date_time>()
                 .As<IDateTime>();
         }
