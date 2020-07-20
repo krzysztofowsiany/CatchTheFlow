@@ -68,6 +68,7 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="CatchTheFlowEventListener.cs" />
         <Compile Include="Properties\Annotations.cs" />
         <Compile Include="WorkTimeViewMode.cs" />
         <Page Include="MainWindow.xaml">
@@ -146,6 +147,14 @@
       <ProjectReference Include="..\StartWorkView\StartWorkView.UI\StartWorkView.UI.csproj">
         <Project>{9ee05091-854a-4563-9707-23d02238ebe8}</Project>
         <Name>StartWorkView.UI</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Suggestion\Suggestion.Application\Suggestion.Application.csproj">
+        <Project>{b4645668-552c-4731-aab7-cad0f115afab}</Project>
+        <Name>Suggestion.Application</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Suggestion\Suggestion.Infrastructure\Suggestion.Infrastructure.csproj">
+        <Project>{c9119fb1-a52b-4e7a-91b8-88475437dccf}</Project>
+        <Name>Suggestion.Infrastructure</Name>
       </ProjectReference>
     </ItemGroup>
     <ItemGroup>

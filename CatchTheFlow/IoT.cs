@@ -7,6 +7,7 @@ using PomodoroWork;
 using Sound;
 using StartShortBreakeView.UI;
 using StartWorkView.UI;
+using Suggestion.Infrastructure;
 
 namespace CatchTheFlow
 {
@@ -38,7 +39,12 @@ namespace CatchTheFlow
             builder.RegisterModule(new StartWorkViewModule());
             builder.RegisterModule(new StartShortBreakeViewModule());
             builder.RegisterModule(new PomodoroShortBreakeModule());
+            builder.RegisterModule(new SuggestionModule());
+                
+            builder.RegisterType<CatchTheFlowEventListener>()
+                .AutoActivate();
 
+            
             _container = builder.Build();
             return _container;
         }
