@@ -49,6 +49,12 @@ namespace Suggestion.Infrastructure
                         new SuggestShortBreakCommand(view.WorkTime, view.StopTime)
                         );
                 }
+                else
+                {
+                    _commandBus.Send(
+                        new SuggestLongBreakeCommand(view.WorkTime, view.StopTime)
+                    );
+                }
             });
         }
     }
