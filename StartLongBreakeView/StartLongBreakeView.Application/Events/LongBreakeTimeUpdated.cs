@@ -1,10 +1,10 @@
 namespace StartLongBreakeView.Application.Events
 {
-    public class ShortBreakeTimeUpdated
+    public class LongBreakeTimeUpdated
     {
         public ushort Time { get; }
 
-        public ShortBreakeTimeUpdated(ushort time)
+        public LongBreakeTimeUpdated(ushort time)
         {
             Time = time;
         }

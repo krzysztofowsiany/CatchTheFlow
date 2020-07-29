@@ -11,22 +11,22 @@ using Module = Autofac.Module;
 
 namespace StartLongBreakeView.UI
 {
-    public sealed class StartShortBreakeViewModule : Module
+    public sealed class StartLongBreakeViewModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
             base.Load(builder);
 
-           builder.RegisterType<StartShortBreakeCommandHandler>()
-                .As<ICommandHandler<StartShortBreakeCommand>>();
+            builder.RegisterType<StartLongBreakeCommandHandler>()
+                .As<ICommandHandler<StartLongBreakeCommand>>();
             
             builder.RegisterType<DateTime>()
                 .As<IDateTime>();
             
-            builder.RegisterType<UserShortBreakeTimeQueryHandler>()
-                .As<IQueryHandler<UserShortBreakeTimeQuery, ShortBreakeTimeView>>();
+            builder.RegisterType<UserLongBreakeTimeQueryHandler>()
+                .As<IQueryHandler<UserLongBreakeTimeQuery, LongBreakeTimeView>>();
 
-            builder.RegisterType<StartShortBreakeDialog>();
+            builder.RegisterType<StartLongBreakeDialog>();
         }
     }
 }

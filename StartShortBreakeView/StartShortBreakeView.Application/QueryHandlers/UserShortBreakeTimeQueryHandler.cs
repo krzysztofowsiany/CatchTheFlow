@@ -1,9 +1,9 @@
 using CQRSLib;
 using EventBus;
-using StartShortBreakeView.Application.Query;
-using StartShortBreakeView.Application.Views;
+using StartLongBreakeView.Application.Query;
+using StartLongBreakeView.Application.Views;
 
-namespace StartShortBreakeView.Application.QueryHandlers
+namespace StartLongBreakeView.Application.QueryHandlers
 {
     public class UserShortBreakeTimeQueryHandler : IQueryHandler<UserShortBreakeTimeQuery, ShortBreakeTimeView>
     {

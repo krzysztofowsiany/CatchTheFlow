@@ -128,6 +128,14 @@
         <Project>{4fa639ab-2afb-4389-85c8-28d948b70c1a}</Project>
         <Name>Sound.Infrastructure</Name>
       </ProjectReference>
+      <ProjectReference Include="..\StartLongBreakeView\StartLongBreakeView.Application\StartLongBreakeView.Application.csproj">
+        <Project>{14f7d265-6612-4ad5-a1d9-0bd630697ea1}</Project>
+        <Name>StartLongBreakeView.Application</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\StartLongBreakeView\StartLongBreakeView.UI\StartLongBreakeView.UI.csproj">
+        <Project>{122c1f0f-3946-47ab-9123-a44dcb0b9f29}</Project>
+        <Name>StartLongBreakeView.UI</Name>
+      </ProjectReference>
       <ProjectReference Include="..\StartShortBreakeView\StartShortBreakeView.Application\StartShortBreakeView.Application.csproj">
         <Project>{08ed1a40-1e25-4084-8147-9c5bcba2e01c}</Project>
         <Name>StartShortBreakeView.Application</Name>
@@ -158,6 +166,12 @@
       </ProjectReference>
     </ItemGroup>
     <ItemGroup>
+      <Content Include="sounds\long_breake_1.mp3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="sounds\long_breake_2.mp3">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
       <Content Include="sounds\short_breake_1.mp3">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>

@@ -1,7 +1,7 @@
 using System;
 using CQRSLib;
 
-namespace StartShortBreakeView.Application.Commands
+namespace StartLongBreakeView.Application.Commands
 {
     public class StartShortBreakeCommand: ICommand
     {

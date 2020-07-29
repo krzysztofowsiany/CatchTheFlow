@@ -58,6 +58,7 @@
     <Compile Include="CommandHandlers\StopPlayCommandHandler.cs" />
     <Compile Include="Commands\StartPlayCommand.cs" />
     <Compile Include="Commands\StopPlayCommand.cs" />
+    <Compile Include="Events\LongBreakeSoundUpdated.cs" />
     <Compile Include="Events\ShortBreakeSoundUpdated.cs" />
     <Compile Include="Events\ShortBreakeStarted.cs" />
     <Compile Include="Events\ShortBreakeStopped.cs" />

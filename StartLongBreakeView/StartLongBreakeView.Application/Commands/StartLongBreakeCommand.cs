@@ -1,10 +1,11 @@
 using System;
+using CQRSLib;
 
-namespace StartLongBreakeView.Application.Events
+namespace StartLongBreakeView.Application.Commands
 {
-    public class ShortBreakeStarted
+    public class StartLongBreakeCommand: ICommand
     {
-        public ShortBreakeStarted(ushort breakeTime, DateTime startTime)
+        public StartLongBreakeCommand(ushort breakeTime, DateTime startTime)
         {
             BreakeTime = breakeTime;
             StartTime = startTime;

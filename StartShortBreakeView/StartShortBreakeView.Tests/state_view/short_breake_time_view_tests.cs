@@ -1,10 +1,10 @@
 ﻿using GWTTestBase;
-using StartShortBreakeView.Application.Events;
-using StartShortBreakeView.Application.Views;
-using StartShortBreakeView.UI;
+using StartLongBreakeView.Application.Events;
+using StartLongBreakeView.Application.Views;
+using StartLongBreakeView.UI;
 using Xunit;
 
-namespace StartShortBreakeView.Tests.state_view
+namespace StartLongBreakeView.Tests.state_view
 {
     public class suggest_short_breake_view_tests : ViewTest<StartShortBreakeViewModule>
     {

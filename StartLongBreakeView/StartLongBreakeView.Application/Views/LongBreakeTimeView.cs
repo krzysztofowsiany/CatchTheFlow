@@ -5,23 +5,23 @@ using StartLongBreakeView.Application.Events;
 
 namespace StartLongBreakeView.Application.Views
 {
-    public class ShortBreakeTimeView :BaseView
+    public class LongBreakeTimeView :BaseView
     {
         public ushort BreakeTime { get; private set; }
 
-        public ShortBreakeTimeView(ushort breakeTime) :base(null)
+        public LongBreakeTimeView(ushort breakeTime) :base(null)
         {
             BreakeTime = breakeTime;
         }
         
-        public ShortBreakeTimeView(IEventRepository eventRepository) :base(eventRepository)
+        public LongBreakeTimeView(IEventRepository eventRepository) :base(eventRepository)
         {
             RestoreState();
         }
 
         public override void RestoreState()
         {
-            var @event = GetEvents<ShortBreakeTimeUpdated>()
+            var @event = GetEvents<LongBreakeTimeUpdated>()
                 .FirstOrDefault();
 
             BreakeTime = @event.Time;
