@@ -68,6 +68,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartLongBreakeView.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartLongBreakeView.UI", "StartLongBreakeView\StartLongBreakeView.UI\StartLongBreakeView.UI.csproj", "{122C1F0F-3946-47AB-9123-A44DCB0B9F29}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PomodoroLongBreake", "PomodoroLongBreake", "{224CB551-F908-4484-A70D-5EF1E4274524}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroLongBreake.Tests", "PomodoroLongBreake\PomodoroLongBreake.Tests\PomodoroLongBreake.Tests.csproj", "{0DCD3FCB-0AC1-49D8-80AB-9EB3E45B612C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroLongBreake.Infrastructure", "PomodoroLongBreake\PomodoroLongBreake.Infrastructure\PomodoroLongBreake.Infrastructure.csproj", "{E6DC79DA-C42F-47CA-8010-A00DF17F448A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroLongBreake.Application", "PomodoroLongBreake\PomodoroLongBreake.Application\PomodoroLongBreake.Application.csproj", "{030E4CE6-601C-4DB8-AFA2-89997190D187}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -178,6 +186,18 @@ Global
 		{122C1F0F-3946-47AB-9123-A44DCB0B9F29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{122C1F0F-3946-47AB-9123-A44DCB0B9F29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{122C1F0F-3946-47AB-9123-A44DCB0B9F29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DCD3FCB-0AC1-49D8-80AB-9EB3E45B612C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DCD3FCB-0AC1-49D8-80AB-9EB3E45B612C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DCD3FCB-0AC1-49D8-80AB-9EB3E45B612C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DCD3FCB-0AC1-49D8-80AB-9EB3E45B612C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6DC79DA-C42F-47CA-8010-A00DF17F448A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6DC79DA-C42F-47CA-8010-A00DF17F448A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6DC79DA-C42F-47CA-8010-A00DF17F448A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6DC79DA-C42F-47CA-8010-A00DF17F448A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{030E4CE6-601C-4DB8-AFA2-89997190D187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{030E4CE6-601C-4DB8-AFA2-89997190D187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{030E4CE6-601C-4DB8-AFA2-89997190D187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{030E4CE6-601C-4DB8-AFA2-89997190D187}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4FA639AB-2AFB-4389-85C8-28D948B70C1A} = {C02CF756-D741-43F9-A7DA-DAB9793449B1}
@@ -202,5 +222,8 @@ Global
 		{14F7D265-6612-4AD5-A1D9-0BD630697EA1} = {A4987B2D-9BF8-4BB7-A792-1D03D9AF45FE}
 		{9126540C-FE0D-40EF-8AC6-28F07DFE1EC7} = {A4987B2D-9BF8-4BB7-A792-1D03D9AF45FE}
 		{122C1F0F-3946-47AB-9123-A44DCB0B9F29} = {A4987B2D-9BF8-4BB7-A792-1D03D9AF45FE}
+		{0DCD3FCB-0AC1-49D8-80AB-9EB3E45B612C} = {224CB551-F908-4484-A70D-5EF1E4274524}
+		{E6DC79DA-C42F-47CA-8010-A00DF17F448A} = {224CB551-F908-4484-A70D-5EF1E4274524}
+		{030E4CE6-601C-4DB8-AFA2-89997190D187} = {224CB551-F908-4484-A70D-5EF1E4274524}
 	EndGlobalSection
 EndGlobal

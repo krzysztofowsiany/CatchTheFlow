@@ -3,21 +3,20 @@ using System.Reactive.Linq;
 using CQRSLib;
 using CQRSLib.DateTime;
 using EventBus;
-using PomodoroShortBreake.Application.Commands;
-using PomodoroShortBreake.Application.Events;
-using PomodoroShortBreake.Application.Views;
-using DateTime = System.DateTime;
+using PomodoroLongBreake.Application.Commands;
+using PomodoroLongBreake.Application.Events;
+using PomodoroLongBreake.Application.Views;
 
-namespace PomodoroShortBreake.Infrastructure
+namespace PomodoroLongBreake.Infrastructure
 {
-    public class PomodoroShortBreakeEventListener
+    public class PomodoroLongBreakeEventListener
     {
         private readonly IEventBus _eventBus;
         private readonly ICommandBus _commandBus;
         private readonly IEventRepository _eventRepository;
         private readonly IDateTime _dateTime;
 
-        public PomodoroShortBreakeEventListener(
+        public PomodoroLongBreakeEventListener(
             IEventBus eventBus,
             IDateTime dateTime,
             ICommandBus commandBus,
@@ -28,21 +27,21 @@ namespace PomodoroShortBreake.Infrastructure
             _eventRepository = eventRepository;
             _dateTime = dateTime;
 
-            SubscribeToShortBreakeStarted();
+            SubscribeToLongBreakeStarted();
         }
 
-        private void SubscribeToShortBreakeStarted()
+        private void SubscribeToLongBreakeStarted()
         {
-            _eventBus.Subscribe<ShortBreakeStarted>(@event =>
+            _eventBus.Subscribe<LongBreakeStarted>(@event =>
             {
-                var view = new ShortBreakeStartedInformationView(_eventRepository);
+                var view = new LongBreakeStartedInformationView(_eventRepository);
 
                 Observable
                     .Timer(_dateTime.DueTime(view.BreakeTime))
                     .Subscribe(
                         onNext =>
                         {
-                            _commandBus.Send(new StopShortBreakeCommand(
+                            _commandBus.Send(new StopLongBreakeCommand(
                                 view.BreakeTime,
                                 view.StartTime.AddMinutes(view.BreakeTime)));
                         }

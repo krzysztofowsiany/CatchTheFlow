@@ -112,6 +112,10 @@
         <Project>{b2a273c5-3dbc-40bf-a1a6-361a920e3f05}</Project>
         <Name>EventBus</Name>
       </ProjectReference>
+      <ProjectReference Include="..\PomodoroLongBreake\PomodoroLongBreake.Infrastructure\PomodoroLongBreake.Infrastructure.csproj">
+        <Project>{e6dc79da-c42f-47ca-8010-a00df17f448a}</Project>
+        <Name>PomodoroLongBreake.Infrastructure</Name>
+      </ProjectReference>
       <ProjectReference Include="..\PomodoroShortBreake\PomodoroShortBreake.Infrastructure\PomodoroShortBreake.Infrastructure.csproj">
         <Project>{60abaa84-1c7b-460b-bdb4-232a56f55769}</Project>
         <Name>PomodoroShortBreake.Infrastructure</Name>

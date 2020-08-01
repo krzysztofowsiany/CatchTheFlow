@@ -3,6 +3,7 @@ using Autofac;
 using CQRSLib;
 using EventBus;
 using PomodoroShortBreake.Infrastructure;
+using PomodoroLongBreake.Infrastructure;
 using PomodoroWork;
 using Sound;
 using StartLongBreakeView.UI;
@@ -39,6 +40,7 @@ namespace CatchTheFlow
             builder.RegisterModule(new StartWorkViewModule());
             builder.RegisterModule(new StartShortBreakeViewModule());
             builder.RegisterModule(new PomodoroShortBreakeModule());
+            builder.RegisterModule(new PomodoroLongBreakeModule());
             builder.RegisterModule(new SuggestionModule());
             builder.RegisterModule(new StartLongBreakeViewModule());
 
