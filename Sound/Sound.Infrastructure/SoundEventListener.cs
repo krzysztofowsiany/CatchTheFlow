@@ -1,10 +1,8 @@
 ﻿using CQRSLib;
-using CQRSLib.DateTime;
 using EventBus;
 using Sound.Application.Commands;
 using Sound.Application.Views;
 using Sound.Application.Events;
-using DateTime = System.DateTime;
 
 namespace Sound.Infrastructure
 {
@@ -13,16 +11,13 @@ namespace Sound.Infrastructure
         private readonly IEventBus _eventBus;
         private readonly ICommandBus _commandBus;
         private readonly IEventRepository _eventRepository;
-        private readonly IDateTime _dateTime;
 
         public SoundEventListener(
             IEventBus eventBus, 
-            IDateTime dateTime,
             ICommandBus commandBus,
             IEventRepository eventRepository)
         {
             _eventBus = eventBus;
-            _dateTime = dateTime;
             _commandBus = commandBus;
             _eventRepository = eventRepository;
             
@@ -30,9 +25,11 @@ namespace Sound.Infrastructure
             SubscribeToWorkStarted();
             SubscribeToShortBreakeStarted();
             SubscribeToShortBreakeStopped();
+            SubscribeToLongBreakeStarted();
+            SubscribeToLongBreakeStopped();
         }
 
-        private void SubscribeToWorkStarted()
+        private void SubscribeToShortBreakeStarted()
         {
             _eventBus.Subscribe<ShortBreakeStarted>(@event =>
             {
@@ -42,7 +39,17 @@ namespace Sound.Infrastructure
             });
         }
         
-        private void SubscribeToShortBreakeStarted()
+        private void SubscribeToLongBreakeStarted()
+        {
+            _eventBus.Subscribe<LongBreakeStarted>(@event =>
+            {
+                var view = new SoundLongBreakeInformationView(_eventRepository);
+
+                _commandBus.Send(new StartPlayCommand(view.Sound));
+            });
+        }
+        
+        private void SubscribeToWorkStarted()
         {
             _eventBus.Subscribe<WorkStarted>(@event =>
             {
@@ -67,6 +74,16 @@ namespace Sound.Infrastructure
             _eventBus.Subscribe<ShortBreakeStopped>(@event =>
             {
                 var view = new ShortBreakeStopTimeView(_eventRepository);
+
+                _commandBus.Send(new StopPlayCommand (view.StopTime));
+            });
+        }
+        
+        private void SubscribeToLongBreakeStopped()
+        {
+            _eventBus.Subscribe<LongBreakeStopped>(@event =>
+            {
+                var view = new LongBreakeStopTimeView(_eventRepository);
 
                 _commandBus.Send(new StopPlayCommand (view.StopTime));
             });

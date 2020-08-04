@@ -71,12 +71,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="state_change\FakeSoundPlayer.cs" />
+    <Compile Include="state_change\long_breake_started_command_tests.cs" />
     <Compile Include="state_change\short_break_stopped_command_tests.cs" />
     <Compile Include="state_change\sound_module.cs" />
     <Compile Include="state_change\short_breake_started_command_tests.cs" />
     <Compile Include="state_change\work_started_command_tests.cs" />
     <Compile Include="state_change\work_stopped_command_tests.cs" />
     <Compile Include="state_view\short_breake_stopped_time_view_tests.cs" />
+    <Compile Include="state_view\sound_long_breake_information_view_tests.cs" />
     <Compile Include="state_view\sound_short_breake_information_view_tests.cs" />
     <Compile Include="state_view\sound_worker_information_view_tests.cs" />
     <Compile Include="state_view\work_stopped_time_view_tests.cs" />
@@ -112,6 +114,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sounds\long_breake_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\long_breake_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="sounds\short_breake_1.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
