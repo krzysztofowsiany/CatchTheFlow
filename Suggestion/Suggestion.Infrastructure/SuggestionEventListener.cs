@@ -25,6 +25,7 @@ namespace Suggestion.Infrastructure
 
             SubscribeToWorkStarted();
             SubscribeToShortBreakeStopped();
+            SubscribeToLongBreakeStopped();
         }
 
         private void  SubscribeToShortBreakeStopped()
@@ -35,6 +36,17 @@ namespace Suggestion.Infrastructure
                     _commandBus.Send(
                         new SuggestWorkCommand(view.WorkTime, view.StopTime)
                     );
+            });
+        }
+        
+        private void  SubscribeToLongBreakeStopped()
+        {
+            _eventBus.Subscribe<LongBreakeStopped>(@event =>
+            {
+                var view = new LongBreakeStoppedInformation(_eventRepository);
+                _commandBus.Send(
+                    new SuggestWorkCommand(view.WorkTime, view.StopTime)
+                );
             });
         }
         

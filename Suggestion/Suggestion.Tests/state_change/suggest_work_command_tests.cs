@@ -9,7 +9,7 @@ namespace Suggestion.Tests.state_change
     public class suggest_work_command_tests : CommandTest<suggestion_module, SuggestWorkCommand>
     {
         [Fact]
-        public void when_suggest_short_breake_command_then_suggested_shor_break()
+        public void when_suggest_work_command_then_suggested_work()
         {
             When(new SuggestWorkCommand(
                 25,
