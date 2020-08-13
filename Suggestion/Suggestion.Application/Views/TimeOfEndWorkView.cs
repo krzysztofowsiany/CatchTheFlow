@@ -30,7 +30,7 @@ namespace Suggestion.Application.Views
             var workStopped = GetEvents<WorkStopped>()
                 .FirstOrDefault();
 
-            var eventNames = GetNamesOfEvents();
+            var eventNames = _eventRepository.GetNamesOfEvents();
             
             if (workStopped != null)
             {

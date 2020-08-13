@@ -23,10 +23,6 @@ namespace Sound.Tests.state_change
             
             builder.RegisterType<SoundPlayerService>();
             
-            builder.RegisterType<EventRepository>()
-                .As<IEventRepository>()
-                .SingleInstance();
-            
             builder.RegisterType<FakeSoundPlayer>()
                 .As<ISoundPlayer>()
                 .SingleInstance();

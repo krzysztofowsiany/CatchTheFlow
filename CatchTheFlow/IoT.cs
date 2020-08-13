@@ -31,7 +31,7 @@ namespace CatchTheFlow
                 .As<ICommandBus>()
                 .SingleInstance();
             
-            builder.RegisterType<EventRepository>()
+            builder.RegisterType<LiteDBEventRepository>()
                 .As<IEventRepository>()
                 .SingleInstance();
             

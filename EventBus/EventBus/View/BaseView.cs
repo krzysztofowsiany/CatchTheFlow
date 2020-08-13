@@ -1,12 +1,10 @@
 using System.Collections.Generic;
-using System.Linq;
-using EventBus.Extensions;
 
 namespace EventBus.View
 {
     public abstract class BaseView
     {
-        protected IEventRepository _eventRepository;
+        protected readonly IEventRepository _eventRepository;
 
         protected BaseView(IEventRepository eventRepository)
         {
@@ -19,17 +17,7 @@ namespace EventBus.View
             where TEvent : class
         {
             var typeName = typeof(TEvent).Name;
-            var events = _eventRepository.Events
-                .Where(e => e.Type == typeName)
-                .OrderByDescending(e=> e.Timestamp)
-                .Select(e => e.Data.Deserialize<TEvent>());
-
-            return events;
+            return _eventRepository.GetEvents<TEvent>(typeName);
         }
-
-        protected IEnumerable<string> GetNamesOfEvents()
-            => _eventRepository.Events
-                .OrderByDescending(e=> e.Timestamp)
-                .Select(e => e.Type);
     }
 }

@@ -5,6 +5,10 @@ namespace EventBus
     public interface IEventRepository
     {
         void Add(Event @event);
-        IList<Event> Events { get; }
+
+        IEnumerable<TEvent> GetEvents<TEvent>(string typeName)
+            where TEvent : class;
+
+        IEnumerable<string> GetNamesOfEvents();
     }
 }

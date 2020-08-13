@@ -26,11 +26,7 @@ namespace Sound
                 .As<ICommandHandler<StartPlayCommand>>();
             
             builder.RegisterType<SoundPlayerService>();
-            
-            builder.RegisterType<EventRepository>()
-                .As<IEventRepository>()
-                .SingleInstance();
-            
+           
             builder.RegisterType<SoundPlayer>()
                 .As<ISoundPlayer>()
                 .SingleInstance();
