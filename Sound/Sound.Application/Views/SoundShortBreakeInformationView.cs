@@ -8,7 +8,7 @@ namespace Sound.Application.Views
 {
     public class SoundShortBreakeInformationView :BaseView 
     {
-        public string Sound { get; private set; }
+        public string Sound { get; private set; } = "short_breake_1.mp3";
 
         public SoundShortBreakeInformationView(string sound): base(null)
         {
@@ -25,7 +25,8 @@ namespace Sound.Application.Views
             var @event = GetEvents<ShortBreakeSoundUpdated>()
                 .FirstOrDefault();
 
-            Sound = @event?.Sound;
+            if (@event != null)
+                Sound = @event.Sound;
         }
     }
 }

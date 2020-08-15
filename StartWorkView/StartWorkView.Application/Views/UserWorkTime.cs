@@ -7,7 +7,7 @@ namespace StartWorkView.Application.Views
 {
     public class UserWorkTime :BaseView
     {
-        public ushort WorkTime { get; private set; }
+        public ushort WorkTime { get; private set; } = 25;
 
         public UserWorkTime(ushort workTime) :base(null)
         {
@@ -24,7 +24,8 @@ namespace StartWorkView.Application.Views
             var @event = GetEvents<WorkTimeUpdated>()
                 .FirstOrDefault();
 
-            WorkTime = @event.WorkTime;
+            if (@event != null)
+                WorkTime = @event.WorkTime;
         }
     }
 }

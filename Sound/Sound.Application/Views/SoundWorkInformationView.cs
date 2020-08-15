@@ -8,7 +8,7 @@ namespace Sound.Application.Views
 {
     public class SoundWorkInformationView :BaseView 
     {
-        public string Sound { get; private set; }
+        public string Sound { get; private set; } = "work_2.mp3";
 
         public SoundWorkInformationView(string sound): base(null)
         {
@@ -25,7 +25,8 @@ namespace Sound.Application.Views
             var @event = GetEvents<WorkSoundUpdated>()
                 .FirstOrDefault();
 
-            Sound = @event?.Sound;
+            if (@event != null)
+                Sound = @event.Sound;
         }
     }
 }

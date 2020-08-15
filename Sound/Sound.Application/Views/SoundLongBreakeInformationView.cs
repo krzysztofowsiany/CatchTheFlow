@@ -6,10 +6,10 @@ using EventBus.View;
 
 namespace Sound.Application.Views
 {
-    public class SoundLongBreakeInformationView :BaseView 
+    public class SoundLongBreakeInformationView :BaseView
     {
-        public string Sound { get; private set; }
-
+        public string Sound { get; private set; } = "long_breake_1.mp3";
+        
         public SoundLongBreakeInformationView(string sound): base(null)
         {
             Sound = sound;
@@ -25,7 +25,8 @@ namespace Sound.Application.Views
             var @event = GetEvents<LongBreakeSoundUpdated>()
                 .FirstOrDefault();
 
-            Sound = @event?.Sound;
+            if (@event != null)
+                Sound = @event.Sound;
         }
     }
 }

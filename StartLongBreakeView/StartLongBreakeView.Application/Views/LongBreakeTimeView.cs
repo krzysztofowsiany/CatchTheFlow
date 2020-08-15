@@ -7,7 +7,7 @@ namespace StartLongBreakeView.Application.Views
 {
     public class LongBreakeTimeView :BaseView
     {
-        public ushort BreakeTime { get; private set; }
+        public ushort BreakeTime { get; private set; } = 15;
 
         public LongBreakeTimeView(ushort breakeTime) :base(null)
         {
@@ -24,7 +24,8 @@ namespace StartLongBreakeView.Application.Views
             var @event = GetEvents<LongBreakeTimeUpdated>()
                 .FirstOrDefault();
 
-            BreakeTime = @event.Time;
+            if (@event != null)
+                BreakeTime = @event.Time;
         }
     }
 }
