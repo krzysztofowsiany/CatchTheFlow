@@ -9,6 +9,7 @@
         <Button Height="20" Click="ButtonBase_OnClick">Start</Button>
         <Button Height="20" Click="ButtonStartShortBreake_OnClick">Start ShortBreake</Button>
         <Button Height="20" Click="ButtonStartLongBreake_OnClick">Start LongBreake</Button>
+        <Button Height="20" Click="ButtonConfig_OnClick">Config</Button>
 
     </StackPanel>
 </Window>

@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using Autofac;
+using Configuration.UI;
 using StartLongBreakeView.UI;
 using StartWorkView.UI;
 
@@ -23,9 +24,15 @@ namespace CatchTheFlow
             dialog.Show();
         }
 
-        private void ButtonStartLongBreake_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonStartLongBreake_OnClick(object sendeButtonConfig_OnClick, RoutedEventArgs e)
         {
             var dialog = IoT.Container.Resolve<StartLongBreakeDialog>();
+            dialog.Show();
+        }
+
+        private void ButtonConfig_OnClick(object sender, RoutedEventArgs e)
+        {
+            var dialog = IoT.Container.Resolve<ConfigurePomodoroTimesDialog>();
             dialog.Show();
         }
     }

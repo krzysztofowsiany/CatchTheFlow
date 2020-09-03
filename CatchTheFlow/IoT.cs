@@ -1,5 +1,6 @@
 
 using Autofac;
+using Configuration.UI;
 using CQRSLib;
 using EventBus;
 using PomodoroShortBreake.Infrastructure;
@@ -43,6 +44,7 @@ namespace CatchTheFlow
             builder.RegisterModule(new PomodoroLongBreakeModule());
             builder.RegisterModule(new SuggestionModule());
             builder.RegisterModule(new StartLongBreakeViewModule());
+            builder.RegisterModule(new SettingsModule());
 
             builder.RegisterType<CatchTheFlowEventListener>()
                 .AutoActivate();

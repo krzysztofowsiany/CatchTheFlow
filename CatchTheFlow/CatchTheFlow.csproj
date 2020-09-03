@@ -104,6 +104,10 @@
         <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\Configuration\Configuration.UI\Configuration.UI.csproj">
+        <Project>{1025983f-3ae5-433a-a94f-338628d4690e}</Project>
+        <Name>Configuration.UI</Name>
+      </ProjectReference>
       <ProjectReference Include="..\CQRSLib\CQRSLib.csproj">
         <Project>{28030da9-13cb-42e9-8a07-360d6c42dd66}</Project>
         <Name>CQRSLib</Name>
