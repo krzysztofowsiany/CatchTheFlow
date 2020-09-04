@@ -38,8 +38,8 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="CommandHandlers\SaveSettingsCommandHandler.cs" />
-        <Compile Include="Commands\SaveSettingsCommand.cs" />
+        <Compile Include="CommandHandlers\SaveTimeSettingsCommandHandler.cs" />
+        <Compile Include="Commands\SaveTimeSettingsCommand.cs" />
         <Compile Include="Events\ShortBreakeTimeUpdated.cs" />
         <Compile Include="Events\LongBreakeTimeUpdated.cs" />
         <Compile Include="Events\WorkTimeUpdated.cs" />

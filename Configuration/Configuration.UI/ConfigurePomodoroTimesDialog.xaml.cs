@@ -30,7 +30,7 @@ namespace Configuration.UI
             var shortBreakeTime = (ushort)ShortBreakeTime.Value;
             var longBreakeTime = (ushort)LongBreakeTime.Value;
             
-            _commandBus.Send(new SaveSettingsCommand(
+            _commandBus.Send(new SaveTimeSettingsCommand(
                 workTime, 
                 shortBreakeTime, 
                 longBreakeTime));

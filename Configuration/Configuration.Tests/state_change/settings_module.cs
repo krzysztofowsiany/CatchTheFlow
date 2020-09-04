@@ -12,8 +12,8 @@ namespace Configuration.Tests.state_change
         {
             base.Load(builder);
 
-            builder.RegisterType<SaveSettingsCommandHandler>()
-                .As<ICommandHandler<SaveSettingsCommand>>();
+            builder.RegisterType<SaveTimeSettingsCommandHandler>()
+                .As<ICommandHandler<SaveTimeSettingsCommand>>();
             
             builder.RegisterType<fake_date_time>()
                 .As<IDateTime>();

@@ -71,7 +71,7 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="state_change\fake_date_time.cs" />
         <Compile Include="state_change\settings_module.cs" />
-        <Compile Include="state_change\save_settings_command_tests.cs" />
+        <Compile Include="state_change\save_time_settings_command_tests.cs" />
         <Compile Include="state_view\time_configuration_view_tests.cs" />
     </ItemGroup>
     <ItemGroup>

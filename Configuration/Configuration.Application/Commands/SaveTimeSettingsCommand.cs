@@ -2,9 +2,9 @@ using CQRSLib;
 
 namespace Configuration.Application.Commands
 {
-    public class SaveSettingsCommand: ICommand
+    public class SaveTimeSettingsCommand: ICommand
     {
-        public SaveSettingsCommand(ushort workTime, ushort shortBreakeTime, ushort longBreakeTime)
+        public SaveTimeSettingsCommand(ushort workTime, ushort shortBreakeTime, ushort longBreakeTime)
         {
             WorkTime = workTime;
             ShortBreakeTime = shortBreakeTime;

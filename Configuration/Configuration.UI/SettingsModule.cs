@@ -17,8 +17,8 @@ namespace Configuration.UI
         {
             base.Load(builder);
 
-            builder.RegisterType<SaveSettingsCommandHandler>()
-                .As<ICommandHandler<SaveSettingsCommand>>();
+            builder.RegisterType<SaveTimeSettingsCommandHandler>()
+                .As<ICommandHandler<SaveTimeSettingsCommand>>();
             
             builder.RegisterType<DateTime>()
                 .As<IDateTime>();

@@ -5,17 +5,17 @@ using Configuration.Application.Events;
 
 namespace Configuration.Application.CommandHandlers
 {
-    public class SaveSettingsCommandHandler: ICommandHandler<SaveSettingsCommand>
+    public class SaveTimeSettingsCommandHandler: ICommandHandler<SaveTimeSettingsCommand>
     {
         private readonly IEventBus _eventBus;
 
-        public SaveSettingsCommandHandler(
+        public SaveTimeSettingsCommandHandler(
             IEventBus eventBus)
         {
             _eventBus = eventBus;
         }
         
-        public void Handle(SaveSettingsCommand command)
+        public void Handle(SaveTimeSettingsCommand command)
         {
           _eventBus.PushEvent(new WorkTimeUpdated(
               command.WorkTime)
