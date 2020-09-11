@@ -20,13 +20,20 @@ namespace Configuration.UI
             builder.RegisterType<SaveTimeSettingsCommandHandler>()
                 .As<ICommandHandler<SaveTimeSettingsCommand>>();
             
+            builder.RegisterType<SaveSoundSettingsCommandHandler>()
+                .As<ICommandHandler<SaveSoundSettingsCommand>>();
+            
             builder.RegisterType<DateTime>()
                 .As<IDateTime>();
             
             builder.RegisterType<ConfiguraitonTimesQueryHandler>()
                 .As<IQueryHandler<ConfiguraitonTimesQuery, TimeConfigurationView>>();
+            
+            builder.RegisterType<ConfiguraitonSoundsQueryHandler>()
+                .As<IQueryHandler<ConfiguraitonSoundsQuery, SoundConfigurationView>>();
 
             builder.RegisterType<ConfigurePomodoroTimesDialog>();
+            builder.RegisterType<ConfigurePomodoroSoundsDialog>();
         }
     }
 }

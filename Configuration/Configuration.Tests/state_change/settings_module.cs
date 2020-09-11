@@ -15,6 +15,9 @@ namespace Configuration.Tests.state_change
             builder.RegisterType<SaveTimeSettingsCommandHandler>()
                 .As<ICommandHandler<SaveTimeSettingsCommand>>();
             
+            builder.RegisterType<SaveSoundSettingsCommandHandler>()
+                .As<ICommandHandler<SaveSoundSettingsCommand>>();
+            
             builder.RegisterType<fake_date_time>()
                 .As<IDateTime>();
         }

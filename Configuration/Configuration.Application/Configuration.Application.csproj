@@ -38,14 +38,22 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="CommandHandlers\SaveSoundSettingsCommandHandler.cs" />
         <Compile Include="CommandHandlers\SaveTimeSettingsCommandHandler.cs" />
+        <Compile Include="Commands\SaveSoundSettingsCommand.cs" />
         <Compile Include="Commands\SaveTimeSettingsCommand.cs" />
+        <Compile Include="Events\LongBreakeSoundUpdated.cs" />
+        <Compile Include="Events\ShortBreakeSoundUpdated.cs" />
         <Compile Include="Events\ShortBreakeTimeUpdated.cs" />
         <Compile Include="Events\LongBreakeTimeUpdated.cs" />
+        <Compile Include="Events\WorkSoundUpdated.cs" />
         <Compile Include="Events\WorkTimeUpdated.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="QueryHandlers\ConfiguraitonSoundsQueryHandler.cs" />
         <Compile Include="QueryHandlers\ConfiguraitonTimesQueryHandler.cs" />
+        <Compile Include="Query\ConfiguraitonSoundsQuery.cs" />
         <Compile Include="Query\ConfiguraitonTimesQuery.cs" />
+        <Compile Include="Views\SoundConfigurationView.cs" />
         <Compile Include="Views\TimeConfigurationView.cs" />
     </ItemGroup>
     <ItemGroup>

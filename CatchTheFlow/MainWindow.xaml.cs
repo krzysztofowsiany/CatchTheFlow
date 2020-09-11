@@ -26,7 +26,7 @@ namespace CatchTheFlow
 
         private void ButtonStartLongBreake_OnClick(object sendeButtonConfig_OnClick, RoutedEventArgs e)
         {
-            var dialog = IoT.Container.Resolve<StartLongBreakeDialog>();
+            var dialog =  IoT.Container.Resolve<StartLongBreakeDialog>();
             dialog.Show();
         }
 
@@ -34,6 +34,12 @@ namespace CatchTheFlow
         {
             var dialog = IoT.Container.Resolve<ConfigurePomodoroTimesDialog>();
             dialog.Show();
+        }
+
+        private void ButtonConfig2_OnClick(object sender, RoutedEventArgs e)
+        {
+             var dialog = IoT.Container.Resolve<ConfigurePomodoroSoundsDialog>();
+                dialog.Show();
         }
     }
 }

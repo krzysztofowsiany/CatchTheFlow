@@ -84,6 +84,10 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="ConfigurePomodoroSoundsDialog.xaml.cs">
+          <DependentUpon>ConfigurePomodoroSoundsDialog.xaml</DependentUpon>
+          <SubType>Code</SubType>
+        </Compile>
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="ConfigurePomodoroTimesDialog.xaml.cs">
           <DependentUpon>ConfigurePomodoroTimesDialog.xaml</DependentUpon>
@@ -92,6 +96,10 @@
         <Compile Include="SettingsModule.cs" />
     </ItemGroup>
     <ItemGroup>
+      <Page Include="ConfigurePomodoroSoundsDialog.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <SubType>Designer</SubType>
+      </Page>
       <Page Include="ConfigurePomodoroTimesDialog.xaml">
         <Generator>MSBuild:Compile</Generator>
         <SubType>Designer</SubType>

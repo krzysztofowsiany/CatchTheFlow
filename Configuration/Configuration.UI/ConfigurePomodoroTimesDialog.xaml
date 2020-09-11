@@ -12,11 +12,11 @@
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20">
             <Label FontSize="20" VerticalAlignment="Center" Content="Długość bloku krótkiej przerwy [min]"></Label>
-            <xctk:IntegerUpDown FontSize="20" Width="100" VerticalAlignment="Center" Name="LongBreakeTime"/>
+            <xctk:IntegerUpDown FontSize="20" Width="100" VerticalAlignment="Center" Name="ShortBreakeTime"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20">
             <Label FontSize="20" VerticalAlignment="Center" Content="Długość bloku długiej przerwy [min]"></Label>
-            <xctk:IntegerUpDown FontSize="20" Width="100" VerticalAlignment="Center" Name="ShortBreakeTime"/>
+            <xctk:IntegerUpDown FontSize="20" Width="100" VerticalAlignment="Center" Name="LongBreakeTime"/>
             </StackPanel>
         <Button Margin="70 0 70 10" Height="45" FontSize="20" VerticalAlignment="Center" Click="SaveSettings">Zapisz ustawienia</Button>
     </StackPanel>
