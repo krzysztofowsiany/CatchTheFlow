@@ -172,6 +172,10 @@
         <Project>{c9119fb1-a52b-4e7a-91b8-88475437dccf}</Project>
         <Name>Suggestion.Infrastructure</Name>
       </ProjectReference>
+      <ProjectReference Include="..\WorkView\WorkView.UI\WorkView.UI.csproj">
+        <Project>{1ce4ce4c-2644-4470-9bdc-12653eeb39f5}</Project>
+        <Name>WorkView.UI</Name>
+      </ProjectReference>
     </ItemGroup>
     <ItemGroup>
       <Content Include="sounds\long_breake_1.mp3">

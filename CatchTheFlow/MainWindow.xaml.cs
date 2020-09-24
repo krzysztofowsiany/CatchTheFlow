@@ -3,6 +3,7 @@ using Autofac;
 using Configuration.UI;
 using StartLongBreakeView.UI;
 using StartWorkView.UI;
+using WorkView.UI;
 
 namespace CatchTheFlow
 {
@@ -40,6 +41,12 @@ namespace CatchTheFlow
         {
              var dialog = IoT.Container.Resolve<ConfigurePomodoroSoundsDialog>();
                 dialog.Show();
+        }
+
+        private void ButtonInterruptWork_OnClick(object sender, RoutedEventArgs e)
+        {
+            var dialog = IoT.Container.Resolve<WorkDialog>();
+            dialog.Show();
         }
     }
 }

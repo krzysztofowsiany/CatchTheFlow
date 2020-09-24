@@ -11,6 +11,7 @@
         <Button Height="20" Click="ButtonStartLongBreake_OnClick">Start LongBreake</Button>
         <Button Height="20" Click="ButtonConfig_OnClick">Config</Button>
         <Button Height="20" Click="ButtonConfig2_OnClick">Config2</Button>
+        <Button Height="20" Click="ButtonInterruptWork_OnClick">InterruptWork</Button>
 
     </StackPanel>
 </Window>

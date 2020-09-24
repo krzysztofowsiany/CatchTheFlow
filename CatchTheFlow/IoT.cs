@@ -10,6 +10,7 @@ using Sound;
 using StartLongBreakeView.UI;
 using StartWorkView.UI;
 using Suggestion.Infrastructure;
+using WorkView.UI;
 
 namespace CatchTheFlow
 {
@@ -45,6 +46,7 @@ namespace CatchTheFlow
             builder.RegisterModule(new SuggestionModule());
             builder.RegisterModule(new StartLongBreakeViewModule());
             builder.RegisterModule(new SettingsModule());
+            builder.RegisterModule(new WorkViewModule());
 
             builder.RegisterType<CatchTheFlowEventListener>()
                 .AutoActivate();
