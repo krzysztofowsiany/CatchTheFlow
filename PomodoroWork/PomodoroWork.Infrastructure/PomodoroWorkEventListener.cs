@@ -29,6 +29,17 @@ namespace PomodoroWork.Infrastructure
             _dateTime = dateTime;
 
             SubscribeToWorkStarted();
+            SubscribeToWorkInterrupted();
+        }
+
+        private void SubscribeToWorkInterrupted()
+        {
+            _eventBus.Subscribe<WorkInterrupted>(@event =>
+            {
+                _commandBus.Send(new StopWorkCommand(
+                    @event.WorkTime,
+                    DateTime.UtcNow));
+            });
         }
 
         private void SubscribeToWorkStarted()

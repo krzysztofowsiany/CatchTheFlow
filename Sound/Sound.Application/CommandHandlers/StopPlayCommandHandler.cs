@@ -21,7 +21,7 @@ namespace Sound.Application.CommandHandlers
         
         public void Handle(StopPlayCommand command)
         {
-           // _soundPlayerService.StopPlay(); 
+            _soundPlayerService.StopPlay(); 
             _eventBus.PushEvent(new SoundStopped());
         }
     }
