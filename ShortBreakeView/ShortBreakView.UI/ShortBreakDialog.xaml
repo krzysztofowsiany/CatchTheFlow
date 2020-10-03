@@ -1,0 +1,16 @@
+﻿<Window x:Class="ShortBreakView.UI.ShortBreakDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Krótka przerwa" Height="180" Width="400" >
+    <StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                       Orientation="Vertical" >
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">
+            <Label FontSize="20" VerticalAlignment="Center" Content="Czas krótkiej przerwy"></Label>
+            <TextBlock FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Name="ShortBreakTime"></TextBlock>
+        </StackPanel>
+        <Button Margin="70 0 70 10" Height="45" FontSize="20" VerticalAlignment="Center" Click="InterruptShortBrake">Przerwij krótką przerwę</Button>
+    </StackPanel>
+</Window>

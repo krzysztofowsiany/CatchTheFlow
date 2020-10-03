@@ -12,6 +12,7 @@
         <Button Height="20" Click="ButtonConfig_OnClick">Config</Button>
         <Button Height="20" Click="ButtonConfig2_OnClick">Config2</Button>
         <Button Height="20" Click="ButtonInterruptWork_OnClick">InterruptWork</Button>
+        <Button Height="20" Click="ButtonInterruptShortBreak_OnClick">InterruptShortBreak</Button>
 
     </StackPanel>
 </Window>

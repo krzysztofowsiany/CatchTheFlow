@@ -6,6 +6,7 @@ using EventBus;
 using PomodoroShortBreake.Infrastructure;
 using PomodoroLongBreake.Infrastructure;
 using PomodoroWork;
+using ShortBreakView.UI;
 using Sound;
 using StartLongBreakeView.UI;
 using StartWorkView.UI;
@@ -47,6 +48,7 @@ namespace CatchTheFlow
             builder.RegisterModule(new StartLongBreakeViewModule());
             builder.RegisterModule(new SettingsModule());
             builder.RegisterModule(new WorkViewModule());
+            builder.RegisterModule(new ShortBreakViewModule());
 
             builder.RegisterType<CatchTheFlowEventListener>()
                 .AutoActivate();

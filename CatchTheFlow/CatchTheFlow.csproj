@@ -128,6 +128,10 @@
         <Project>{f32049f3-552e-40a2-aa3b-a7ac353e8db8}</Project>
         <Name>PomodoroWork.Infrastructure</Name>
       </ProjectReference>
+      <ProjectReference Include="..\ShortBreakeView\ShortBreakView.UI\ShortBreakView.UI.csproj">
+        <Project>{83b0e0a9-d424-413e-92e2-4f78915ed8e1}</Project>
+        <Name>ShortBreakView.UI</Name>
+      </ProjectReference>
       <ProjectReference Include="..\Sound\Sound.Application\Sound.Application.csproj">
         <Project>{3c9d3d5a-e130-4dff-baf3-60bfb6f071e0}</Project>
         <Name>Sound.Application</Name>
