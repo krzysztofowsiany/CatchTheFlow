@@ -29,6 +29,17 @@ namespace PomodoroShortBreake.Infrastructure
             _dateTime = dateTime;
 
             SubscribeToShortBreakeStarted();
+            SubscribeToShortBreakeInterrupted();
+        }
+
+        private void SubscribeToShortBreakeInterrupted()
+        {
+            _eventBus.Subscribe<ShortBreakInterrupted>(@event =>
+            {
+                _commandBus.Send(new StopShortBreakeCommand(
+                    @event.WorkTime,
+                    DateTime.UtcNow));
+            });
         }
 
         private void SubscribeToShortBreakeStarted()

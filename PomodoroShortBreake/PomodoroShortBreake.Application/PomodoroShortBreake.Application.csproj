@@ -43,6 +43,7 @@
         <Compile Include="Events\ShortBreakeStarted.cs" />
         <Compile Include="Events\ShortBreakeStopped.cs" />
         <Compile Include="Events\ShortBreakeTimeUpdated.cs" />
+        <Compile Include="Events\ShortBreakInterrupted.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Views\ShortBreakeStartedInformationView.cs" />
     </ItemGroup>
