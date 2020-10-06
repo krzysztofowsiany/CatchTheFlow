@@ -38,7 +38,24 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="CommandHandlers\InterruptLongBreakCommandHandler.cs" />
+        <Compile Include="Commands\InterruptLongBreakCommand.cs" />
+        <Compile Include="Events\LongBreakeStarted.cs" />
+        <Compile Include="Events\LongBreakInterrupted.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="QueryHandlers\StartLongBreakTimeQueryHandler.cs" />
+        <Compile Include="Query\StartLongBreakTimeQuery.cs" />
+        <Compile Include="Views\StartLongBreakTimeView.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\CQRSLib\CQRSLib.csproj">
+        <Project>{28030da9-13cb-42e9-8a07-360d6c42dd66}</Project>
+        <Name>CQRSLib</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\..\EventBus\EventBus\EventBus.csproj">
+        <Project>{b2a273c5-3dbc-40bf-a1a6-361a920e3f05}</Project>
+        <Name>EventBus</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
