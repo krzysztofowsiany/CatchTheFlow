@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using Autofac;
 using Configuration.UI;
+using LongBreakView.UI;
 using ShortBreakView.UI;
 using StartLongBreakeView.UI;
 using StartWorkView.UI;
@@ -55,5 +56,12 @@ namespace CatchTheFlow
             var dialog = IoT.Container.Resolve<ShortBreakDialog>();
             dialog.Show();
         }
+        
+        private void ButtonInterruptLongBreak_OnClick(object sender, RoutedEventArgs e)
+        {
+            var dialog = IoT.Container.Resolve<LongBreakDialog>();
+            dialog.Show();
+        }
+        
     }
 }

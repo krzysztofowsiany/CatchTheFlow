@@ -116,6 +116,14 @@
         <Project>{b2a273c5-3dbc-40bf-a1a6-361a920e3f05}</Project>
         <Name>EventBus</Name>
       </ProjectReference>
+      <ProjectReference Include="..\LongBreakView\LongBreakView.Application\LongBreakView.Application.csproj">
+        <Project>{d30e5c22-cfad-4496-81f2-df444a95876a}</Project>
+        <Name>LongBreakView.Application</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\LongBreakView\LongBreakView.UI\LongBreakView.UI.csproj">
+        <Project>{25bf39a8-125f-4d21-88ed-9c93eeb2e426}</Project>
+        <Name>LongBreakView.UI</Name>
+      </ProjectReference>
       <ProjectReference Include="..\PomodoroLongBreake\PomodoroLongBreake.Infrastructure\PomodoroLongBreake.Infrastructure.csproj">
         <Project>{e6dc79da-c42f-47ca-8010-a00df17f448a}</Project>
         <Name>PomodoroLongBreake.Infrastructure</Name>
