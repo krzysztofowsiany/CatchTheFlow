@@ -43,6 +43,7 @@
         <Compile Include="Events\LongBreakeStarted.cs" />
         <Compile Include="Events\LongBreakeStopped.cs" />
         <Compile Include="Events\LongBreakeTimeUpdated.cs" />
+        <Compile Include="Events\LongBreakInterrupted.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Views\LongBreakeStartedInformationView.cs" />
     </ItemGroup>

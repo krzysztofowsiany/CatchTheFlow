@@ -6,6 +6,7 @@ using EventBus;
 using PomodoroLongBreake.Application.Commands;
 using PomodoroLongBreake.Application.Events;
 using PomodoroLongBreake.Application.Views;
+using DateTime = System.DateTime;
 
 namespace PomodoroLongBreake.Infrastructure
 {
@@ -28,6 +29,17 @@ namespace PomodoroLongBreake.Infrastructure
             _dateTime = dateTime;
 
             SubscribeToLongBreakeStarted();
+            SubscribeToLongBreakeInterrupted();
+        }
+
+        private void SubscribeToLongBreakeInterrupted()
+        {
+            _eventBus.Subscribe<LongBreakInterrupted>(@event =>
+            {
+                _commandBus.Send(new StopLongBreakeCommand(
+                    @event.WorkTime,
+                    DateTime.UtcNow));
+            });
         }
 
         private void SubscribeToLongBreakeStarted()
