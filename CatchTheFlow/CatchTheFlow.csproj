@@ -1,213 +1,222 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{C795C6C9-563C-431B-96FC-330C218A955B}</ProjectGuid>
-        <OutputType>WinExe</OutputType>
-        <RootNamespace>CatchTheFlow</RootNamespace>
-        <AssemblyName>CatchTheFlow</AssemblyName>
-        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-        <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-        <WarningLevel>4</WarningLevel>
-        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>false</Optimize>
-        <OutputPath>bin\Debug\</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>bin\Release\</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="Autofac, Version=5.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da">
-          <HintPath>..\packages\Autofac.5.2.0\lib\net461\Autofac.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
-          <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="mscorlib" />
-        <Reference Include="System" />
-        <Reference Include="System.ComponentModel.Composition" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-          <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
-          <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="System.Xml" />
-        <Reference Include="System.Xaml">
-            <RequiredTargetFramework>4.0</RequiredTargetFramework>
-        </Reference>
-        <Reference Include="WindowsBase" />
-        <Reference Include="PresentationCore" />
-        <Reference Include="PresentationFramework" />
-    </ItemGroup>
-    <ItemGroup>
-        <ApplicationDefinition Include="App.xaml">
-            <Generator>MSBuild:Compile</Generator>
-            <SubType>Designer</SubType>
-        </ApplicationDefinition>
-        <Compile Include="CatchTheFlowEventListener.cs" />
-        <Compile Include="Properties\Annotations.cs" />
-        <Compile Include="WorkTimeViewMode.cs" />
-        <Page Include="MainWindow.xaml">
-            <Generator>MSBuild:Compile</Generator>
-            <SubType>Designer</SubType>
-        </Page>
-        <Compile Include="App.xaml.cs">
-            <DependentUpon>App.xaml</DependentUpon>
-            <SubType>Code</SubType>
-        </Compile>
-        <Compile Include="IoT.cs" />
-        <Compile Include="MainWindow.xaml.cs">
-            <DependentUpon>MainWindow.xaml</DependentUpon>
-            <SubType>Code</SubType>
-        </Compile>
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="Properties\AssemblyInfo.cs">
-            <SubType>Code</SubType>
-        </Compile>
-        <Compile Include="Properties\Resources.Designer.cs">
-            <AutoGen>True</AutoGen>
-            <DesignTime>True</DesignTime>
-            <DependentUpon>Resources.resx</DependentUpon>
-        </Compile>
-        <EmbeddedResource Include="Properties\Resources.resx">
-            <Generator>ResXFileCodeGenerator</Generator>
-            <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-        </EmbeddedResource>
-    </ItemGroup>
-    <ItemGroup>
-        <None Include="App.config" />
-        <None Include="packages.config" />
-    </ItemGroup>
-    <ItemGroup>
-      <ProjectReference Include="..\Configuration\Configuration.UI\Configuration.UI.csproj">
-        <Project>{1025983f-3ae5-433a-a94f-338628d4690e}</Project>
-        <Name>Configuration.UI</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\CQRSLib\CQRSLib.csproj">
-        <Project>{28030da9-13cb-42e9-8a07-360d6c42dd66}</Project>
-        <Name>CQRSLib</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\EventBus\EventBus\EventBus.csproj">
-        <Project>{b2a273c5-3dbc-40bf-a1a6-361a920e3f05}</Project>
-        <Name>EventBus</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\LongBreakView\LongBreakView.Application\LongBreakView.Application.csproj">
-        <Project>{d30e5c22-cfad-4496-81f2-df444a95876a}</Project>
-        <Name>LongBreakView.Application</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\LongBreakView\LongBreakView.UI\LongBreakView.UI.csproj">
-        <Project>{25bf39a8-125f-4d21-88ed-9c93eeb2e426}</Project>
-        <Name>LongBreakView.UI</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\PomodoroLongBreake\PomodoroLongBreake.Infrastructure\PomodoroLongBreake.Infrastructure.csproj">
-        <Project>{e6dc79da-c42f-47ca-8010-a00df17f448a}</Project>
-        <Name>PomodoroLongBreake.Infrastructure</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\PomodoroShortBreake\PomodoroShortBreake.Infrastructure\PomodoroShortBreake.Infrastructure.csproj">
-        <Project>{60abaa84-1c7b-460b-bdb4-232a56f55769}</Project>
-        <Name>PomodoroShortBreake.Infrastructure</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\PomodoroWork\PomodoroWork.Infrastructure\PomodoroWork.Infrastructure.csproj">
-        <Project>{f32049f3-552e-40a2-aa3b-a7ac353e8db8}</Project>
-        <Name>PomodoroWork.Infrastructure</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\ShortBreakeView\ShortBreakView.UI\ShortBreakView.UI.csproj">
-        <Project>{83b0e0a9-d424-413e-92e2-4f78915ed8e1}</Project>
-        <Name>ShortBreakView.UI</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\Sound\Sound.Application\Sound.Application.csproj">
-        <Project>{3c9d3d5a-e130-4dff-baf3-60bfb6f071e0}</Project>
-        <Name>Sound.Application</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\Sound\Sound.Infrastructure\Sound.Infrastructure.csproj">
-        <Project>{4fa639ab-2afb-4389-85c8-28d948b70c1a}</Project>
-        <Name>Sound.Infrastructure</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\StartLongBreakeView\StartLongBreakeView.Application\StartLongBreakeView.Application.csproj">
-        <Project>{14f7d265-6612-4ad5-a1d9-0bd630697ea1}</Project>
-        <Name>StartLongBreakeView.Application</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\StartLongBreakeView\StartLongBreakeView.UI\StartLongBreakeView.UI.csproj">
-        <Project>{122c1f0f-3946-47ab-9123-a44dcb0b9f29}</Project>
-        <Name>StartLongBreakeView.UI</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\StartShortBreakeView\StartShortBreakeView.Application\StartShortBreakeView.Application.csproj">
-        <Project>{08ed1a40-1e25-4084-8147-9c5bcba2e01c}</Project>
-        <Name>StartShortBreakeView.Application</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\StartShortBreakeView\StartShortBreakeView.UI\StartShortBreakeView.UI.csproj">
-        <Project>{e04de452-7959-4265-8e2c-841d636a8d74}</Project>
-        <Name>StartShortBreakeView.UI</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\StartWorkView\StartWorkView.Application\StartWorkView.Application.csproj">
-        <Project>{30a07d01-22bb-40c6-8025-fccbcecb548c}</Project>
-        <Name>StartWorkView.Application</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\StartWorkView\StartWorkView.Infrastructure\StartWorkView.Infrastructure.csproj">
-        <Project>{22e9f66a-d363-4d06-8c20-878ab901cc14}</Project>
-        <Name>StartWorkView.Infrastructure</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\StartWorkView\StartWorkView.UI\StartWorkView.UI.csproj">
-        <Project>{9ee05091-854a-4563-9707-23d02238ebe8}</Project>
-        <Name>StartWorkView.UI</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\Suggestion\Suggestion.Application\Suggestion.Application.csproj">
-        <Project>{b4645668-552c-4731-aab7-cad0f115afab}</Project>
-        <Name>Suggestion.Application</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\Suggestion\Suggestion.Infrastructure\Suggestion.Infrastructure.csproj">
-        <Project>{c9119fb1-a52b-4e7a-91b8-88475437dccf}</Project>
-        <Name>Suggestion.Infrastructure</Name>
-      </ProjectReference>
-      <ProjectReference Include="..\WorkView\WorkView.UI\WorkView.UI.csproj">
-        <Project>{1ce4ce4c-2644-4470-9bdc-12653eeb39f5}</Project>
-        <Name>WorkView.UI</Name>
-      </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-      <Content Include="sounds\long_breake_1.mp3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="sounds\long_breake_2.mp3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="sounds\short_breake_1.mp3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="sounds\short_breake_2.mp3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="sounds\work_1.mp3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="sounds\work_2.mp3">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C795C6C9-563C-431B-96FC-330C218A955B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CatchTheFlow</RootNamespace>
+    <AssemblyName>CatchTheFlow</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\CatchTheFlowIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=5.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da">
+      <HintPath>..\packages\Autofac.5.2.0\lib\net461\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="CatchTheFlowEventListener.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="WorkTimeViewMode.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IoT.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Configuration\Configuration.UI\Configuration.UI.csproj">
+      <Project>{1025983f-3ae5-433a-a94f-338628d4690e}</Project>
+      <Name>Configuration.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CQRSLib\CQRSLib.csproj">
+      <Project>{28030da9-13cb-42e9-8a07-360d6c42dd66}</Project>
+      <Name>CQRSLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventBus\EventBus\EventBus.csproj">
+      <Project>{b2a273c5-3dbc-40bf-a1a6-361a920e3f05}</Project>
+      <Name>EventBus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LongBreakView\LongBreakView.Application\LongBreakView.Application.csproj">
+      <Project>{d30e5c22-cfad-4496-81f2-df444a95876a}</Project>
+      <Name>LongBreakView.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LongBreakView\LongBreakView.UI\LongBreakView.UI.csproj">
+      <Project>{25bf39a8-125f-4d21-88ed-9c93eeb2e426}</Project>
+      <Name>LongBreakView.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PomodoroLongBreake\PomodoroLongBreake.Infrastructure\PomodoroLongBreake.Infrastructure.csproj">
+      <Project>{e6dc79da-c42f-47ca-8010-a00df17f448a}</Project>
+      <Name>PomodoroLongBreake.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PomodoroShortBreake\PomodoroShortBreake.Infrastructure\PomodoroShortBreake.Infrastructure.csproj">
+      <Project>{60abaa84-1c7b-460b-bdb4-232a56f55769}</Project>
+      <Name>PomodoroShortBreake.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PomodoroWork\PomodoroWork.Infrastructure\PomodoroWork.Infrastructure.csproj">
+      <Project>{f32049f3-552e-40a2-aa3b-a7ac353e8db8}</Project>
+      <Name>PomodoroWork.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShortBreakeView\ShortBreakView.UI\ShortBreakView.UI.csproj">
+      <Project>{83b0e0a9-d424-413e-92e2-4f78915ed8e1}</Project>
+      <Name>ShortBreakView.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sound\Sound.Application\Sound.Application.csproj">
+      <Project>{3c9d3d5a-e130-4dff-baf3-60bfb6f071e0}</Project>
+      <Name>Sound.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sound\Sound.Infrastructure\Sound.Infrastructure.csproj">
+      <Project>{4fa639ab-2afb-4389-85c8-28d948b70c1a}</Project>
+      <Name>Sound.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StartLongBreakeView\StartLongBreakeView.Application\StartLongBreakeView.Application.csproj">
+      <Project>{14f7d265-6612-4ad5-a1d9-0bd630697ea1}</Project>
+      <Name>StartLongBreakeView.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StartLongBreakeView\StartLongBreakeView.UI\StartLongBreakeView.UI.csproj">
+      <Project>{122c1f0f-3946-47ab-9123-a44dcb0b9f29}</Project>
+      <Name>StartLongBreakeView.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StartShortBreakeView\StartShortBreakeView.Application\StartShortBreakeView.Application.csproj">
+      <Project>{08ed1a40-1e25-4084-8147-9c5bcba2e01c}</Project>
+      <Name>StartShortBreakeView.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StartShortBreakeView\StartShortBreakeView.UI\StartShortBreakeView.UI.csproj">
+      <Project>{e04de452-7959-4265-8e2c-841d636a8d74}</Project>
+      <Name>StartShortBreakeView.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StartWorkView\StartWorkView.Application\StartWorkView.Application.csproj">
+      <Project>{30a07d01-22bb-40c6-8025-fccbcecb548c}</Project>
+      <Name>StartWorkView.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StartWorkView\StartWorkView.Infrastructure\StartWorkView.Infrastructure.csproj">
+      <Project>{22e9f66a-d363-4d06-8c20-878ab901cc14}</Project>
+      <Name>StartWorkView.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StartWorkView\StartWorkView.UI\StartWorkView.UI.csproj">
+      <Project>{9ee05091-854a-4563-9707-23d02238ebe8}</Project>
+      <Name>StartWorkView.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Suggestion\Suggestion.Application\Suggestion.Application.csproj">
+      <Project>{b4645668-552c-4731-aab7-cad0f115afab}</Project>
+      <Name>Suggestion.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Suggestion\Suggestion.Infrastructure\Suggestion.Infrastructure.csproj">
+      <Project>{c9119fb1-a52b-4e7a-91b8-88475437dccf}</Project>
+      <Name>Suggestion.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WorkView\WorkView.UI\WorkView.UI.csproj">
+      <Project>{1ce4ce4c-2644-4470-9bdc-12653eeb39f5}</Project>
+      <Name>WorkView.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CatchTheFlowIcon.ico" />
+    <None Include="logo.ico" />
+    <None Include="logo2.png" />
+    <None Include="logo2.ico" />
+    <Content Include="sounds\long_breake_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\long_breake_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\short_breake_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\short_breake_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\work_1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sounds\work_2.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
