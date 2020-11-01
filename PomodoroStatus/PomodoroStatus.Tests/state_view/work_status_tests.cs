@@ -19,5 +19,18 @@ namespace PomodoroStatus.Tests.state_view
 
             Then(new PomodoroStatusView(Application.Views.PomodoroStatus.Work));
         }
+        
+        [Fact]
+        public void status_is_work__when__sound_started_at_last_event()
+        {
+            Give( new WorkStarted(
+                25, 
+                DateTime.Parse("2019-01-01 23:00"))
+            );
+            
+            Give( new SoundStarted("file.mp3"));
+
+            Then(new PomodoroStatusView(Application.Views.PomodoroStatus.Work));
+        }
     }
 }

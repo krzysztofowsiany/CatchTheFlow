@@ -137,6 +137,14 @@
       <Project>{60abaa84-1c7b-460b-bdb4-232a56f55769}</Project>
       <Name>PomodoroShortBreake.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PomodoroStatus\PomodoroStatus.Application\PomodoroStatus.Application.csproj">
+      <Project>{65461d47-73ea-4504-b940-84cada352f9c}</Project>
+      <Name>PomodoroStatus.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PomodoroStatus\PomodoroStatus.Infrastructure\PomodoroStatus.Infrastructure.csproj">
+      <Project>{14424534-9a8c-4f9c-ab23-6fff38106f58}</Project>
+      <Name>PomodoroStatus.Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PomodoroWork\PomodoroWork.Infrastructure\PomodoroWork.Infrastructure.csproj">
       <Project>{f32049f3-552e-40a2-aa3b-a7ac353e8db8}</Project>
       <Name>PomodoroWork.Infrastructure</Name>

@@ -67,6 +67,10 @@
         <Project>{28030da9-13cb-42e9-8a07-360d6c42dd66}</Project>
         <Name>CQRSLib</Name>
       </ProjectReference>
+      <ProjectReference Include="..\PomodoroStatus.Application\PomodoroStatus.Application.csproj">
+        <Project>{65461d47-73ea-4504-b940-84cada352f9c}</Project>
+        <Name>PomodoroStatus.Application</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

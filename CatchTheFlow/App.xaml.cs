@@ -1,9 +1,13 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Forms;
 using Autofac;
 using Configuration.UI;
+using CQRSLib;
+using LongBreakView.UI;
+using PomodoroStatus.Application.Query;
+using PomodoroStatus.Application.Views;
+using ShortBreakView.UI;
 using StartWorkView.UI;
 using WorkView.UI;
 
@@ -17,13 +21,14 @@ namespace CatchTheFlow
     {
         private NotifyIcon _notifyIcon;
         private bool _isExit;
+        private IQueryBus _queryBus;
 
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
             MainWindow = new MainWindow();
             MainWindow.Closing += MainWindowClosing;
-
+            _queryBus = IoT.Container.Resolve<IQueryBus>();
             CreateNotifyIcon();
         }
 
@@ -43,17 +48,33 @@ namespace CatchTheFlow
             _notifyIcon.Icon = CatchTheFlow.Properties.Resources.CatchTheFlowLogo;
             _notifyIcon.DoubleClick += (s, args) => ShowMainWindow();
             _notifyIcon.Visible = true;
-            
+
             CreateContextMenu();
-           // _result = queryBus.Process<StartWorkTimeQuery, StartWorkTime>(new StartWorkTimeQuery());
         }
 
         private void ShowMainWindow()
         {
-           /* switch (_result.PomodoroStatus)
+            
+            var status = _queryBus.Process<PomodoroStatusQuery, PomodoroStatusView>(new PomodoroStatusQuery());
+        
+            switch (status.PomodoroStatus)
             {
-                IoT.Container.Resolve<StartWorkDialog>().Show();    
-            }*/
+                case PomodoroStatus.Application.Views.PomodoroStatus.WorkToStart:
+                    IoT.Container.Resolve<StartWorkDialog>().Show();
+                break;
+                
+                case PomodoroStatus.Application.Views.PomodoroStatus.LongBreak:
+                    IoT.Container.Resolve<LongBreakDialog>().Show();
+                    break;
+                
+                case PomodoroStatus.Application.Views.PomodoroStatus.ShortBreak:
+                    IoT.Container.Resolve<ShortBreakDialog>().Show();
+                    break;
+                
+                case PomodoroStatus.Application.Views.PomodoroStatus.Work:
+                    IoT.Container.Resolve<WorkDialog>().Show();
+                    break;
+            }
             
         }
 

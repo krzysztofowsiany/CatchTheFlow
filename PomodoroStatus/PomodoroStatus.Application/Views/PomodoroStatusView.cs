@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using EventBus;
 using EventBus.View;
@@ -6,15 +8,20 @@ namespace PomodoroStatus.Application.Views
 {
     public class PomodoroStatusView :BaseView
     {
-        public PomodoroStatus PomodorStatus { get; set; } = PomodoroStatus.WorkToStart;
+        private IDictionary<string, PomodoroStatus> _pomodorStatuses;
+        private IEnumerable<string> _exceptEvents;
+
+        public PomodoroStatus PomodoroStatus { get; set; } = PomodoroStatus.WorkToStart;
         
-        public PomodoroStatusView(PomodoroStatus pomodorStatus) :base(null)
+        public PomodoroStatusView(PomodoroStatus pomodoroStatus) :base(null)
         {
-            PomodorStatus = pomodorStatus;
+            InitializePomodoroStatuses();
+            PomodoroStatus = pomodoroStatus;
         }
 
         public PomodoroStatusView(IEventRepository eventRepository) :base(eventRepository)
         {
+            InitializePomodoroStatuses();
             RestoreState();
         }
 
@@ -22,22 +29,42 @@ namespace PomodoroStatus.Application.Views
         {
             var eventNameList = _eventRepository
                 .GetNamesOfEvents()
+                .Except(_exceptEvents)
                 .FirstOrDefault();
-           
-           if (eventNameList.Contains("WorkStarted"))
-                PomodorStatus = PomodoroStatus.Work;
-           else if (eventNameList.Contains("ShortBreakeStarted"))
-                PomodorStatus = PomodoroStatus.ShortBreak;
-           else if (eventNameList.Contains("LongBreakeStarted"))
-                PomodorStatus = PomodoroStatus.LongBreak;
-           else if (eventNameList.Contains("ShortBreakeStopped")
-                || eventNameList.Contains("LongBreakeStopped")
-                || eventNameList.Contains("WorkInterrupted")
-                || eventNameList.Contains("ShortBreakInterrupted")
-                || eventNameList.Contains("LongBreakInterrupted")
-                )
-               PomodorStatus = PomodoroStatus.WorkToStart;
-           else PomodorStatus = PomodoroStatus.Nothing;
+            
+            if (eventNameList == null)
+            {
+                return;
+            }
+            
+            if (_pomodorStatuses.ContainsKey(eventNameList))
+            {
+                PomodoroStatus = _pomodorStatuses[eventNameList];
+            }
+            else
+            {
+                PomodoroStatus = PomodoroStatus.Nothing;
+            }
+        }
+        
+        private void InitializePomodoroStatuses()
+        {
+            _pomodorStatuses = new Dictionary<string, PomodoroStatus>
+            {
+                {"WorkStarted", PomodoroStatus.Work},
+                {"ShortBreakeStarted", PomodoroStatus.ShortBreak},
+                {"LongBreakeStarted", PomodoroStatus.LongBreak},
+                {"ShortBreakeStopped", PomodoroStatus.WorkToStart},
+                {"LongBreakeStopped", PomodoroStatus.WorkToStart},
+                {"WorkInterrupted", PomodoroStatus.WorkToStart},
+                {"ShortBreakInterrupted", PomodoroStatus.WorkToStart},
+                {"LongBreakInterrupted", PomodoroStatus.WorkToStart},
+            };
+
+            _exceptEvents = new[]
+            {
+                "SoundStarted", "SoundStopped"
+            };
         }
     }
 }

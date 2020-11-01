@@ -35,6 +35,11 @@ namespace PomodoroStatus.Tests.state_view
             Then(new PomodoroStatusView(Application.Views.PomodoroStatus.WorkToStart));
         }
         
+        [Fact]
+        public void status_is_work_to_start__when__dont_have_any_events()
+        {
+            Then(new PomodoroStatusView(Application.Views.PomodoroStatus.WorkToStart));
+        }
         
         [Fact]
         public void status_is_work_to_start__when__was_work_and_long_break()

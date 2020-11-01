@@ -79,6 +79,7 @@
         <Compile Include="Events\ShortBreakeStarted.cs" />
         <Compile Include="Events\ShortBreakeStopped.cs" />
         <Compile Include="Events\ShortBreakInterrupted.cs" />
+        <Compile Include="Events\SoundStarted.cs" />
         <Compile Include="Events\SuggestedShortBreake.cs" />
         <Compile Include="Events\WorkInterrupted.cs" />
         <Compile Include="Events\WorkStarted.cs" />
