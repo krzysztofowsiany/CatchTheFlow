@@ -115,5 +115,46 @@ namespace PomodoroStatus.Tests.state_view
 
             Then(new PomodoroStatusView(Application.Views.PomodoroStatus.WorkToStart));
         }
+        
+        
+        [Fact]
+        public void status_is_work_to_start__when__was_work_stopped_after_work_interrupted()
+        {
+            Give( new WorkStarted(
+                25, 
+                DateTime.Parse("2019-01-01 23:00"))
+            );
+            
+            Give( new WorkInterrupted(
+                25, 
+                DateTime.Parse("2019-01-01 23:00"))
+            );
+            
+            Give( new WorkStopped(
+                25, 
+                DateTime.Parse("2019-01-01 23:00"))
+            );
+
+
+            Then(new PomodoroStatusView(Application.Views.PomodoroStatus.WorkToStart));
+        }
+        
+        
+        [Fact]
+        public void status_is_work_to_start__when__was_work_stopped()
+        {
+            Give( new WorkStarted(
+                25, 
+                DateTime.Parse("2019-01-01 23:00"))
+            );
+            
+            Give( new WorkStopped(
+                25, 
+                DateTime.Parse("2019-01-01 23:00"))
+            );
+
+
+            Then(new PomodoroStatusView(Application.Views.PomodoroStatus.WorkToStart));
+        }
     }
 }

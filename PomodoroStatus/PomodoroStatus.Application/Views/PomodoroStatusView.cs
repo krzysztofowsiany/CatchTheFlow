@@ -57,6 +57,7 @@ namespace PomodoroStatus.Application.Views
                 {"ShortBreakeStopped", PomodoroStatus.WorkToStart},
                 {"LongBreakeStopped", PomodoroStatus.WorkToStart},
                 {"WorkInterrupted", PomodoroStatus.WorkToStart},
+                {"WorkStopped", PomodoroStatus.WorkToStart},
                 {"ShortBreakInterrupted", PomodoroStatus.WorkToStart},
                 {"LongBreakInterrupted", PomodoroStatus.WorkToStart},
             };

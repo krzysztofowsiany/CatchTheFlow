@@ -29,7 +29,7 @@ namespace PomodoroWork.Infrastructure
             _dateTime = dateTime;
 
             SubscribeToWorkStarted();
-            SubscribeToWorkInterrupted();
+            //SubscribeToWorkInterrupted();
         }
 
         private void SubscribeToWorkInterrupted()
