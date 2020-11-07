@@ -31,7 +31,7 @@ namespace PomodoroStatus.Application.Views
                 .GetNamesOfEvents()
                 .Except(_exceptEvents)
                 .FirstOrDefault();
-            
+           
             if (eventNameList == null)
             {
                 return;
@@ -64,7 +64,11 @@ namespace PomodoroStatus.Application.Views
 
             _exceptEvents = new[]
             {
-                "SoundStarted", "SoundStopped"
+                "SoundStarted", "SoundStopped",
+                "LongBreakeSoundUpdated", "LongBreakeTimeUpdated",
+                "ShortBreakeSoundUpdated", "ShortBreakeTimeUpdated",
+                "WorkSoundUpdated", "WorkTimeUpdated",
+                "SuggestedLongBreake", "SuggestedShortBreake", "SuggestedWork"
             };
         }
     }

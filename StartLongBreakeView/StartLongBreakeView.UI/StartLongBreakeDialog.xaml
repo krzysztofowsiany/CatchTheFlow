@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Rozpoczynanie długiej przerwy" Height="180" Width="400" >
     <StackPanel Orientation="Vertical" >
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="20">

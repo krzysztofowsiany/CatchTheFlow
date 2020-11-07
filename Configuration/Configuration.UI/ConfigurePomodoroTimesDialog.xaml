@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        WindowStartupLocation="CenterScreen"
         Title="Konfiguracja czasów pomodoro" Height="350" Width="500" >
     <StackPanel Orientation="Vertical" >
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="20">
