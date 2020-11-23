@@ -10,37 +10,37 @@ namespace PomodoroStatus.Tests.state_view
     public class work_to_start_status_befor_update_configurations_tests : ViewTest<PomodoroStatusModule>
     {
         [Fact]
-        public void status_is_work_to_start__when__was_long_brek_sound_updated()
+        public void status_is_work_to_start__when__was_long_break_sound_updated()
         {
             Give( new WorkStopped(25, DateTime.Parse("2019-01-01 23:00")));
-            Give( new LongBreakeSoundUpdated(""));
+            Give( new LongBreakSoundUpdated(""));
             
             Then(new PomodoroStatusView(Application.Views.PomodoroStatus.WorkToStart));
         }
         
         [Fact]
-        public void status_is_work_to_start__when__was_short_brek_sound_updated()
+        public void status_is_work_to_start__when__was_short_break_sound_updated()
         {
             Give( new WorkStopped(25, DateTime.Parse("2019-01-01 23:00")));
-            Give( new ShortBreakeSoundUpdated(""));
+            Give( new ShortBreakSoundUpdated(""));
             
             Then(new PomodoroStatusView(Application.Views.PomodoroStatus.WorkToStart));
         }
         
         [Fact]
-        public void status_is_work_to_start__when__was_short_brek_time_updated()
+        public void status_is_work_to_start__when__was_short_break_time_updated()
         {
             Give( new WorkStopped(25, DateTime.Parse("2019-01-01 23:00")));
-            Give( new ShortBreakeTimeUpdated(0));
+            Give( new ShortBreakTimeUpdated(0));
             
             Then(new PomodoroStatusView(Application.Views.PomodoroStatus.WorkToStart));
         }
         
         [Fact]
-        public void status_is_work_to_start__when__was_long_brek_time_updated()
+        public void status_is_work_to_start__when__was_long_break_time_updated()
         {
             Give( new WorkStopped(25, DateTime.Parse("2019-01-01 23:00")));
-            Give( new LongBreakeTimeUpdated(0));
+            Give( new LongBreakTimeUpdated(0));
             
             Then(new PomodoroStatusView(Application.Views.PomodoroStatus.WorkToStart));
         }

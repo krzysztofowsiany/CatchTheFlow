@@ -47,37 +47,37 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Suggestion.Tests", "Suggest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Suggestion.Infrastructure", "Suggestion\Suggestion.Infrastructure\Suggestion.Infrastructure.csproj", "{C9119FB1-A52B-4E7A-91B8-88475437DCCF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StartShortBreakeView", "StartShortBreakeView", "{A6B72B5C-53C3-4DCB-B495-72EB8D5E4B2C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StartShortBreakView", "StartShortBreakView", "{A6B72B5C-53C3-4DCB-B495-72EB8D5E4B2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartShortBreakeView.Application", "StartShortBreakeView\StartShortBreakeView.Application\StartShortBreakeView.Application.csproj", "{08ED1A40-1E25-4084-8147-9C5BCBA2E01C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartShortBreakView.Application", "StartShortBreakView\StartShortBreakView.Application\StartShortBreakView.Application.csproj", "{08ED1A40-1E25-4084-8147-9C5BCBA2E01C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartShortBreakeView.Tests", "StartShortBreakeView\StartShortBreakeView.Tests\StartShortBreakeView.Tests.csproj", "{0B32BC0A-D1F1-4125-8377-9A78BBA2D04A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartShortBreakView.Tests", "StartShortBreakView\StartShortBreakView.Tests\StartShortBreakView.Tests.csproj", "{0B32BC0A-D1F1-4125-8377-9A78BBA2D04A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartShortBreakeView.UI", "StartShortBreakeView\StartShortBreakeView.UI\StartShortBreakeView.UI.csproj", "{E04DE452-7959-4265-8E2C-841D636A8D74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartShortBreakView.UI", "StartShortBreakView\StartShortBreakView.UI\StartShortBreakView.UI.csproj", "{E04DE452-7959-4265-8E2C-841D636A8D74}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PomodoroShortBreake", "PomodoroShortBreake", "{D98BEB07-B804-43DA-9EAF-229A48F85F75}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PomodoroShortBreak", "PomodoroShortBreak", "{D98BEB07-B804-43DA-9EAF-229A48F85F75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroShortBreake.Tests", "PomodoroShortBreake\PomodoroShortBreake.Tests\PomodoroShortBreake.Tests.csproj", "{3B6A4C56-CB01-4960-9295-7A352B70724E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroShortBreak.Tests", "PomodoroShortBreak\PomodoroShortBreak.Tests\PomodoroShortBreak.Tests.csproj", "{3B6A4C56-CB01-4960-9295-7A352B70724E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroShortBreake.Infrastructure", "PomodoroShortBreake\PomodoroShortBreake.Infrastructure\PomodoroShortBreake.Infrastructure.csproj", "{60ABAA84-1C7B-460B-BDB4-232A56F55769}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroShortBreak.Infrastructure", "PomodoroShortBreak\PomodoroShortBreak.Infrastructure\PomodoroShortBreak.Infrastructure.csproj", "{60ABAA84-1C7B-460B-BDB4-232A56F55769}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroShortBreake.Application", "PomodoroShortBreake\PomodoroShortBreake.Application\PomodoroShortBreake.Application.csproj", "{05490C80-F54C-4170-8986-0C169908D4E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroShortBreak.Application", "PomodoroShortBreak\PomodoroShortBreak.Application\PomodoroShortBreak.Application.csproj", "{05490C80-F54C-4170-8986-0C169908D4E2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StartLongBreakeView", "StartLongBreakeView", "{A4987B2D-9BF8-4BB7-A792-1D03D9AF45FE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StartLongBreakView", "StartLongBreakView", "{A4987B2D-9BF8-4BB7-A792-1D03D9AF45FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartLongBreakeView.Application", "StartLongBreakeView\StartLongBreakeView.Application\StartLongBreakeView.Application.csproj", "{14F7D265-6612-4AD5-A1D9-0BD630697EA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartLongBreakView.Application", "StartLongBreakView\StartLongBreakView.Application\StartLongBreakView.Application.csproj", "{14F7D265-6612-4AD5-A1D9-0BD630697EA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartLongBreakeView.Tests", "StartLongBreakeView\StartLongBreakeView.Tests\StartLongBreakeView.Tests.csproj", "{9126540C-FE0D-40EF-8AC6-28F07DFE1EC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartLongBreakView.Tests", "StartLongBreakView\StartLongBreakView.Tests\StartLongBreakView.Tests.csproj", "{9126540C-FE0D-40EF-8AC6-28F07DFE1EC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartLongBreakeView.UI", "StartLongBreakeView\StartLongBreakeView.UI\StartLongBreakeView.UI.csproj", "{122C1F0F-3946-47AB-9123-A44DCB0B9F29}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartLongBreakView.UI", "StartLongBreakView\StartLongBreakView.UI\StartLongBreakView.UI.csproj", "{122C1F0F-3946-47AB-9123-A44DCB0B9F29}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PomodoroLongBreake", "PomodoroLongBreake", "{224CB551-F908-4484-A70D-5EF1E4274524}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PomodoroLongBreak", "PomodoroLongBreak", "{224CB551-F908-4484-A70D-5EF1E4274524}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroLongBreake.Tests", "PomodoroLongBreake\PomodoroLongBreake.Tests\PomodoroLongBreake.Tests.csproj", "{0DCD3FCB-0AC1-49D8-80AB-9EB3E45B612C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroLongBreak.Tests", "PomodoroLongBreak\PomodoroLongBreak.Tests\PomodoroLongBreak.Tests.csproj", "{0DCD3FCB-0AC1-49D8-80AB-9EB3E45B612C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroLongBreake.Infrastructure", "PomodoroLongBreake\PomodoroLongBreake.Infrastructure\PomodoroLongBreake.Infrastructure.csproj", "{E6DC79DA-C42F-47CA-8010-A00DF17F448A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroLongBreak.Infrastructure", "PomodoroLongBreak\PomodoroLongBreak.Infrastructure\PomodoroLongBreak.Infrastructure.csproj", "{E6DC79DA-C42F-47CA-8010-A00DF17F448A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroLongBreake.Application", "PomodoroLongBreake\PomodoroLongBreake.Application\PomodoroLongBreake.Application.csproj", "{030E4CE6-601C-4DB8-AFA2-89997190D187}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PomodoroLongBreak.Application", "PomodoroLongBreak\PomodoroLongBreak.Application\PomodoroLongBreak.Application.csproj", "{030E4CE6-601C-4DB8-AFA2-89997190D187}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{215F5121-C867-485D-B452-418B29D768C7}"
 EndProject
@@ -97,11 +97,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkView.Application", "Wor
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShortBreakView", "ShortBreakView", "{BD049A2C-7FEC-4977-B5FF-231C5F6F7B3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortBreakView.UI", "ShortBreakeView\ShortBreakView.UI\ShortBreakView.UI.csproj", "{83B0E0A9-D424-413E-92E2-4F78915ED8E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortBreakView.UI", "ShortBreakView\ShortBreakView.UI\ShortBreakView.UI.csproj", "{83B0E0A9-D424-413E-92E2-4F78915ED8E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortBreakView.Tests", "ShortBreakeView\ShortBreakView.Tests\ShortBreakView.Tests.csproj", "{C6EAC0CE-EA63-411F-B3EB-330BE76965B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortBreakView.Tests", "ShortBreakView\ShortBreakView.Tests\ShortBreakView.Tests.csproj", "{C6EAC0CE-EA63-411F-B3EB-330BE76965B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortBreakView.Application", "ShortBreakeView\ShortBreakView.Application\ShortBreakView.Application.csproj", "{E526DD42-42A8-4316-B56F-AEA124FDD843}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortBreakView.Application", "ShortBreakView\ShortBreakView.Application\ShortBreakView.Application.csproj", "{E526DD42-42A8-4316-B56F-AEA124FDD843}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LongBreakView", "LongBreakView", "{FBC92E7B-7F6A-4DFB-BBBD-4A22833368D8}"
 EndProject

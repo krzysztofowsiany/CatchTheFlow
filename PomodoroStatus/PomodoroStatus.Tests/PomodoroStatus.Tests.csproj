@@ -73,19 +73,19 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Events\LongBreakeSoundUpdated.cs" />
-        <Compile Include="Events\LongBreakeStarted.cs" />
-        <Compile Include="Events\LongBreakeStopped.cs" />
-        <Compile Include="Events\LongBreakeTimeUpdated.cs" />
+        <Compile Include="Events\LongBreakSoundUpdated.cs" />
+        <Compile Include="Events\LongBreakStarted.cs" />
+        <Compile Include="Events\LongBreakStopped.cs" />
+        <Compile Include="Events\LongBreakTimeUpdated.cs" />
         <Compile Include="Events\LongBreakInterrupted.cs" />
-        <Compile Include="Events\ShortBreakeSoundUpdated.cs" />
-        <Compile Include="Events\ShortBreakeStarted.cs" />
-        <Compile Include="Events\ShortBreakeStopped.cs" />
-        <Compile Include="Events\ShortBreakeTimeUpdated.cs" />
+        <Compile Include="Events\ShortBreakSoundUpdated.cs" />
+        <Compile Include="Events\ShortBreakStarted.cs" />
+        <Compile Include="Events\ShortBreakStopped.cs" />
+        <Compile Include="Events\ShortBreakTimeUpdated.cs" />
         <Compile Include="Events\ShortBreakInterrupted.cs" />
         <Compile Include="Events\SoundStarted.cs" />
-        <Compile Include="Events\SuggestedLongBreake.cs" />
-        <Compile Include="Events\SuggestedShortBreake.cs" />
+        <Compile Include="Events\SuggestedLongBreak.cs" />
+        <Compile Include="Events\SuggestedShortBreak.cs" />
         <Compile Include="Events\SuggestedWork.cs" />
         <Compile Include="Events\WorkInterrupted.cs" />
         <Compile Include="Events\WorkSoundUpdated.cs" />

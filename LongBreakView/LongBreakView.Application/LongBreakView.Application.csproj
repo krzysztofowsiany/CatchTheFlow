@@ -40,7 +40,7 @@
     <ItemGroup>
         <Compile Include="CommandHandlers\InterruptLongBreakCommandHandler.cs" />
         <Compile Include="Commands\InterruptLongBreakCommand.cs" />
-        <Compile Include="Events\LongBreakeStarted.cs" />
+        <Compile Include="Events\LongBreakStarted.cs" />
         <Compile Include="Events\LongBreakInterrupted.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="QueryHandlers\StartLongBreakTimeQueryHandler.cs" />

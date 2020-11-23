@@ -20,7 +20,7 @@ namespace Configuration.Tests.state_change
         }
         
         [Fact]
-        public void when_save_time_settings_command__then__short_breake_time_should_be_updated()
+        public void when_save_time_settings_command__then__short_break_time_should_be_updated()
         {
             When(new SaveTimeSettingsCommand(
                 25, 
@@ -28,7 +28,7 @@ namespace Configuration.Tests.state_change
                 15)
             );
             
-            Then(new ShortBreakeTimeUpdated(5));
+            Then(new ShortBreakTimeUpdated(5));
         }
 
         [Fact]
@@ -40,7 +40,7 @@ namespace Configuration.Tests.state_change
                 15)
             );
             
-            Then(new LongBreakeTimeUpdated(15));
+            Then(new LongBreakTimeUpdated(15));
         }
     }
 }

@@ -22,12 +22,12 @@ namespace PomodoroStatus.Tests.state_view
                 DateTime.Parse("2019-01-01 23:00"))
             );
             
-            Give( new ShortBreakeStarted(
+            Give( new ShortBreakStarted(
                 5, 
                 DateTime.Parse("2019-01-01 23:00"))
             );
             
-            Give( new ShortBreakeStopped(
+            Give( new ShortBreakStopped(
                 5, 
                 DateTime.Parse("2019-01-01 23:00"))
             );
@@ -54,12 +54,12 @@ namespace PomodoroStatus.Tests.state_view
                 DateTime.Parse("2019-01-01 23:00"))
             );
             
-            Give( new LongBreakeStarted(
+            Give( new LongBreakStarted(
                 15, 
                 DateTime.Parse("2019-01-01 23:00"))
             );
             
-            Give( new LongBreakeStopped(
+            Give( new LongBreakStopped(
                 15, 
                 DateTime.Parse("2019-01-01 23:00"))
             );
@@ -87,7 +87,7 @@ namespace PomodoroStatus.Tests.state_view
         [Fact]
         public void status_is_work_to_start__when__was_short_break_interrupted()
         {
-            Give(new ShortBreakeStarted(
+            Give(new ShortBreakStarted(
                 5,
                 DateTime.Parse("2019-01-01 23:00"))
                 );
@@ -103,7 +103,7 @@ namespace PomodoroStatus.Tests.state_view
         [Fact]
         public void status_is_work_to_start__when__was_long_break_interrupted()
         {
-            Give(new LongBreakeStarted(
+            Give(new LongBreakStarted(
                 10,
                 DateTime.Parse("2019-01-01 23:00"))
             );

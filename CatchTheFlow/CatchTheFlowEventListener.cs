@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Autofac;
 using EventBus;
-using StartLongBreakeView.UI;
+using StartLongBreakView.UI;
 using StartWorkView.UI;
 using Suggestion.Application.Events;
 
@@ -34,10 +34,10 @@ namespace CatchTheFlow
         
         private void SubscribeToShortBreakStarted()
         {
-            _eventBus.Subscribe<SuggestedShortBreake>(@event =>
+            _eventBus.Subscribe<SuggestedShortBreak>(@event =>
             {
                 Application.Current.Dispatcher.Invoke(delegate{
-                    var dialog = IoT.Container.Resolve<StartShortBreakeDialog>();
+                    var dialog = IoT.Container.Resolve<StartShortBreakDialog>();
                     dialog.Show();
                 });
             });
@@ -45,10 +45,10 @@ namespace CatchTheFlow
         
         private void SubscribeToLongBreakStarted()
         {
-            _eventBus.Subscribe<SuggestedLongBreake>(@event =>
+            _eventBus.Subscribe<SuggestedLongBreak>(@event =>
             {
                 Application.Current.Dispatcher.Invoke(delegate{
-                    var dialog = IoT.Container.Resolve<StartLongBreakeDialog>();
+                    var dialog = IoT.Container.Resolve<StartLongBreakDialog>();
                     dialog.Show();
                 });
             });

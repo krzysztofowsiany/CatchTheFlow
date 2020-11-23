@@ -52,10 +52,10 @@ namespace PomodoroStatus.Application.Views
             _pomodorStatuses = new Dictionary<string, PomodoroStatus>
             {
                 {"WorkStarted", PomodoroStatus.Work},
-                {"ShortBreakeStarted", PomodoroStatus.ShortBreak},
-                {"LongBreakeStarted", PomodoroStatus.LongBreak},
-                {"ShortBreakeStopped", PomodoroStatus.WorkToStart},
-                {"LongBreakeStopped", PomodoroStatus.WorkToStart},
+                {"ShortBreakStarted", PomodoroStatus.ShortBreak},
+                {"LongBreakStarted", PomodoroStatus.LongBreak},
+                {"ShortBreakStopped", PomodoroStatus.WorkToStart},
+                {"LongBreakStopped", PomodoroStatus.WorkToStart},
                 {"WorkInterrupted", PomodoroStatus.WorkToStart},
                 {"WorkStopped", PomodoroStatus.WorkToStart},
                 {"ShortBreakInterrupted", PomodoroStatus.WorkToStart},
@@ -65,10 +65,10 @@ namespace PomodoroStatus.Application.Views
             _exceptEvents = new[]
             {
                 "SoundStarted", "SoundStopped",
-                "LongBreakeSoundUpdated", "LongBreakeTimeUpdated",
-                "ShortBreakeSoundUpdated", "ShortBreakeTimeUpdated",
+                "LongBreakSoundUpdated", "LongBreakTimeUpdated",
+                "ShortBreakSoundUpdated", "ShortBreakTimeUpdated",
                 "WorkSoundUpdated", "WorkTimeUpdated",
-                "SuggestedLongBreake", "SuggestedShortBreake", "SuggestedWork"
+                "SuggestedLongBreak", "SuggestedShortBreak", "SuggestedWork"
             };
         }
     }

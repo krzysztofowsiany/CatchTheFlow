@@ -12,7 +12,7 @@ namespace PomodoroStatus.Tests.state_view
         [Fact]
         public void status_is_long_break__when__long_break_started()
         {
-            Give( new LongBreakeStarted(
+            Give( new LongBreakStarted(
                 15, 
                 DateTime.Parse("2019-01-01 23:00"))
             );

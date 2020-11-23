@@ -25,13 +25,13 @@ namespace LongBreakView.Application.Views
 
         public override void RestoreState()
         {
-            var @event = GetEvents<LongBreakeStarted>()
+            var @event = GetEvents<LongBreakStarted>()
                 .FirstOrDefault();
 
             if (@event == null)
                 return;
             
-            BreakTime = @event.BreakeTime;
+            BreakTime = @event.BreakTime;
             StartTime = @event.StartTime;
         }
     }

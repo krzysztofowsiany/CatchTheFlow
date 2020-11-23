@@ -11,16 +11,16 @@ namespace Suggestion.Tests.state_view
     {
 
         [Fact]
-        public void suggest_work__when__short_breake_stopped()
+        public void suggest_work__when__short_break_stopped()
         { 
             Give( new WorkTimeUpdated(25));
             
-            Give( new ShortBreakeStopped(
+            Give( new ShortBreakStopped(
                 5, 
                 DateTime.Parse("2019-01-01 23:10"))
             );
 
-            Then(new ShortBreakeStoppedInformation(
+            Then(new ShortBreakStoppedInformation(
                 25, 
                 DateTime.Parse("2019-01-01 23:10")
                 )
@@ -29,16 +29,16 @@ namespace Suggestion.Tests.state_view
         
         
         [Fact]
-        public void suggest_work__when__long_breake_stopped()
+        public void suggest_work__when__long_break_stopped()
         { 
             Give( new WorkTimeUpdated(25));
             
-            Give( new LongBreakeStopped(
+            Give( new LongBreakStopped(
                 15, 
                 DateTime.Parse("2019-01-01 23:10"))
             );
 
-            Then(new LongBreakeStoppedInformation(
+            Then(new LongBreakStoppedInformation(
                     25, 
                     DateTime.Parse("2019-01-01 23:10")
                 )

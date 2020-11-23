@@ -11,8 +11,8 @@ namespace Configuration.Tests.state_view
         [Fact]
         public void time_configuration_restored__when__all_update_block_time_are_updated()
         { 
-            Give(new LongBreakeTimeUpdated(10));
-            Give(new ShortBreakeTimeUpdated(10));
+            Give(new LongBreakTimeUpdated(10));
+            Give(new ShortBreakTimeUpdated(10));
             Give(new WorkTimeUpdated(30));
 
             Then(new TimeConfigurationView(30,10,10));
@@ -29,13 +29,13 @@ namespace Configuration.Tests.state_view
         {
             for (var i = 1; i < 6; i++)
             {
-                Give(new LongBreakeTimeUpdated((ushort) (10+i)));
-                Give(new ShortBreakeTimeUpdated((ushort) (5+i)));
+                Give(new LongBreakTimeUpdated((ushort) (10+i)));
+                Give(new ShortBreakTimeUpdated((ushort) (5+i)));
                 Give(new WorkTimeUpdated((ushort) (30+i)));
             }
 
-            Give(new LongBreakeTimeUpdated(10));
-            Give(new ShortBreakeTimeUpdated(5));
+            Give(new LongBreakTimeUpdated(10));
+            Give(new ShortBreakTimeUpdated(5));
             Give(new WorkTimeUpdated(30));
 
             Then(new TimeConfigurationView(30,10,5));

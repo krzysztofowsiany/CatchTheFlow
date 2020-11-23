@@ -9,10 +9,26 @@ namespace PomodoroStatus.Tests.state_view
 {
     public class short_break_status_tests : ViewTest<PomodoroStatusModule>
     {
+ 
+        [Fact]
+        public void status_is_not_short_break__when__short_break_started_not_a_last_event()
+        {
+            
+            Give( new ShortBreakStarted(
+                5, 
+                DateTime.Parse("2019-01-01 23:00"))
+            );
+            
+            Give( new ShortBreakStopped(5, 
+                DateTime.Parse("2019-01-01 23:00")));
+            
+            Then(new PomodoroStatusView(Application.Views.PomodoroStatus.WorkToStart));
+        }
+        
         [Fact]
         public void status_is_short_break__when__short_break_started()
         {
-            Give( new ShortBreakeStarted(
+            Give( new ShortBreakStarted(
                 5, 
                 DateTime.Parse("2019-01-01 23:00"))
             );
@@ -28,7 +44,7 @@ namespace PomodoroStatus.Tests.state_view
                 DateTime.Parse("2019-01-01 23:00"))
             );
             
-            Give( new ShortBreakeStarted(
+            Give( new ShortBreakStarted(
                 5, 
                 DateTime.Parse("2019-01-01 23:00"))
             );
@@ -36,18 +52,6 @@ namespace PomodoroStatus.Tests.state_view
             Then(new PomodoroStatusView(Application.Views.PomodoroStatus.ShortBreak));
         }
         
-        [Fact]
-        public void status_is_not_short_break__when__short_break_started_not_a_last_event()
-        {
-            
-            Give( new ShortBreakeStarted(
-                5, 
-                DateTime.Parse("2019-01-01 23:00"))
-            );
-            
-            Give( new SuggestedShortBreake());
-            
-            Then(new PomodoroStatusView(Application.Views.PomodoroStatus.Nothing));
-        }
+        
     }
 }

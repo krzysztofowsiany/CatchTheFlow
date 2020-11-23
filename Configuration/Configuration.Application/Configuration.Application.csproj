@@ -42,10 +42,10 @@
         <Compile Include="CommandHandlers\SaveTimeSettingsCommandHandler.cs" />
         <Compile Include="Commands\SaveSoundSettingsCommand.cs" />
         <Compile Include="Commands\SaveTimeSettingsCommand.cs" />
-        <Compile Include="Events\LongBreakeSoundUpdated.cs" />
-        <Compile Include="Events\ShortBreakeSoundUpdated.cs" />
-        <Compile Include="Events\ShortBreakeTimeUpdated.cs" />
-        <Compile Include="Events\LongBreakeTimeUpdated.cs" />
+        <Compile Include="Events\LongBreakSoundUpdated.cs" />
+        <Compile Include="Events\ShortBreakSoundUpdated.cs" />
+        <Compile Include="Events\ShortBreakTimeUpdated.cs" />
+        <Compile Include="Events\LongBreakTimeUpdated.cs" />
         <Compile Include="Events\WorkSoundUpdated.cs" />
         <Compile Include="Events\WorkTimeUpdated.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />

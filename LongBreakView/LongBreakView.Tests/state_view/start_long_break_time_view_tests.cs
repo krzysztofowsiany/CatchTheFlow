@@ -12,7 +12,7 @@ namespace LongBreakView.Tests.state_view
         [Fact]
         public void start_long_break_time_view_restored__when__long_break_started()
         {
-            Give( new LongBreakeStarted(
+            Give( new LongBreakStarted(
                 15, 
                 DateTime.Parse("2019-01-01 23:30"))
             );

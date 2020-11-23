@@ -21,12 +21,12 @@ namespace Configuration.Application.CommandHandlers
               command.WorkTime)
               );
           
-          _eventBus.PushEvent(new ShortBreakeTimeUpdated(
-              command.ShortBreakeTime)
+          _eventBus.PushEvent(new ShortBreakTimeUpdated(
+              command.ShortBreakTime)
           );
           
-          _eventBus.PushEvent(new LongBreakeTimeUpdated(
-              command.LongBreakeTime)
+          _eventBus.PushEvent(new LongBreakTimeUpdated(
+              command.LongBreakTime)
           );
         }
     }
