@@ -126,7 +126,7 @@ namespace Suggestion.Tests.state_view
                 DateTime.Parse("2019-01-01 22:00"))
             );
             
-            Give( new LongBreakeStopped(
+            Give( new LongBreakStopped(
                 15, 
                 DateTime.Parse("2019-01-01 21:30"))
             );

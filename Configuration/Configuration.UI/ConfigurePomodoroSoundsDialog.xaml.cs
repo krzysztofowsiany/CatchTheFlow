@@ -27,16 +27,16 @@ namespace Configuration.UI
             workSounds.SelectedValue = _result.WorkSound;
             
             var shortBreakSoundFiles = new List<string>();
-            shortBreakSoundFiles.Add("short_breake_1.mp3");
-            shortBreakSoundFiles.Add("short_breake_2.mp3");
+            shortBreakSoundFiles.Add("short_break_1.mp3");
+            shortBreakSoundFiles.Add("short_break_2.mp3");
             shortBreakSounds.ItemsSource = shortBreakSoundFiles;
-            shortBreakSounds.SelectedValue = _result.ShortBreakeSound;
+            shortBreakSounds.SelectedValue = _result.ShortBreakSound;
             
             var longBreakSoundFiles = new List<string>();
-            longBreakSoundFiles.Add("long_breake_1.mp3");
-            longBreakSoundFiles.Add("long_breake_2.mp3");
+            longBreakSoundFiles.Add("long_break_1.mp3");
+            longBreakSoundFiles.Add("long_break_2.mp3");
             longBreakSounds.ItemsSource = longBreakSoundFiles;
-            longBreakSounds.SelectedValue = _result.LongBreakeSound;
+            longBreakSounds.SelectedValue = _result.LongBreakSound;
         }
         
         private void SaveSettings(object sender, RoutedEventArgs e)

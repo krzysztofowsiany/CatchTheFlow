@@ -12,23 +12,23 @@ namespace Configuration.Tests.state_change
         {
             When(new SaveSoundSettingsCommand(
                 "work_1.mp3", 
-                "short_breake_2.mp3",
-                "long_breake_1.mp3")
+                "short_break_2.mp3",
+                "long_break_1.mp3")
             );
             
             Then(new WorkSoundUpdated("work_1.mp3"));
         }
         
         [Fact]
-        public void when_save_sound_settings_command__then__short_breake_sound_should_be_updated()
+        public void when_save_sound_settings_command__then__short_break_sound_should_be_updated()
         {
             When(new SaveSoundSettingsCommand(
                 "work_1.mp3", 
-                "short_breake_2.mp3",
-                "long_breake_1.mp3")
+                "short_break_2.mp3",
+                "long_break_1.mp3")
             );
             
-            Then(new ShortBreakeSoundUpdated("short_breake_2.mp3"));
+            Then(new ShortBreakSoundUpdated("short_break_2.mp3"));
         }
 
         [Fact]
@@ -36,11 +36,11 @@ namespace Configuration.Tests.state_change
         {
             When(new SaveSoundSettingsCommand(
                 "work_1.mp3", 
-                "short_breake_2.mp3",
-                "long_breake_1.mp3")
+                "short_break_2.mp3",
+                "long_break_1.mp3")
             );
             
-            Then(new LongBreakeSoundUpdated("long_breake_1.mp3"));
+            Then(new LongBreakSoundUpdated("long_break_1.mp3"));
         }
     }
 }

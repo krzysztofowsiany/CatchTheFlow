@@ -2,14 +2,14 @@ using System;
 
 namespace Suggestion.Application.Events
 {
-    public class LongBreakeStopped
+    public class LongBreakStopped
     {
-        public ushort BreakeTime { get; }
+        public ushort BreakTime { get; }
         public DateTime StopTime { get; }
 
-        public LongBreakeStopped(ushort breakeTime, DateTime stopTime)
+        public LongBreakStopped(ushort breakTime, DateTime stopTime)
         {
-            BreakeTime = breakeTime;
+            BreakTime = breakTime;
             StopTime = stopTime;
         }
     }

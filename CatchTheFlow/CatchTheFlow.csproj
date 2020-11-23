@@ -129,13 +129,13 @@
       <Project>{25bf39a8-125f-4d21-88ed-9c93eeb2e426}</Project>
       <Name>LongBreakView.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PomodoroLongBreake\PomodoroLongBreake.Infrastructure\PomodoroLongBreake.Infrastructure.csproj">
+    <ProjectReference Include="..\PomodoroLongBreak\PomodoroLongBreak.Infrastructure\PomodoroLongBreak.Infrastructure.csproj">
       <Project>{e6dc79da-c42f-47ca-8010-a00df17f448a}</Project>
-      <Name>PomodoroLongBreake.Infrastructure</Name>
+      <Name>PomodoroLongBreak.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PomodoroShortBreake\PomodoroShortBreake.Infrastructure\PomodoroShortBreake.Infrastructure.csproj">
+    <ProjectReference Include="..\PomodoroShortBreak\PomodoroShortBreak.Infrastructure\PomodoroShortBreak.Infrastructure.csproj">
       <Project>{60abaa84-1c7b-460b-bdb4-232a56f55769}</Project>
-      <Name>PomodoroShortBreake.Infrastructure</Name>
+      <Name>PomodoroShortBreak.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\PomodoroStatus\PomodoroStatus.Application\PomodoroStatus.Application.csproj">
       <Project>{65461d47-73ea-4504-b940-84cada352f9c}</Project>
@@ -149,7 +149,7 @@
       <Project>{f32049f3-552e-40a2-aa3b-a7ac353e8db8}</Project>
       <Name>PomodoroWork.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ShortBreakeView\ShortBreakView.UI\ShortBreakView.UI.csproj">
+    <ProjectReference Include="..\ShortBreakView\ShortBreakView.UI\ShortBreakView.UI.csproj">
       <Project>{83b0e0a9-d424-413e-92e2-4f78915ed8e1}</Project>
       <Name>ShortBreakView.UI</Name>
     </ProjectReference>
@@ -161,21 +161,21 @@
       <Project>{4fa639ab-2afb-4389-85c8-28d948b70c1a}</Project>
       <Name>Sound.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StartLongBreakeView\StartLongBreakeView.Application\StartLongBreakeView.Application.csproj">
+    <ProjectReference Include="..\StartLongBreakView\StartLongBreakView.Application\StartLongBreakView.Application.csproj">
       <Project>{14f7d265-6612-4ad5-a1d9-0bd630697ea1}</Project>
-      <Name>StartLongBreakeView.Application</Name>
+      <Name>StartLongBreakView.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StartLongBreakeView\StartLongBreakeView.UI\StartLongBreakeView.UI.csproj">
+    <ProjectReference Include="..\StartLongBreakView\StartLongBreakView.UI\StartLongBreakView.UI.csproj">
       <Project>{122c1f0f-3946-47ab-9123-a44dcb0b9f29}</Project>
-      <Name>StartLongBreakeView.UI</Name>
+      <Name>StartLongBreakView.UI</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StartShortBreakeView\StartShortBreakeView.Application\StartShortBreakeView.Application.csproj">
+    <ProjectReference Include="..\StartShortBreakView\StartShortBreakView.Application\StartShortBreakView.Application.csproj">
       <Project>{08ed1a40-1e25-4084-8147-9c5bcba2e01c}</Project>
-      <Name>StartShortBreakeView.Application</Name>
+      <Name>StartShortBreakView.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StartShortBreakeView\StartShortBreakeView.UI\StartShortBreakeView.UI.csproj">
+    <ProjectReference Include="..\StartShortBreakView\StartShortBreakView.UI\StartShortBreakView.UI.csproj">
       <Project>{e04de452-7959-4265-8e2c-841d636a8d74}</Project>
-      <Name>StartShortBreakeView.UI</Name>
+      <Name>StartShortBreakView.UI</Name>
     </ProjectReference>
     <ProjectReference Include="..\StartWorkView\StartWorkView.Application\StartWorkView.Application.csproj">
       <Project>{30a07d01-22bb-40c6-8025-fccbcecb548c}</Project>
@@ -207,16 +207,16 @@
     <None Include="logo.ico" />
     <None Include="logo2.png" />
     <None Include="logo2.ico" />
-    <Content Include="sounds\long_breake_1.mp3">
+    <Content Include="sounds\long_break_1.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="sounds\long_breake_2.mp3">
+    <Content Include="sounds\long_break_2.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="sounds\short_breake_1.mp3">
+    <Content Include="sounds\short_break_1.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="sounds\short_breake_2.mp3">
+    <Content Include="sounds\short_break_2.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="sounds\work_1.mp3">

@@ -4,15 +4,15 @@ namespace Configuration.Application.Commands
 {
     public class SaveSoundSettingsCommand: ICommand
     {
-        public SaveSoundSettingsCommand(string workSound, string shortBreakeSound, string longBreakeSound)
+        public SaveSoundSettingsCommand(string workSound, string shortBreakSound, string longBreakSound)
         {
             WorkSound = workSound;
-            ShortBreakeSound = shortBreakeSound;
-            LongBreakeSound = longBreakeSound;
+            ShortBreakSound = shortBreakSound;
+            LongBreakSound = longBreakSound;
         }
 
         public string WorkSound { get;  }
-        public string ShortBreakeSound { get;  }
-        public string LongBreakeSound { get;  }
+        public string ShortBreakSound { get;  }
+        public string LongBreakSound { get;  }
     }
 }

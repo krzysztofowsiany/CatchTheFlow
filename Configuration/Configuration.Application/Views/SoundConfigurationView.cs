@@ -8,14 +8,14 @@ namespace Configuration.Application.Views
     public class SoundConfigurationView :BaseView
     {
         public string WorkSound { get; private set; } = "work_1.mp3";
-        public string LongBreakeSound { get; private set; } = "long_breake_1.mp3";
-        public string ShortBreakeSound { get; private set; } = "short_breake_1.mp3";
+        public string LongBreakSound { get; private set; } = "long_break_1.mp3";
+        public string ShortBreakSound { get; private set; } = "short_break_1.mp3";
 
-        public SoundConfigurationView(string workSound, string longBreakeSound, string shortBreakeSound) :base(null)
+        public SoundConfigurationView(string workSound, string longBreakSound, string shortBreakSound) :base(null)
         {
             WorkSound = workSound;
-            LongBreakeSound = longBreakeSound;
-            ShortBreakeSound = shortBreakeSound;
+            LongBreakSound = longBreakSound;
+            ShortBreakSound = shortBreakSound;
         }
         
         public SoundConfigurationView(IEventRepository eventRepository) :base(eventRepository)
@@ -25,12 +25,12 @@ namespace Configuration.Application.Views
 
         public override void RestoreState()
         {
-            var longBreakeSoundUpdate = GetEvents<LongBreakeSoundUpdated>().FirstOrDefault();
-            var shortBreakeSoundUpdate = GetEvents<ShortBreakeSoundUpdated>().FirstOrDefault();
+            var longBreakSoundUpdate = GetEvents<LongBreakSoundUpdated>().FirstOrDefault();
+            var shortBreakSoundUpdate = GetEvents<ShortBreakSoundUpdated>().FirstOrDefault();
             var workSoundUpdate = GetEvents<WorkSoundUpdated>().FirstOrDefault();
 
-            if (longBreakeSoundUpdate != null) LongBreakeSound = longBreakeSoundUpdate.Sound;
-            if (shortBreakeSoundUpdate != null) ShortBreakeSound = shortBreakeSoundUpdate.Sound;
+            if (longBreakSoundUpdate != null) LongBreakSound = longBreakSoundUpdate.Sound;
+            if (shortBreakSoundUpdate != null) ShortBreakSound = shortBreakSoundUpdate.Sound;
             if (workSoundUpdate != null) WorkSound = workSoundUpdate.Sound;
         }
     }

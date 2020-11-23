@@ -38,22 +38,22 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="CommandHandlers\SuggestLongBreakeCommandHandler.cs" />
+        <Compile Include="CommandHandlers\SuggestLongBreakCommandHandler.cs" />
         <Compile Include="CommandHandlers\SuggestShortBreakCommandHandler.cs" />
         <Compile Include="CommandHandlers\SuggestWorkCommandHandler.cs" />
-        <Compile Include="Commands\SuggestLongBreakeCommand.cs" />
-        <Compile Include="Commands\SuggestShortBreakeCommand.cs" />
+        <Compile Include="Commands\SuggestLongBreakCommand.cs" />
+        <Compile Include="Commands\SuggestShortBreakCommand.cs" />
         <Compile Include="Commands\SuggestWorkCommand.cs" />
-        <Compile Include="Events\LongBreakeStopped.cs" />
+        <Compile Include="Events\LongBreakStopped.cs" />
         <Compile Include="Events\ShortBreakStopped.cs" />
-        <Compile Include="Events\SuggestedLongBreake.cs" />
-        <Compile Include="Events\SuggestedShortBreake.cs" />
+        <Compile Include="Events\SuggestedLongBreak.cs" />
+        <Compile Include="Events\SuggestedShortBreak.cs" />
         <Compile Include="Events\SuggestedWork.cs" />
         <Compile Include="Events\WorkStopped.cs" />
         <Compile Include="Events\WorkTimeUpdated.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Views\LongBreakeStoppedInformation.cs" />
-        <Compile Include="Views\ShortBreakeStoppedInformation.cs" />
+        <Compile Include="Views\LongBreakStoppedInformation.cs" />
+        <Compile Include="Views\ShortBreakStoppedInformation.cs" />
         <Compile Include="Views\TimeOfEndWorkView.cs" />
     </ItemGroup>
     <ItemGroup>

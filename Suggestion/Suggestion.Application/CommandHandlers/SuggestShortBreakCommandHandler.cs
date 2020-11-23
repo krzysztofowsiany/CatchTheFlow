@@ -17,8 +17,8 @@ namespace Suggestion.Application.CommandHandlers
         
         public void Handle(SuggestShortBreakCommand command)
         {
-            _eventBus.PushEvent(new SuggestedShortBreake(
-              command.BreakeTime, 
+            _eventBus.PushEvent(new SuggestedShortBreak(
+              command.BreakTime, 
               command.StopTime));
         }
     }

@@ -12,7 +12,7 @@ namespace PomodoroStatus.Tests.state_view
         [Fact]
         public void status_is_work_to_start__when__was_long_break_suggested()
         {
-            Give( new SuggestedLongBreake());
+            Give( new SuggestedLongBreak());
             
             Then(new PomodoroStatusView(Application.Views.PomodoroStatus.WorkToStart));
         }
@@ -20,7 +20,7 @@ namespace PomodoroStatus.Tests.state_view
         [Fact]
         public void status_is_work_to_start__when__was_short_break_suggested()
         {
-            Give( new SuggestedShortBreake());
+            Give( new SuggestedShortBreak());
             
             Then(new PomodoroStatusView(Application.Views.PomodoroStatus.WorkToStart));
         }

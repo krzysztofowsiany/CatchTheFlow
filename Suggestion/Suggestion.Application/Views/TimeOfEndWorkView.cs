@@ -47,7 +47,7 @@ namespace Suggestion.Application.Views
                     Count++;
                 }
                 
-                if (eventName.Equals("LongBreakeStopped"))
+                if (eventName.Equals("LongBreakStopped"))
                 {
                     break;
                 }

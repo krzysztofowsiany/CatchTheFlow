@@ -21,12 +21,12 @@ namespace Configuration.Application.CommandHandlers
               command.WorkSound)
               );
           
-          _eventBus.PushEvent(new ShortBreakeSoundUpdated(
-              command.ShortBreakeSound)
+          _eventBus.PushEvent(new ShortBreakSoundUpdated(
+              command.ShortBreakSound)
           );
           
-          _eventBus.PushEvent(new LongBreakeSoundUpdated(
-              command.LongBreakeSound)
+          _eventBus.PushEvent(new LongBreakSoundUpdated(
+              command.LongBreakSound)
           );
         }
     }

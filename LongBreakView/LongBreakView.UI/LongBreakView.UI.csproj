@@ -78,7 +78,7 @@
         <Project>{28030da9-13cb-42e9-8a07-360d6c42dd66}</Project>
         <Name>CQRSLib</Name>
       </ProjectReference>
-      <ProjectReference Include="..\..\ShortBreakeView\ShortBreakView.Application\ShortBreakView.Application.csproj">
+      <ProjectReference Include="..\..\ShortBreakView\ShortBreakView.Application\ShortBreakView.Application.csproj">
         <Project>{e526dd42-42a8-4316-b56f-aea124fdd843}</Project>
         <Name>ShortBreakView.Application</Name>
       </ProjectReference>

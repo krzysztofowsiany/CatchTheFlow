@@ -24,26 +24,26 @@ namespace Suggestion.Infrastructure
             _eventRepository = eventRepository;
 
             SubscribeToWorkStarted();
-            SubscribeToShortBreakeStopped();
-            SubscribeToLongBreakeStopped();
+            SubscribeToShortBreakStopped();
+            SubscribeToLongBreakStopped();
         }
 
-        private void  SubscribeToShortBreakeStopped()
+        private void  SubscribeToShortBreakStopped()
         {
-            _eventBus.Subscribe<ShortBreakeStopped>(@event =>
+            _eventBus.Subscribe<ShortBreakStopped>(@event =>
             {
-                var view = new ShortBreakeStoppedInformation(_eventRepository);
+                var view = new ShortBreakStoppedInformation(_eventRepository);
                     _commandBus.Send(
                         new SuggestWorkCommand(view.WorkTime, view.StopTime)
                     );
             });
         }
         
-        private void  SubscribeToLongBreakeStopped()
+        private void  SubscribeToLongBreakStopped()
         {
-            _eventBus.Subscribe<LongBreakeStopped>(@event =>
+            _eventBus.Subscribe<LongBreakStopped>(@event =>
             {
-                var view = new LongBreakeStoppedInformation(_eventRepository);
+                var view = new LongBreakStoppedInformation(_eventRepository);
                 _commandBus.Send(
                     new SuggestWorkCommand(view.WorkTime, view.StopTime)
                 );
@@ -64,7 +64,7 @@ namespace Suggestion.Infrastructure
                 else
                 {
                     _commandBus.Send(
-                        new SuggestLongBreakeCommand(view.WorkTime, view.StopTime)
+                        new SuggestLongBreakCommand(view.WorkTime, view.StopTime)
                     );
                 }
             });

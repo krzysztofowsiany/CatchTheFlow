@@ -15,8 +15,8 @@ namespace Suggestion.Tests.state_change
             builder.RegisterType<SuggestShortBreakCommandHandler>()
                 .As<ICommandHandler<SuggestShortBreakCommand>>();
             
-            builder.RegisterType<SuggestLongBreakeCommandHandler>()
-                .As<ICommandHandler<SuggestLongBreakeCommand>>();
+            builder.RegisterType<SuggestLongBreakCommandHandler>()
+                .As<ICommandHandler<SuggestLongBreakCommand>>();
             
             builder.RegisterType<SuggestWorkCommandHandler>()
                 .As<ICommandHandler<SuggestWorkCommand>>();

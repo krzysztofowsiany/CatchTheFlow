@@ -76,8 +76,8 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="state_change\fake_date_time.cs" />
         <Compile Include="state_change\suggestion_module.cs" />
-        <Compile Include="state_change\suggest_long_breake_command_tests.cs" />
-        <Compile Include="state_change\suggest_short_breake_command_tests.cs" />
+        <Compile Include="state_change\suggest_long_break_command_tests.cs" />
+        <Compile Include="state_change\suggest_short_break_command_tests.cs" />
         <Compile Include="state_change\suggest_work_command_tests.cs" />
         <Compile Include="state_view\time_of_end_work_view_tests.cs" />
         <Compile Include="state_view\work_suggested_view_test.cs" />

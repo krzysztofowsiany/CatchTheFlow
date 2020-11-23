@@ -20,20 +20,20 @@ namespace Configuration.UI
             _result = queryBus.Process<ConfiguraitonTimesQuery, TimeConfigurationView>(new ConfiguraitonTimesQuery());
 
             WorkTime.Value = _result.WorkTime;
-            ShortBreakeTime.Value = _result.ShortBreakeTime;
-            LongBreakeTime.Value = _result.LongBreakeTime;
+            ShortBreakTime.Value = _result.ShortBreakTime;
+            LongBreakTime.Value = _result.LongBreakTime;
         }
         
         private void SaveSettings(object sender, RoutedEventArgs e)
         {
             var workTime = (ushort)WorkTime.Value;
-            var shortBreakeTime = (ushort)ShortBreakeTime.Value;
-            var longBreakeTime = (ushort)LongBreakeTime.Value;
+            var shortBreakTime = (ushort)ShortBreakTime.Value;
+            var longBreakTime = (ushort)LongBreakTime.Value;
             
             _commandBus.Send(new SaveTimeSettingsCommand(
                 workTime, 
-                shortBreakeTime, 
-                longBreakeTime));
+                shortBreakTime, 
+                longBreakTime));
             
             Close();
         }

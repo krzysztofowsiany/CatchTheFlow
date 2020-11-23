@@ -4,15 +4,15 @@ namespace Configuration.Application.Commands
 {
     public class SaveTimeSettingsCommand: ICommand
     {
-        public SaveTimeSettingsCommand(ushort workTime, ushort shortBreakeTime, ushort longBreakeTime)
+        public SaveTimeSettingsCommand(ushort workTime, ushort shortBreakTime, ushort longBreakTime)
         {
             WorkTime = workTime;
-            ShortBreakeTime = shortBreakeTime;
-            LongBreakeTime = longBreakeTime;
+            ShortBreakTime = shortBreakTime;
+            LongBreakTime = longBreakTime;
         }
 
         public ushort WorkTime { get;  }
-        public ushort ShortBreakeTime { get;  }
-        public ushort LongBreakeTime { get;  }
+        public ushort ShortBreakTime { get;  }
+        public ushort LongBreakTime { get;  }
     }
 }
