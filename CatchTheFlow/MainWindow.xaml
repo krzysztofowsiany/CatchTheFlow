@@ -6,14 +6,5 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525" >
     <StackPanel>
-        <Button Height="20" Click="ButtonBase_OnClick">Start</Button>
-        <Button Height="20" Click="ButtonStartShortBreak_OnClick">Start ShortBreak</Button>
-        <Button Height="20" Click="ButtonStartLongBreak_OnClick">Start LongBreak</Button>
-        <Button Height="20" Click="ButtonConfig_OnClick">Config</Button>
-        <Button Height="20" Click="ButtonConfig2_OnClick">Config2</Button>
-        <Button Height="20" Click="ButtonInterruptWork_OnClick">InterruptWork</Button>
-        <Button Height="20" Click="ButtonInterruptShortBreak_OnClick">InterruptShortBreak</Button>
-        <Button Height="20" Click="ButtonInterruptLongBreak_OnClick">InterruptLongBreak</Button>
-
     </StackPanel>
 </Window>

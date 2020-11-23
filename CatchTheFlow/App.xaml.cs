@@ -40,6 +40,8 @@ namespace CatchTheFlow
             
             _notifyIcon.ContextMenuStrip.Items.Add("Pomodoro Times").Click+= (sender, args) =>
                 IoT.Container.Resolve<ConfigurePomodoroTimesDialog>().Show();
+            
+            _notifyIcon.ContextMenuStrip.Items.Add("Exit").Click+= (s, args) => CloseWindow();
         }
 
         private void CreateNotifyIcon()
@@ -54,7 +56,6 @@ namespace CatchTheFlow
 
         private void ShowMainWindow()
         {
-            
             var status = _queryBus.Process<PomodoroStatusQuery, PomodoroStatusView>(new PomodoroStatusQuery());
         
             switch (status.PomodoroStatus)
@@ -78,20 +79,10 @@ namespace CatchTheFlow
             
         }
 
-        private void ShowMainWindow2()
+        private void CloseWindow()
         {
-            if (MainWindow.IsVisible)
-            {
-                if (MainWindow.WindowState == WindowState.Minimized)
-                {
-                    MainWindow.WindowState = WindowState.Normal;
-                }
-                MainWindow.Activate();
-            }
-            else
-            {
-                MainWindow.Show();
-            }
+            _isExit = true;
+            MainWindow.Close();
         }
 
         private void MainWindowClosing(object sender, CancelEventArgs e)
